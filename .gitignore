@@ -1,0 +1,29 @@
+# Git ignore file
+
+# Vscode
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Quartus build files
+*.rpt
+*.sof
+*.qws
+db/
+incremental_db/
+output_files/
+simulation/
+
+# Nios II auto-generated files
+
+software/bsp/
+*.elf
+*.map
+*.obj
+*.o
+
+# Build artifacts
+build*/
