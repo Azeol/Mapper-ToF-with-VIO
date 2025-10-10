@@ -1,7 +1,9 @@
 # Mapper-ToF-with-VIO
 
-An open source project to make a 3D point cloud with a ToF camera using VIO to map of a room
-Preferably relatively low-cost
+An open source project to make a 3D point cloud with a ToF camera using VIO to map of a room. Preferably relatively low-cost.
+It probably wont work but ehhh if it works it works. Most of my work on the Nios II is based on what I did in my masters degree.
+Probably will try to put it on a drone if it works who knows.<br>
+This project is mainly to familiarize myself with verilog/SystemVerilog, Quartus and FGPA overall and git.
 
 ## Project objectives
 
@@ -28,4 +30,4 @@ Mapper-ToF-with-VIO<br>
 ┃ ┗ DE10_Lite_User_Manual.pdf<br>
 ┣ FPGA --> Quartus project<br>
 ┣ PC --> VIO & Mapping<br>
-┣ Software --> Nios II Source code
+┣ Software --> Nios II Source code<br>
