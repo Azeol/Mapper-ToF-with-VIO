@@ -9,28 +9,28 @@ Preferably relatively low-cost
 -   Generating the fused and interpolated 3D point cloud
 
 ## Project Architectures
-┌────────────┐ ┌─────┐
-| Mono + IMU | | ToF |
-└─────┬──────┘ └──┬──┘     
-      |   "COMM"  |
-      ▼           ▼
-┌──────────────────────┐
-|   DE10 Lite (FPGA)   |
-| - Reading IMU / Mono |
-| - Reading ToF        |  
-| - Timestamping       |
-| - UART Out           |
-└─────────┬────────────┘
-          │ UART
-          ▼
-┌──────────────────────┐
-│         PC           │
-│ - Data Parsing       │
-│ - VIO (IMU + Cam/ToF)│
-│ - Pos Estimation     │
-│ - 3D Reconstruction  │
-│ - Visualization      │
-└──────────────────────┘
+┌────────────┐ ┌─────┐      <br>
+| Mono + IMU | | ToF |      <br>
+└─────┬──────┘ └──┬──┘      <br>  
+      |   "COMM"  |         <br>
+      ▼           ▼         <br>
+┌──────────────────────┐    <br>
+|   DE10 Lite (FPGA)   |    <br>
+| - Reading IMU / Mono |    <br>
+| - Reading ToF        |    <br>
+| - Timestamping       |    <br>
+| - UART Out           |    <br>
+└─────────┬────────────┘    <br>
+          │ UART            <br>
+          ▼                 <br>
+┌──────────────────────┐    <br>
+│         PC           │    <br>
+│ - Data Parsing       │    <br>
+│ - VIO (IMU + Cam/ToF)│    <br>
+│ - Pos Estimation     │    <br>
+│ - 3D Reconstruction  │    <br>
+│ - Visualization      │    <br>
+└──────────────────────┘    <br>
 
 - **DE10-Lite / FPGA**: sensor acquisition, timestamping, transmission  
 - **Nios II softcore**: IMU + + ToF + UART + timer drivers  
