@@ -9,7 +9,7 @@ Preferably relatively low-cost
 -   Generating the fused and interpolated 3D point cloud
 
 Example of 3D could point from a ToF LiDAR
-![alt text](image.png)
+![alt text](images/LiDARexample.png)
 
 ## Project Architectures
 [IMU + mono + ToF] -> [Nios II] -> [PC]
