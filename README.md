@@ -8,6 +8,10 @@ Preferably relatively low-cost
 -   Transfering data from FPGA to PC to handle the VIO
 -   Generating the fused and interpolated 3D point cloud
 
+## Image exemple
+
+![alt text](image.png)
+
 ## Project Architectures
 [IMU + mono + ToF] -> [Nios II] -> [PC]
 
