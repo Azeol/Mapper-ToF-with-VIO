@@ -9,7 +9,28 @@ Preferably relatively low-cost
 -   Generating the fused and interpolated 3D point cloud
 
 ## Project Architectures
-[IMU + mono + ToF] -> [Nios II] -> [PC]
+┌────────────┐ ┌─────┐
+| Mono + IMU | | ToF |
+└─────┬──────┘ └──┬──┘     
+      |   "COMM"  |
+      ▼           ▼
+┌──────────────────────┐
+|   DE10 Lite (FPGA)   |
+| - Reading IMU / Mono |
+| - Reading ToF        |  
+| - Timestamping       |
+| - UART Out           |
+└─────────┬────────────┘
+          │ UART
+          ▼
+┌──────────────────────┐
+│         PC           │
+│ - Data Parsing       │
+│ - VIO (IMU + Cam/ToF)│
+│ - Pos Estimation     │
+│ - 3D Reconstruction  │
+│ - Visualization      │
+└──────────────────────┘
 
 - **DE10-Lite / FPGA**: sensor acquisition, timestamping, transmission  
 - **Nios II softcore**: IMU + + ToF + UART + timer drivers  
@@ -21,4 +42,4 @@ Preferably relatively low-cost
 ┣ 📂documentation --> Doc folder
 ┃ ┗
 ┣ 📂FPGA --> NIOS II source code
-┣ 📂
+┣ 📂PC -->
