@@ -17,8 +17,8 @@ Preferably relatively low-cost
 
 ## Folder Structure
 
-📦Mapper-ToF-with-VIO
-┣ 📂documentation --> Doc folder
-┃ ┗
-┣ 📂FPGA --> NIOS II source code
-┣ 📂PC -->
+📦Mapper-ToF-with-VIO<br>
+┣ 📂documentation --> Doc folder<br>
+┃ ┗<br>
+┣ 📂FPGA --> NIOS II source code<br>
+┣ 📂PC --><br>
