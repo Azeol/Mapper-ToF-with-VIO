@@ -5,7 +5,7 @@ Preferably relatively low-cost
 ## Project objectives
 -   Reading in real time the IMU / Mono camera with a ToF camera
 -   Synchronizing and data handling by the DE10 Lite FPGA
--   Transfering data from FPGA to PC to handle the VIO
+-   Transfering data from FPGA to PC to handle the VIO and map in real time
 -   Generating the fused and interpolated 3D point cloud
 
 Example of 3D could point from a ToF LiDAR
