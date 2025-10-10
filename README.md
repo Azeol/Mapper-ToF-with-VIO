@@ -8,6 +8,9 @@ Preferably relatively low-cost
 -   Transfering data from FPGA to PC to handle the VIO
 -   Generating the fused and interpolated 3D point cloud
 
+Example of 3D could point from a ToF LiDAR
+![alt text](images/LiDARexample.png)
+
 ## Project Architectures
 [IMU + mono + ToF] -> [Nios II / FPGA] -> [PC]
 
