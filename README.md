@@ -12,16 +12,17 @@ Example of 3D could point from a ToF LiDAR
 ![alt text](images/LiDARexample.png)
 
 ## Project Architectures
-[IMU + mono + ToF] -> [Nios II] -> [PC]
+[IMU + mono + ToF] -> [Nios II / FPGA] -> [PC]
 
 - **DE10-Lite / FPGA**: sensor acquisition, timestamping, transmission  
-- **Nios II softcore**: IMU + + ToF + UART + timer drivers  
+- **Nios II softcore**: IMU + Mono camera + ToF + UART + timer drivers  
 - **PC (Python)**: VIO processing and point cloud construction
 
 ## Folder Structure
 
-📦Mapper-ToF-with-VIO
-┣ 📂documentation --> Doc folder
-┃ ┗
-┣ 📂FPGA --> NIOS II source code
-┣ 📂
+Mapper-ToF-with-VIO<br>
+┣ Documentation --> Doc folder<br>
+┃ ┗ DE10_Lite_User_Manual.pdf<br>
+┣ FPGA --> Quartus project<br>
+┣ PC --> VIO & Mapping<br>
+┣ Software --> Nios II Source code<br>
