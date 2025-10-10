@@ -1,17 +1,20 @@
 # Mapper-ToF-with-VIO
+
 An open source project to make a 3D point cloud with a ToF camera using VIO to map of a room
 Preferably relatively low-cost
 
 ## Project objectives
--   Reading in real time the IMU / Mono camera with a ToF camera
--   Synchronizing and data handling by the DE10 Lite FPGA
--   Transfering data from FPGA to PC to handle the VIO and map in real time
--   Generating the fused and interpolated 3D point cloud
+
+- Reading in real time the IMU / Mono camera with a ToF camera
+- Synchronizing and data handling by the DE10 Lite FPGA
+- Transfering data from FPGA to PC to handle the VIO and map in real time
+- Generating the fused and interpolated 3D point cloud
 
 Example of 3D could point from a ToF LiDAR
 ![alt text](images/LiDARexample.png)
 
 ## Project Architectures
+
 [IMU + mono + ToF] -> [Nios II / FPGA] -> [PC]
 
 - **DE10-Lite / FPGA**: sensor acquisition, timestamping, transmission  
@@ -20,9 +23,9 @@ Example of 3D could point from a ToF LiDAR
 
 ## Folder Structure
 
-Mapper-ToF-with-VIO<br>
-┣ Documentation --> Doc folder<br>
-┃ ┗ DE10_Lite_User_Manual.pdf<br>
-┣ FPGA --> Quartus project<br>
-┣ PC --> VIO & Mapping<br>
-┣ Software --> Nios II Source code<br>
+Mapper-ToF-with-VIO{space}{space}
+┣ Documentation --> Doc folder{space}{space}
+┃ ┗ DE10_Lite_User_Manual.pdf{space}{space}
+┣ FPGA --> Quartus project{space}{space}
+┣ PC --> VIO & Mapping{space}{space}
+┣ Software --> Nios II Source code{space}{space}
