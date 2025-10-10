@@ -20,5 +20,6 @@ Preferably relatively low-cost
 📦Mapper-ToF-with-VIO<br>
 ┣ 📂documentation --> Doc folder<br>
 ┃ ┗<br>
-┣ 📂FPGA --> NIOS II source code<br>
-┣ 📂PC --><br>
+┣ 📂FPGA --> Quartus project<br>
+┣ 📂PC --> VIO & Mapping<br>
+┣ 📂Software --> Nios II Source code<br>
