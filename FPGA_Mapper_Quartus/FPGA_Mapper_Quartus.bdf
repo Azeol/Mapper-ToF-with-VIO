@@ -1,0 +1,157 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(symbol
+	(rect 776 152 1320 600)
+	(text "NIOSII_QSYS" (rect 232 -1 327 15)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 432 25 444)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 41 75)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 240 72))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "i2c_i2c_serial_sda_in" (rect 0 0 122 14)(font "Arial" (font_size 8)))
+		(text "i2c_i2c_serial_sda_in" (rect 4 141 126 155)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 240 152))
+	)
+	(port
+		(pt 0 168)
+		(input)
+		(text "i2c_i2c_serial_scl_in" (rect 0 0 118 14)(font "Arial" (font_size 8)))
+		(text "i2c_i2c_serial_scl_in" (rect 4 157 122 171)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 240 168))
+	)
+	(port
+		(pt 0 280)
+		(input)
+		(text "pb_external_connection_export[1..0]" (rect 0 0 208 14)(font "Arial" (font_size 8)))
+		(text "pb_external_connection_export[1..0]" (rect 4 269 212 283)(font "Arial" (font_size 8)))
+		(line (pt 0 280)(pt 240 280)(line_width 3))
+	)
+	(port
+		(pt 0 320)
+		(input)
+		(text "reset_reset_n" (rect 0 0 80 14)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 309 84 323)(font "Arial" (font_size 8)))
+		(line (pt 0 320)(pt 240 320))
+	)
+	(port
+		(pt 0 360)
+		(input)
+		(text "switch_external_connection_export[9..0]" (rect 0 0 233 14)(font "Arial" (font_size 8)))
+		(text "switch_external_connection_export[9..0]" (rect 4 349 237 363)(font "Arial" (font_size 8)))
+		(line (pt 0 360)(pt 240 360)(line_width 3))
+	)
+	(port
+		(pt 0 400)
+		(input)
+		(text "uart_external_connection_rxd" (rect 0 0 171 14)(font "Arial" (font_size 8)))
+		(text "uart_external_connection_rxd" (rect 4 389 175 403)(font "Arial" (font_size 8)))
+		(line (pt 0 400)(pt 240 400))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "hex3_hex0_external_connection_export[31..0]" (rect 0 0 265 14)(font "Arial" (font_size 8)))
+		(text "hex3_hex0_external_connection_export[31..0]" (rect 4 101 269 115)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 240 112)(line_width 3))
+	)
+	(port
+		(pt 0 184)
+		(output)
+		(text "i2c_i2c_serial_sda_oe" (rect 0 0 127 14)(font "Arial" (font_size 8)))
+		(text "i2c_i2c_serial_sda_oe" (rect 4 173 131 187)(font "Arial" (font_size 8)))
+		(line (pt 0 184)(pt 240 184))
+	)
+	(port
+		(pt 0 200)
+		(output)
+		(text "i2c_i2c_serial_scl_oe" (rect 0 0 122 14)(font "Arial" (font_size 8)))
+		(text "i2c_i2c_serial_scl_oe" (rect 4 189 126 203)(font "Arial" (font_size 8)))
+		(line (pt 0 200)(pt 240 200))
+	)
+	(port
+		(pt 0 240)
+		(output)
+		(text "ledr_external_connection_export[9..0]" (rect 0 0 215 14)(font "Arial" (font_size 8)))
+		(text "ledr_external_connection_export[9..0]" (rect 4 229 219 243)(font "Arial" (font_size 8)))
+		(line (pt 0 240)(pt 240 240)(line_width 3))
+	)
+	(port
+		(pt 0 416)
+		(output)
+		(text "uart_external_connection_txd" (rect 0 0 169 14)(font "Arial" (font_size 8)))
+		(text "uart_external_connection_txd" (rect 4 405 173 419)(font "Arial" (font_size 8)))
+		(line (pt 0 416)(pt 240 416))
+	)
+	(drawing
+		(text "clk" (rect 225 43 242 58)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 245 67 259 79)(font "Arial" (color 0 0 0)))
+		(text "hex3_hex0_external_connection" (rect 56 83 263 98)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 245 107 275 119)(font "Arial" (color 0 0 0)))
+		(text "i2c_i2c_serial" (rect 161 123 251 138)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "sda_in" (rect 245 147 276 159)(font "Arial" (color 0 0 0)))
+		(text "scl_in" (rect 245 163 273 175)(font "Arial" (color 0 0 0)))
+		(text "sda_oe" (rect 245 179 280 191)(font "Arial" (color 0 0 0)))
+		(text "scl_oe" (rect 245 195 276 207)(font "Arial" (color 0 0 0)))
+		(text "ledr_external_connection" (rect 96 211 258 226)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 245 235 275 247)(font "Arial" (color 0 0 0)))
+		(text "pb_external_connection" (rect 104 251 258 266)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 245 275 275 287)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 211 291 244 306)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 245 315 281 327)(font "Arial" (color 0 0 0)))
+		(text "switch_external_connection" (rect 81 331 260 346)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 245 355 275 367)(font "Arial" (color 0 0 0)))
+		(text "uart_external_connection" (rect 95 371 257 386)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "rxd" (rect 245 395 260 407)(font "Arial" (color 0 0 0)))
+		(text "txd" (rect 245 411 260 423)(font "Arial" (color 0 0 0)))
+		(text " NIOSII_QSYS " (rect 480 432 557 444)(font "Arial" ))
+		(line (pt 240 32)(pt 304 32))
+		(line (pt 304 32)(pt 304 432))
+		(line (pt 240 432)(pt 304 432))
+		(line (pt 240 32)(pt 240 432))
+		(line (pt 241 52)(pt 241 76))
+		(line (pt 242 52)(pt 242 76))
+		(line (pt 241 92)(pt 241 116))
+		(line (pt 242 92)(pt 242 116))
+		(line (pt 241 132)(pt 241 204))
+		(line (pt 242 132)(pt 242 204))
+		(line (pt 241 220)(pt 241 244))
+		(line (pt 242 220)(pt 242 244))
+		(line (pt 241 260)(pt 241 284))
+		(line (pt 242 260)(pt 242 284))
+		(line (pt 241 300)(pt 241 324))
+		(line (pt 242 300)(pt 242 324))
+		(line (pt 241 340)(pt 241 364))
+		(line (pt 242 340)(pt 242 364))
+		(line (pt 241 380)(pt 241 420))
+		(line (pt 242 380)(pt 242 420))
+		(line (pt 0 0)(pt 544 0))
+		(line (pt 544 0)(pt 544 448))
+		(line (pt 0 448)(pt 544 448))
+		(line (pt 0 0)(pt 0 448))
+	)
+)
