@@ -29,5 +29,8 @@ Mapper-ToF-with-VIO<br>
 ┣ Documentation --> Doc folder<br>
 ┃ ┗ DE10_Lite_User_Manual.pdf<br>
 ┣ FPGA --> Quartus project<br>
+┣ Images<br>
+┃ ┗ LiDARexmaple.png
 ┣ PC --> VIO & Mapping<br>
-┣ Software --> Nios II Source code<br>
+┗ Software --> Nios II Source code<br>
+  ┗

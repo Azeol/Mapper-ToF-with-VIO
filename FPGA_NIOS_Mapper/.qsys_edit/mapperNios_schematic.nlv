@@ -1,0 +1,32 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst mapperNios.NiosII_CPU.clock_bridge -pg 1
+preplace inst mapperNios.NiosII_CPU.cpu -pg 1
+preplace inst mapperNios.MEMORY -pg 1 -lvl 3 -y 250
+preplace inst mapperNios.jtag_uart_0 -pg 1 -lvl 3 -y 330
+preplace inst mapperNios.PB -pg 1 -lvl 3 -y 430
+preplace inst mapperNios.MAIN_TIMER -pg 1 -lvl 3 -y 150
+preplace inst mapperNios.UART -pg 1 -lvl 3 -y 550
+preplace inst mapperNios.SWITCH -pg 1 -lvl 3 -y 850
+preplace inst mapperNios.clk_0 -pg 1 -lvl 1 -y 340
+preplace inst mapperNios.NiosII_CPU -pg 1 -lvl 2 -y 320
+preplace inst mapperNios -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst mapperNios.NiosII_CPU.reset_bridge -pg 1
+preplace inst mapperNios.HEX3_HEX0 -pg 1 -lvl 3 -y 950
+preplace inst mapperNios.I2C -pg 1 -lvl 3 -y 30
+preplace inst mapperNios.sysid_qsys_0 -pg 1 -lvl 3 -y 670
+preplace inst mapperNios.LEDR -pg 1 -lvl 3 -y 750
+preplace netloc EXPORT<net_container>mapperNios</net_container>(SLAVE)mapperNios.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>mapperNios</net_container>(SLAVE)LEDR.external_connection,(SLAVE)mapperNios.ledr) 1 0 3 NJ 780 NJ 780 NJ
+preplace netloc EXPORT<net_container>mapperNios</net_container>(SLAVE)HEX3_HEX0.external_connection,(SLAVE)mapperNios.hex3_hex0) 1 0 3 NJ 980 NJ 980 NJ
+preplace netloc FAN_OUT<net_container>mapperNios</net_container>(SLAVE)MEMORY.clk1,(SLAVE)SWITCH.clk,(SLAVE)MAIN_TIMER.clk,(SLAVE)LEDR.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)UART.clk,(MASTER)clk_0.clk,(SLAVE)PB.clk,(SLAVE)NiosII_CPU.clk,(SLAVE)HEX3_HEX0.clk,(SLAVE)I2C.clock) 1 1 2 290 240 730
+preplace netloc INTERCONNECT<net_container>mapperNios</net_container>(SLAVE)HEX3_HEX0.reset,(SLAVE)MEMORY.reset1,(SLAVE)MAIN_TIMER.reset,(SLAVE)PB.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)SWITCH.reset,(MASTER)NiosII_CPU.debug_reset_request,(SLAVE)I2C.reset_sink,(SLAVE)UART.reset,(SLAVE)LEDR.reset,(SLAVE)sysid_qsys_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)NiosII_CPU.reset) 1 1 2 310 260 710
+preplace netloc EXPORT<net_container>mapperNios</net_container>(SLAVE)mapperNios.uart,(SLAVE)UART.external_connection) 1 0 3 NJ 580 NJ 580 NJ
+preplace netloc EXPORT<net_container>mapperNios</net_container>(SLAVE)mapperNios.switch,(SLAVE)SWITCH.external_connection) 1 0 3 NJ 880 NJ 880 NJ
+preplace netloc EXPORT<net_container>mapperNios</net_container>(SLAVE)PB.external_connection,(SLAVE)mapperNios.pushbutton) 1 0 3 NJ 460 NJ 460 NJ
+preplace netloc EXPORT<net_container>mapperNios</net_container>(SLAVE)mapperNios.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>mapperNios</net_container>(MASTER)NiosII_CPU.irq,(SLAVE)MAIN_TIMER.irq,(SLAVE)UART.irq,(SLAVE)jtag_uart_0.irq,(SLAVE)PB.irq,(SLAVE)I2C.interrupt_sender) 1 2 1 750
+preplace netloc EXPORT<net_container>mapperNios</net_container>(SLAVE)mapperNios.i2c_serial,(SLAVE)I2C.i2c_serial) 1 0 3 NJ 100 NJ 100 NJ
+preplace netloc INTERCONNECT<net_container>mapperNios</net_container>(SLAVE)sysid_qsys_0.control_slave,(SLAVE)MAIN_TIMER.s1,(SLAVE)SWITCH.s1,(SLAVE)PB.s1,(SLAVE)NiosII_CPU.debug_mem_slave,(MASTER)NiosII_CPU.data_master,(MASTER)NiosII_CPU.instruction_master,(SLAVE)I2C.csr,(SLAVE)UART.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)MEMORY.s1,(SLAVE)LEDR.s1,(SLAVE)HEX3_HEX0.s1) 1 1 2 330 280 690
+levelinfo -pg 1 0 80 940
+levelinfo -hier mapperNios 90 120 450 780 930

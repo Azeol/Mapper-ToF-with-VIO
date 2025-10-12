@@ -1,0 +1,177 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 608 280 784 296)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "MAX10_CLK_50" (rect 5 0 83 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
+	)
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+)
+(symbol
+	(rect 808 216 1128 664)
+	(text "mapperNios" (rect 126 -1 207 15)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 432 25 444)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 41 75)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 128 72))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "i2c_serial_sda_in" (rect 0 0 99 14)(font "Arial" (font_size 8)))
+		(text "i2c_serial_sda_in" (rect 4 141 103 155)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 128 152))
+	)
+	(port
+		(pt 0 168)
+		(input)
+		(text "i2c_serial_scl_in" (rect 0 0 94 14)(font "Arial" (font_size 8)))
+		(text "i2c_serial_scl_in" (rect 4 157 98 171)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 128 168))
+	)
+	(port
+		(pt 0 280)
+		(input)
+		(text "pushbutton_export[1..0]" (rect 0 0 135 14)(font "Arial" (font_size 8)))
+		(text "pushbutton_export[1..0]" (rect 4 269 139 283)(font "Arial" (font_size 8)))
+		(line (pt 0 280)(pt 128 280)(line_width 3))
+	)
+	(port
+		(pt 0 320)
+		(input)
+		(text "reset_reset_n" (rect 0 0 80 14)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 309 84 323)(font "Arial" (font_size 8)))
+		(line (pt 0 320)(pt 128 320))
+	)
+	(port
+		(pt 0 360)
+		(input)
+		(text "switch_export[9..0]" (rect 0 0 110 14)(font "Arial" (font_size 8)))
+		(text "switch_export[9..0]" (rect 4 349 114 363)(font "Arial" (font_size 8)))
+		(line (pt 0 360)(pt 128 360)(line_width 3))
+	)
+	(port
+		(pt 0 400)
+		(input)
+		(text "uart_rxd" (rect 0 0 48 14)(font "Arial" (font_size 8)))
+		(text "uart_rxd" (rect 4 389 52 403)(font "Arial" (font_size 8)))
+		(line (pt 0 400)(pt 128 400))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "hex3_hex0_export[31..0]" (rect 0 0 142 14)(font "Arial" (font_size 8)))
+		(text "hex3_hex0_export[31..0]" (rect 4 101 146 115)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 128 112)(line_width 3))
+	)
+	(port
+		(pt 0 184)
+		(output)
+		(text "i2c_serial_sda_oe" (rect 0 0 103 14)(font "Arial" (font_size 8)))
+		(text "i2c_serial_sda_oe" (rect 4 173 107 187)(font "Arial" (font_size 8)))
+		(line (pt 0 184)(pt 128 184))
+	)
+	(port
+		(pt 0 200)
+		(output)
+		(text "i2c_serial_scl_oe" (rect 0 0 99 14)(font "Arial" (font_size 8)))
+		(text "i2c_serial_scl_oe" (rect 4 189 103 203)(font "Arial" (font_size 8)))
+		(line (pt 0 200)(pt 128 200))
+	)
+	(port
+		(pt 0 240)
+		(output)
+		(text "ledr_export[9..0]" (rect 0 0 93 14)(font "Arial" (font_size 8)))
+		(text "ledr_export[9..0]" (rect 4 229 97 243)(font "Arial" (font_size 8)))
+		(line (pt 0 240)(pt 128 240)(line_width 3))
+	)
+	(port
+		(pt 0 416)
+		(output)
+		(text "uart_txd" (rect 0 0 47 14)(font "Arial" (font_size 8)))
+		(text "uart_txd" (rect 4 405 51 419)(font "Arial" (font_size 8)))
+		(line (pt 0 416)(pt 128 416))
+	)
+	(drawing
+		(text "clk" (rect 113 43 130 58)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 133 67 147 79)(font "Arial" (color 0 0 0)))
+		(text "hex3_hex0" (rect 67 83 136 98)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 133 107 163 119)(font "Arial" (color 0 0 0)))
+		(text "i2c_serial" (rect 73 123 136 138)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "sda_in" (rect 133 147 164 159)(font "Arial" (color 0 0 0)))
+		(text "scl_in" (rect 133 163 161 175)(font "Arial" (color 0 0 0)))
+		(text "sda_oe" (rect 133 179 168 191)(font "Arial" (color 0 0 0)))
+		(text "scl_oe" (rect 133 195 164 207)(font "Arial" (color 0 0 0)))
+		(text "ledr" (rect 107 211 131 226)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 133 235 163 247)(font "Arial" (color 0 0 0)))
+		(text "pushbutton" (rect 65 251 138 266)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 133 275 163 287)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 99 291 132 306)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 133 315 169 327)(font "Arial" (color 0 0 0)))
+		(text "switch" (rect 92 331 133 346)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 133 355 163 367)(font "Arial" (color 0 0 0)))
+		(text "uart" (rect 106 371 130 386)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "rxd" (rect 133 395 148 407)(font "Arial" (color 0 0 0)))
+		(text "txd" (rect 133 411 148 423)(font "Arial" (color 0 0 0)))
+		(text " mapperNios " (rect 266 432 332 444)(font "Arial" ))
+		(line (pt 128 32)(pt 192 32))
+		(line (pt 192 32)(pt 192 432))
+		(line (pt 128 432)(pt 192 432))
+		(line (pt 128 32)(pt 128 432))
+		(line (pt 129 52)(pt 129 76))
+		(line (pt 130 52)(pt 130 76))
+		(line (pt 129 92)(pt 129 116))
+		(line (pt 130 92)(pt 130 116))
+		(line (pt 129 132)(pt 129 204))
+		(line (pt 130 132)(pt 130 204))
+		(line (pt 129 220)(pt 129 244))
+		(line (pt 130 220)(pt 130 244))
+		(line (pt 129 260)(pt 129 284))
+		(line (pt 130 260)(pt 130 284))
+		(line (pt 129 300)(pt 129 324))
+		(line (pt 130 300)(pt 130 324))
+		(line (pt 129 340)(pt 129 364))
+		(line (pt 130 340)(pt 130 364))
+		(line (pt 129 380)(pt 129 420))
+		(line (pt 130 380)(pt 130 420))
+		(line (pt 0 0)(pt 320 0))
+		(line (pt 320 0)(pt 320 448))
+		(line (pt 0 448)(pt 320 448))
+		(line (pt 0 0)(pt 0 448))
+	)
+)
+(connector
+	(pt 784 288)
+	(pt 808 288)
+)
