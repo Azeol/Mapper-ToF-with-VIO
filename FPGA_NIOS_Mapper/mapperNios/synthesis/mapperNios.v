@@ -6,6 +6,7 @@
 module mapperNios (
 		input  wire        clk_clk,           //        clk.clk
 		output wire [31:0] hex3_hex0_export,  //  hex3_hex0.export
+		output wire [15:0] hex5_hex4_export,  //  hex5_hex4.export
 		input  wire        i2c_serial_sda_in, // i2c_serial.sda_in
 		input  wire        i2c_serial_scl_in, //           .scl_in
 		output wire        i2c_serial_sda_oe, //           .sda_oe
@@ -89,13 +90,18 @@ module mapperNios (
 	wire   [2:0] mm_interconnect_0_main_timer_s1_address;                     // mm_interconnect_0:MAIN_TIMER_s1_address -> MAIN_TIMER:address
 	wire         mm_interconnect_0_main_timer_s1_write;                       // mm_interconnect_0:MAIN_TIMER_s1_write -> MAIN_TIMER:write_n
 	wire  [15:0] mm_interconnect_0_main_timer_s1_writedata;                   // mm_interconnect_0:MAIN_TIMER_s1_writedata -> MAIN_TIMER:writedata
+	wire         mm_interconnect_0_hex5_hex4_s1_chipselect;                   // mm_interconnect_0:HEX5_HEX4_s1_chipselect -> HEX5_HEX4:chipselect
+	wire  [31:0] mm_interconnect_0_hex5_hex4_s1_readdata;                     // HEX5_HEX4:readdata -> mm_interconnect_0:HEX5_HEX4_s1_readdata
+	wire   [1:0] mm_interconnect_0_hex5_hex4_s1_address;                      // mm_interconnect_0:HEX5_HEX4_s1_address -> HEX5_HEX4:address
+	wire         mm_interconnect_0_hex5_hex4_s1_write;                        // mm_interconnect_0:HEX5_HEX4_s1_write -> HEX5_HEX4:write_n
+	wire  [31:0] mm_interconnect_0_hex5_hex4_s1_writedata;                    // mm_interconnect_0:HEX5_HEX4_s1_writedata -> HEX5_HEX4:writedata
 	wire         irq_mapper_receiver0_irq;                                    // I2C:intr -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                                    // PB:irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                                    // UART:irq -> irq_mapper:receiver2_irq
 	wire         irq_mapper_receiver3_irq;                                    // MAIN_TIMER:irq -> irq_mapper:receiver3_irq
 	wire         irq_mapper_receiver4_irq;                                    // jtag_uart_0:av_irq -> irq_mapper:receiver4_irq
 	wire  [31:0] niosii_cpu_irq_irq;                                          // irq_mapper:sender_irq -> NiosII_CPU:irq
-	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [HEX3_HEX0:reset_n, I2C:rst_n, LEDR:reset_n, MAIN_TIMER:reset_n, PB:reset_n, SWITCH:reset_n, UART:reset_n, jtag_uart_0:rst_n, mm_interconnect_0:jtag_uart_0_reset_reset_bridge_in_reset_reset, sysid_qsys_0:reset_n]
+	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [HEX3_HEX0:reset_n, HEX5_HEX4:reset_n, I2C:rst_n, LEDR:reset_n, MAIN_TIMER:reset_n, PB:reset_n, SWITCH:reset_n, UART:reset_n, jtag_uart_0:rst_n, mm_interconnect_0:jtag_uart_0_reset_reset_bridge_in_reset_reset, sysid_qsys_0:reset_n]
 	wire         rst_controller_001_reset_out_reset;                          // rst_controller_001:reset_out -> [MEMORY:reset, NiosII_CPU:reset_n, irq_mapper:reset, mm_interconnect_0:NiosII_CPU_reset_reset_bridge_in_reset_reset]
 	wire         rst_controller_001_reset_out_reset_req;                      // rst_controller_001:reset_req -> [MEMORY:reset_req, NiosII_CPU:reset_req, rst_translator:reset_req_in]
 	wire         niosii_cpu_debug_reset_request_reset;                        // NiosII_CPU:debug_reset_request -> rst_controller_001:reset_in1
@@ -109,6 +115,17 @@ module mapperNios (
 		.chipselect (mm_interconnect_0_hex3_hex0_s1_chipselect), //                    .chipselect
 		.readdata   (mm_interconnect_0_hex3_hex0_s1_readdata),   //                    .readdata
 		.out_port   (hex3_hex0_export)                           // external_connection.export
+	);
+
+	mapperNios_HEX5_HEX4 hex5_hex4 (
+		.clk        (clk_clk),                                   //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),           //               reset.reset_n
+		.address    (mm_interconnect_0_hex5_hex4_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_hex5_hex4_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_hex5_hex4_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_hex5_hex4_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_hex5_hex4_s1_readdata),   //                    .readdata
+		.out_port   (hex5_hex4_export)                           // external_connection.export
 	);
 
 	altera_avalon_i2c #(
@@ -279,6 +296,11 @@ module mapperNios (
 		.HEX3_HEX0_s1_readdata                         (mm_interconnect_0_hex3_hex0_s1_readdata),                     //                                        .readdata
 		.HEX3_HEX0_s1_writedata                        (mm_interconnect_0_hex3_hex0_s1_writedata),                    //                                        .writedata
 		.HEX3_HEX0_s1_chipselect                       (mm_interconnect_0_hex3_hex0_s1_chipselect),                   //                                        .chipselect
+		.HEX5_HEX4_s1_address                          (mm_interconnect_0_hex5_hex4_s1_address),                      //                            HEX5_HEX4_s1.address
+		.HEX5_HEX4_s1_write                            (mm_interconnect_0_hex5_hex4_s1_write),                        //                                        .write
+		.HEX5_HEX4_s1_readdata                         (mm_interconnect_0_hex5_hex4_s1_readdata),                     //                                        .readdata
+		.HEX5_HEX4_s1_writedata                        (mm_interconnect_0_hex5_hex4_s1_writedata),                    //                                        .writedata
+		.HEX5_HEX4_s1_chipselect                       (mm_interconnect_0_hex5_hex4_s1_chipselect),                   //                                        .chipselect
 		.I2C_csr_address                               (mm_interconnect_0_i2c_csr_address),                           //                                 I2C_csr.address
 		.I2C_csr_write                                 (mm_interconnect_0_i2c_csr_write),                             //                                        .write
 		.I2C_csr_read                                  (mm_interconnect_0_i2c_csr_read),                              //                                        .read

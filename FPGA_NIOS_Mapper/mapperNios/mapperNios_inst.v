@@ -10,6 +10,7 @@
 		.reset_reset_n     (<connected-to-reset_reset_n>),     //      reset.reset_n
 		.switch_export     (<connected-to-switch_export>),     //     switch.export
 		.uart_rxd          (<connected-to-uart_rxd>),          //       uart.rxd
-		.uart_txd          (<connected-to-uart_txd>)           //           .txd
+		.uart_txd          (<connected-to-uart_txd>),          //           .txd
+		.hex5_hex4_export  (<connected-to-hex5_hex4_export>)   //  hex5_hex4.export
 	);
 

@@ -3,7 +3,8 @@
 An open source project to make a 3D point cloud with a ToF camera using VIO to map of a room. Preferably relatively low-cost.
 It probably wont work but ehhh if it works it works. Most of my work on the Nios II is based on what I did in my masters degree and with Quartus.
 Probably will try to put it on a drone if it works who knows.  
-This project is mainly to familiarize myself with Verilog/SystemVerilog, Quartus and FGPA overall and git.
+This project is mainly to familiarize myself with Verilog/SystemVerilog, Quartus and FGPA overall and git.  
+/!\ Note to self : remember to deactivate Memory integrity to enable Quartus USB-driver and to enable WSL before launching Quartus /!\
 
 ## Project objectives
 

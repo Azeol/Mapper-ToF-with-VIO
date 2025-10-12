@@ -2,6 +2,7 @@
 		port (
 			clk_clk           : in  std_logic                     := 'X';             -- clk
 			hex3_hex0_export  : out std_logic_vector(31 downto 0);                    -- export
+			hex5_hex4_export  : out std_logic_vector(15 downto 0);                    -- export
 			i2c_serial_sda_in : in  std_logic                     := 'X';             -- sda_in
 			i2c_serial_scl_in : in  std_logic                     := 'X';             -- scl_in
 			i2c_serial_sda_oe : out std_logic;                                        -- sda_oe

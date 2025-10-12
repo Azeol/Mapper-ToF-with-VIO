@@ -11,7 +11,8 @@ module mapperNios (
 	reset_reset_n,
 	switch_export,
 	uart_rxd,
-	uart_txd);	
+	uart_txd,
+	hex5_hex4_export);	
 
 	input		clk_clk;
 	output	[31:0]	hex3_hex0_export;
@@ -25,4 +26,5 @@ module mapperNios (
 	input	[9:0]	switch_export;
 	input		uart_rxd;
 	output		uart_txd;
+	output	[15:0]	hex5_hex4_export;
 endmodule

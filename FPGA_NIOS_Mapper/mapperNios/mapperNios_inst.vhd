@@ -11,7 +11,8 @@
 			reset_reset_n     : in  std_logic                     := 'X';             -- reset_n
 			switch_export     : in  std_logic_vector(9 downto 0)  := (others => 'X'); -- export
 			uart_rxd          : in  std_logic                     := 'X';             -- rxd
-			uart_txd          : out std_logic                                         -- txd
+			uart_txd          : out std_logic;                                        -- txd
+			hex5_hex4_export  : out std_logic_vector(15 downto 0)                     -- export
 		);
 	end component mapperNios;
 
@@ -28,6 +29,7 @@
 			reset_reset_n     => CONNECTED_TO_reset_reset_n,     --      reset.reset_n
 			switch_export     => CONNECTED_TO_switch_export,     --     switch.export
 			uart_rxd          => CONNECTED_TO_uart_rxd,          --       uart.rxd
-			uart_txd          => CONNECTED_TO_uart_txd           --           .txd
+			uart_txd          => CONNECTED_TO_uart_txd,          --           .txd
+			hex5_hex4_export  => CONNECTED_TO_hex5_hex4_export   --  hex5_hex4.export
 		);
 
