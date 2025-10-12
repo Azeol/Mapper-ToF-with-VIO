@@ -25,7 +25,7 @@ Example of 3D could point from a ToF LiDAR taken from the internet
 
 ## Folder Structure
 
-Mapper-ToF-with-VIO<br>
+Mapper-ToF-with-VIO  
 ┣ Documentation --> Doc folder<br>
 ┃ ┗ DE10_Lite_User_Manual.pdf<br>
 ┣ FPGA --> Quartus project<br>
