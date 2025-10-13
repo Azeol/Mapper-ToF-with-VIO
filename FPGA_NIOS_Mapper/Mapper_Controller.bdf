@@ -293,7 +293,7 @@ refer to the applicable agreement for further details.
 	(text "VCC" (rect 152 -1 172 9)(font "Arial" (font_size 6)))
 )
 (symbol
-	(rect 696 512 728 528)
+	(rect 688 512 720 528)
 	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
 	(text "inst3" (rect 3 5 25 22)(font "Intel Clear" )(invisible))
 	(port
@@ -546,14 +546,6 @@ refer to the applicable agreement for further details.
 	(pt 784 608)
 )
 (connector
-	(pt 712 536)
-	(pt 712 528)
-)
-(connector
-	(pt 808 536)
-	(pt 712 536)
-)
-(connector
 	(pt 784 496)
 	(pt 808 496)
 	(bus)
@@ -614,4 +606,12 @@ refer to the applicable agreement for further details.
 	(pt 1152 256)
 	(pt 1272 256)
 	(bus)
+)
+(connector
+	(pt 704 528)
+	(pt 704 536)
+)
+(connector
+	(pt 704 536)
+	(pt 808 536)
 )

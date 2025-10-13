@@ -32,7 +32,11 @@ Mapper-ToF-with-VIO
 ┣ FPGA --> Quartus project  
 ┣ Images  
 ┃ ┗ LiDARexample.png  
-┣ PC --> VIO & Mapping  
-┗ Software --> Nios II Source code  
-  ┗
-  
+┣ PC --> VIO & Mapping
+┃ ┗  
+┣ Software --> Nios II Source code  
+┃ ┗  
+┣ .gitignore  
+┣ LICENSE  
+┣ README.md  
+┗ todo.md  
