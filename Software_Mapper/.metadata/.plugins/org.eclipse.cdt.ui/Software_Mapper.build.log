@@ -1,9 +1,0 @@
-11:01:28 **** Incremental Build of configuration Nios II for project Software_Mapper ****
-make all 
-Info: Building ../Software_Mapper_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Software_Mapper_bsp/
-[BSP build complete]
-[Software_Mapper build complete]
-
-11:01:29 Build Finished (took 482ms)
-

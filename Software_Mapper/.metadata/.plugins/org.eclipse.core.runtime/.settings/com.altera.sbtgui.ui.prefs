@@ -1,4 +1,4 @@
 eclipse.preferences.version=1
-newSoftwareExampleWizardPage.defaultLocation=C\:\\Users\\neser\\Mapper-ToF-with-VIO\\FPGA_NIOS_Mapper\\software\\Software_Mapper
+newSoftwareExampleWizardPage.defaultLocation=C\:\\Users\\neser\\Mapper-ToF-with-VIO\\FPGA_NIOS_Mapper\\software\\Software_NiosII
 newSoftwareExampleWizardPage.sopcinfoFile=C\:\\Users\\neser\\Mapper-ToF-with-VIO\\FPGA_NIOS_Mapper\\Hardware_Qsys.sopcinfo
-newSoftwareExampleWizardPage2.newBspLocation=C\:\\Users\\neser\\Mapper-ToF-with-VIO\\FPGA_NIOS_Mapper\\software\\Software_Mapper_bsp
+newSoftwareExampleWizardPage2.newBspLocation=C\:\\Users\\neser\\Mapper-ToF-with-VIO\\FPGA_NIOS_Mapper\\software\\Software_NiosII_bsp
