@@ -44,9 +44,9 @@ Mapper-ToF-with-VIO
 ┃ ┃ ┗ Hardware_Qsys.bsf  
 ┃ ┣ **software --> Code for the Nios II**  
 ┃ ┃ ┣ Software_Mapper  
-┃ ┃ ┃ ┣ include
+┃ ┃ ┃ ┣ include  
 ┃ ┃ ┃ ┃ ┣  
-┃ ┃ ┃ ┣ src
+┃ ┃ ┃ ┣ src  
 ┃ ┃ ┃ ┃ ┣  
 ┃ ┃ ┣ Software_Mapper_bsp  
 ┃ ┃ ┃ ┣ Software_Mapper  
