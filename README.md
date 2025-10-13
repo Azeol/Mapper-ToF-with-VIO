@@ -24,6 +24,12 @@ Example of 3D could point from a ToF LiDAR taken from the internet
 - **Nios II processor (C++)**: IMU + Mono camera + ToF + I2C + UART + timer drivers  
 - **PC (Python)**: VIO processing and 3D point cloud construction and interpolation
 
+### DE10 Lite Expension Header
+
+For I2C I use the GPIO0 as SDA, the GPIO1 as SCL, the GPIO2 as SDA OE (output enable) and the GPIO 3 for SCL OE  
+For UART I use the GPIO34 as RxD and the GPIO35 as TxD
+![alt text](images/ExpansionHeader.png)
+
 ## Folder Structure
 
 PS : for the Quartus folder I only put the most important files
