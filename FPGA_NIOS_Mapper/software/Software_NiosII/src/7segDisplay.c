@@ -1,0 +1,23 @@
+// Cette fonction permet de convertir une entree en valeur
+// comprise par la fonction d'affichage d'altera
+
+#include "7segDisplay.h"
+#include <stdio.h>
+
+int seg7(int value, int seg){
+    int decal[] = {0,8,16,24};
+
+    switch (value) {
+        case 0: return (0x40 << decal[seg]);
+        case 1: return (0x79 << decal[seg]);
+        case 2: return (0x24 << decal[seg]);
+        case 3: return (0x30 << decal[seg]);
+        case 4: return (0x19 << decal[seg]);
+        case 5: return (0x12 << decal[seg]);
+        case 6: return (0x02 << decal[seg]);
+        case 7: return (0x78 << decal[seg]);
+        case 8: return (0x00 << decal[seg]);
+        case 9: return (0x10 << decal[seg]);
+        default: return (0xFF << decal[seg]);
+    }
+}
