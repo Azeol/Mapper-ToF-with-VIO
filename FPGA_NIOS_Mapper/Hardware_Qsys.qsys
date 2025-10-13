@@ -21,7 +21,7 @@
    {
       datum baseAddress
       {
-         value = "266288";
+         value = "266384";
          type = "String";
       }
    }
@@ -37,7 +37,23 @@
    {
       datum baseAddress
       {
-         value = "266272";
+         value = "266368";
+         type = "String";
+      }
+   }
+   element I2C
+   {
+      datum _sortIndex
+      {
+         value = "9";
+         type = "int";
+      }
+   }
+   element I2C.csr
+   {
+      datum baseAddress
+      {
+         value = "266240";
          type = "String";
       }
    }
@@ -53,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "266304";
+         value = "266400";
          type = "String";
       }
    }
@@ -125,7 +141,7 @@
    {
       datum baseAddress
       {
-         value = "266320";
+         value = "266416";
          type = "String";
       }
    }
@@ -141,7 +157,7 @@
    {
       datum baseAddress
       {
-         value = "266336";
+         value = "266432";
          type = "String";
       }
    }
@@ -157,7 +173,23 @@
    {
       datum baseAddress
       {
-         value = "266240";
+         value = "266336";
+         type = "String";
+      }
+   }
+   element UART
+   {
+      datum _sortIndex
+      {
+         value = "10";
+         type = "int";
+      }
+   }
+   element UART.s1
+   {
+      datum baseAddress
+      {
+         value = "266304";
          type = "String";
       }
    }
@@ -189,7 +221,7 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "12";
          type = "int";
       }
    }
@@ -197,7 +229,7 @@
    {
       datum baseAddress
       {
-         value = "266360";
+         value = "266456";
          type = "String";
       }
    }
@@ -205,7 +237,7 @@
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "11";
          type = "int";
       }
    }
@@ -213,7 +245,7 @@
    {
       datum baseAddress
       {
-         value = "266352";
+         value = "266448";
          type = "String";
       }
    }
@@ -249,6 +281,7 @@
    internal="HEX5_HEX4.external_connection"
    type="conduit"
    dir="end" />
+ <interface name="i2c_serial" internal="I2C.i2c_serial" type="conduit" dir="end" />
  <interface
    name="ledr"
    internal="LEDR.external_connection"
@@ -263,6 +296,11 @@
  <interface
    name="switch"
    internal="SWITCH.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="uart"
+   internal="UART.external_connection"
    type="conduit"
    dir="end" />
  <module name="HEX3_HEX0" kind="altera_avalon_pio" version="18.1" enabled="1">
@@ -292,6 +330,11 @@
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="16" />
+ </module>
+ <module name="I2C" kind="altera_avalon_i2c" version="18.1" enabled="1">
+  <parameter name="FIFO_DEPTH" value="4" />
+  <parameter name="USE_AV_ST" value="0" />
+  <parameter name="clockRate" value="50000000" />
  </module>
  <module name="LEDR" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
@@ -359,7 +402,7 @@
   <parameter name="dataAddrWidth" value="19" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='MEMORY.s1' start='0x20000' end='0x3E000' type='altera_avalon_onchip_memory2.s1' /><slave name='NIOSII_CPU.debug_mem_slave' start='0x40800' end='0x41000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='TIMER_MAIN.s1' start='0x41000' end='0x41020' type='altera_avalon_timer.s1' /><slave name='HEX5_HEX4.s1' start='0x41020' end='0x41030' type='altera_avalon_pio.s1' /><slave name='HEX3_HEX0.s1' start='0x41030' end='0x41040' type='altera_avalon_pio.s1' /><slave name='LEDR.s1' start='0x41040' end='0x41050' type='altera_avalon_pio.s1' /><slave name='PB.s1' start='0x41050' end='0x41060' type='altera_avalon_pio.s1' /><slave name='SWITCH.s1' start='0x41060' end='0x41070' type='altera_avalon_pio.s1' /><slave name='sysid_qsys_0.control_slave' start='0x41070' end='0x41078' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x41078' end='0x41080' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='MEMORY.s1' start='0x20000' end='0x3E000' type='altera_avalon_onchip_memory2.s1' /><slave name='NIOSII_CPU.debug_mem_slave' start='0x40800' end='0x41000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='I2C.csr' start='0x41000' end='0x41040' type='altera_avalon_i2c.csr' /><slave name='UART.s1' start='0x41040' end='0x41060' type='altera_avalon_uart.s1' /><slave name='TIMER_MAIN.s1' start='0x41060' end='0x41080' type='altera_avalon_timer.s1' /><slave name='HEX5_HEX4.s1' start='0x41080' end='0x41090' type='altera_avalon_pio.s1' /><slave name='HEX3_HEX0.s1' start='0x41090' end='0x410A0' type='altera_avalon_pio.s1' /><slave name='LEDR.s1' start='0x410A0' end='0x410B0' type='altera_avalon_pio.s1' /><slave name='PB.s1' start='0x410B0' end='0x410C0' type='altera_avalon_pio.s1' /><slave name='SWITCH.s1' start='0x410C0' end='0x410D0' type='altera_avalon_pio.s1' /><slave name='sysid_qsys_0.control_slave' start='0x410D0' end='0x410D8' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x410D8' end='0x410E0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -405,7 +448,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="65545" />
+  <parameter name="internalIrqMaskSystemInfo" value="65551" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -561,6 +604,22 @@
   <parameter name="timeoutPulseOutput" value="false" />
   <parameter name="watchdogPulse" value="2" />
  </module>
+ <module name="UART" kind="altera_avalon_uart" version="18.1" enabled="1">
+  <parameter name="baud" value="115200" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="dataBits" value="8" />
+  <parameter name="fixedBaud" value="true" />
+  <parameter name="parity" value="NONE" />
+  <parameter name="simCharStream" value="" />
+  <parameter name="simInteractiveInputEnable" value="false" />
+  <parameter name="simInteractiveOutputEnable" value="false" />
+  <parameter name="simTrueBaud" value="false" />
+  <parameter name="stopBits" value="1" />
+  <parameter name="syncRegDepth" value="2" />
+  <parameter name="useCtsRts" value="false" />
+  <parameter name="useEopRegister" value="false" />
+  <parameter name="useRelativePathForSimFile" value="false" />
+ </module>
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -599,7 +658,7 @@
    start="NIOSII_CPU.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041078" />
+  <parameter name="baseAddress" value="0x000410d8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -608,7 +667,16 @@
    start="NIOSII_CPU.data_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041070" />
+  <parameter name="baseAddress" value="0x000410d0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="NIOSII_CPU.data_master"
+   end="I2C.csr">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00041000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -635,7 +703,7 @@
    start="NIOSII_CPU.data_master"
    end="TIMER_MAIN.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041000" />
+  <parameter name="baseAddress" value="0x00041060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -644,7 +712,7 @@
    start="NIOSII_CPU.data_master"
    end="SWITCH.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041060" />
+  <parameter name="baseAddress" value="0x000410c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -653,7 +721,7 @@
    start="NIOSII_CPU.data_master"
    end="PB.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041050" />
+  <parameter name="baseAddress" value="0x000410b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -662,7 +730,7 @@
    start="NIOSII_CPU.data_master"
    end="LEDR.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041040" />
+  <parameter name="baseAddress" value="0x000410a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -671,7 +739,7 @@
    start="NIOSII_CPU.data_master"
    end="HEX3_HEX0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041030" />
+  <parameter name="baseAddress" value="0x00041090" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -680,7 +748,16 @@
    start="NIOSII_CPU.data_master"
    end="HEX5_HEX4.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041020" />
+  <parameter name="baseAddress" value="0x00041080" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="NIOSII_CPU.data_master"
+   end="UART.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00041040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -710,7 +787,16 @@
  <connection kind="clock" version="18.1" start="clk_0.clk" end="LEDR.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="HEX3_HEX0.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="HEX5_HEX4.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="UART.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="MEMORY.clk1" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C.clock" />
+ <connection
+   kind="interrupt"
+   version="18.1"
+   start="NIOSII_CPU.irq"
+   end="I2C.interrupt_sender">
+  <parameter name="irqNumber" value="1" />
+ </connection>
  <connection
    kind="interrupt"
    version="18.1"
@@ -726,6 +812,9 @@
   <parameter name="irqNumber" value="0" />
  </connection>
  <connection kind="interrupt" version="18.1" start="NIOSII_CPU.irq" end="PB.irq">
+  <parameter name="irqNumber" value="2" />
+ </connection>
+ <connection kind="interrupt" version="18.1" start="NIOSII_CPU.irq" end="UART.irq">
   <parameter name="irqNumber" value="3" />
  </connection>
  <connection
@@ -765,11 +854,17 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="HEX5_HEX4.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="UART.reset" />
  <connection
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
    end="MEMORY.reset1" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="I2C.reset_sink" />
  <connection
    kind="reset"
    version="18.1"

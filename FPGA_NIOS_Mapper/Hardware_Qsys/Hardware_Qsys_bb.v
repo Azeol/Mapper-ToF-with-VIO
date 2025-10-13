@@ -6,7 +6,13 @@ module Hardware_Qsys (
 	ledr_export,
 	pushbutton_export,
 	reset_reset_n,
-	switch_export);	
+	switch_export,
+	i2c_serial_sda_in,
+	i2c_serial_scl_in,
+	i2c_serial_sda_oe,
+	i2c_serial_scl_oe,
+	uart_rxd,
+	uart_txd);	
 
 	input		clk_clk;
 	output	[31:0]	hex3_hex0_export;
@@ -15,4 +21,10 @@ module Hardware_Qsys (
 	input	[1:0]	pushbutton_export;
 	input		reset_reset_n;
 	input	[9:0]	switch_export;
+	input		i2c_serial_sda_in;
+	input		i2c_serial_scl_in;
+	output		i2c_serial_sda_oe;
+	output		i2c_serial_scl_oe;
+	input		uart_rxd;
+	output		uart_txd;
 endmodule
