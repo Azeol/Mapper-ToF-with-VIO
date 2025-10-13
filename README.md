@@ -34,11 +34,11 @@ For UART I use the GPIO34 as RxD and the GPIO35 as TxD
 ### Command needed on Nios2 Command Shell to upload code
 
 For those commands you need to do a cd /cygdrive/c/Users/neser/Mapper-ToF-with-VIO/FPGA_NIOS_Mapper/software/Software_NiosII or Software_NiosII_bsp.
-You also need to be on a NiosII Command Shell
+You also need to be on a Nios2 Command Shell.
 
-**make clean** -> clean folder you are currently on (example : on this project on Software_NiosII or Software_NiosII_bsp)
-**make build** -> build folder you are currently on only use on Software_NiosII and not on the bsp
-**nios2-download Software_NiosII.elf --go** -> Upload on the DE10 Lite the program only use on Software_NiosII
+**make clean** -> clean folder you are currently on (example : on this project on Software_NiosII or Software_NiosII_bsp)  
+**make build** -> build folder you are currently on only use on Software_NiosII and not on the bsp  
+**nios2-download Software_NiosII.elf --go** -> Upload on the DE10 Lite the program only use on Software_NiosII  
 
 ## Folder Structure
 
