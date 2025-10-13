@@ -12,11 +12,13 @@ __pycache__/
 *.rpt
 *.sof
 *.qws
+*.objdump
 db/
 incremental_db/
 output_files/
 simulation/
 tmpWorkspace/
+obj/
 
 # Nios II auto-generated files
 

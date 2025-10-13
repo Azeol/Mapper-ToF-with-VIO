@@ -4,7 +4,7 @@ An open source project to make a 3D point cloud with a ToF camera using VIO to m
 It probably wont work but ehhh if it works it works. Most of my work on the Nios II is based on what I did in my masters degree and with Quartus.
 Probably will try to put it on a drone if it works who knows.  
 This project is mainly to familiarize myself with Verilog/SystemVerilog, Quartus and FGPA overall and git.  
-/!\ Note to self : remember to deactivate Memory integrity to enable Quartus USB-driver and to enable WSL before launching Quartus /!\
+/!\ Note to self : remember to deactivate Memory integrity to enable Quartus USB-driver and let OpenCore open before and while opening the bit stream /!\
 
 ## Project objectives
 
@@ -26,16 +26,31 @@ Example of 3D could point from a ToF LiDAR taken from the internet
 
 ## Folder Structure
 
+PS : for the Quartus folder I only put the most important files
+
 Mapper-ToF-with-VIO  
 ┣ Documentation --> Doc folder  
 ┃ ┗ DE10_Lite_User_Manual.pdf  
-┣ FPGA --> Quartus project  
+┣ FPGA --> **Quartus project**  
+┃ ┣ Hardware_Qsys  
+┃ ┃ ┣ synthesis  
+┃ ┃ ┃ ┗ Hardware_Qsys.qip -> Import NIOS II on the schematic  
+┃ ┃ ┗ Hardware_Qsys.bsf  
+┃ ┣ software -> **Code for the Nios II**  
+┃ ┃ ┣ Software_Mapper  
+┃ ┃ ┃ ┣ Software_Mapper  
+┃ ┃ ┣ Software_Mapper_bsp  
+┃ ┃ ┃ ┣ Software_Mapper  
+┃ ┣ DE10_LITE_Golden_Top.v   
+┃ ┣ Hardware_Mapper.qpf  
+┃ ┣ Hardware_Mapper.qsf  
+┃ ┣ Hardware_Qsys.qsys -> Qsys for NIOS II  
+┃ ┣ Hardware_Qsys.sopcinfo -> Base file for software  
 ┣ Images  
 ┃ ┗ LiDARexample.png  
-┣ PC --> VIO & Mapping
+┣ PC --> **VIO & Mapping**  
 ┃ ┗  
-┣ Software --> Nios II Source code  
-┃ ┗  
+┣ Software_Mapper --> Workspace of Eclipse for Quartus (non important)  
 ┣ .gitignore  
 ┣ LICENSE  
 ┣ README.md  
