@@ -45,7 +45,7 @@ You also need to be on a Nios2 Command Shell.
 PS : for the Quartus folder I only put the most important files
 
 Mapper-ToF-with-VIO  
-┣ **Documentation --> Doc folder** 
+┣ **Documentation --> Doc folder**  
 ┃ ┣ DE10_Lite_User_Manual.pdf  
 ┃ ┗ ug_embedded_ip.pdf  
 ┣ **FPGA --> Quartus project**  
