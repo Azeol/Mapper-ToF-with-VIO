@@ -33,7 +33,7 @@ For UART I use the GPIO34 as RxD and the GPIO35 as TxD
 
 ### Command needed on Nios2 Command Shell to upload code
 
-For those commands you need to do a cd /cygdrive/c/Users/neser/Mapper-ToF-with-VIO/FPGA_NIOS_Mapper/software/Software_NiosII or Software_NiosII_bsp.
+For those commands you need to do a cd /cygdrive/c/Users/YourUsername/Mapper-ToF-with-VIO/FPGA_NIOS_Mapper/software/Software_NiosII or Software_NiosII_bsp.
 You also need to be on a Nios2 Command Shell.
 
 **make clean** -> clean folder you are currently on (example : on this project on Software_NiosII or Software_NiosII_bsp)  
@@ -48,7 +48,7 @@ Mapper-ToF-with-VIO
 ┣ **Documentation --> Doc folder**  
 ┃ ┣ DE10_Lite_User_Manual.pdf  
 ┃ ┗ ug_embedded_ip.pdf  
-┣ **FPGA --> Quartus project**  
+┣ **FPGA_NIOS_Mapper --> Quartus project**  
 ┃ ┣ Hardware_Qsys  
 ┃ ┃ ┣ synthesis  
 ┃ ┃ ┃ ┗ Hardware_Qsys.qip -> Used to import NIOS II on the schematic  
