@@ -48,7 +48,7 @@ Mapper-ToF-with-VIO
 ┣ **Documentation --> Doc folder**  
 ┃ ┣ DE10_Lite_User_Manual.pdf  
 ┃ ┗ ug_embedded_ip.pdf  
-┣ **FPGA --> Quartus project**  
+┣ **FPGA_NIOS_Mapper --> Quartus project**  
 ┃ ┣ Hardware_Qsys  
 ┃ ┃ ┣ synthesis  
 ┃ ┃ ┃ ┗ Hardware_Qsys.qip -> Used to import NIOS II on the schematic  
