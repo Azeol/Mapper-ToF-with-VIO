@@ -1,0 +1,18 @@
+// Standard lib
+#include <stdio.h>
+
+// Project libs
+#include "7segDisplay.h"
+
+int main()
+{
+  printf("Hello from Nios II!\n");
+  //testing seg7Display
+  seg7Display(3, 0);
+  seg7Display(9, 1);
+  seg7Display(4, 2);
+  seg7Display(2, 3);
+  seg7Display(1, 4);
+
+  return 0;
+}

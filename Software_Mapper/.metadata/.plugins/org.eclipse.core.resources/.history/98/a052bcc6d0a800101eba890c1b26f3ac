@@ -1,5 +1,5 @@
-#ifndef INCLUDE_7SEGDISPLAY_H_
-#define INCLUDE_7SEGDISPLAY_H_
+#ifndef HEX_H_
+#define HEX_H_
 
 int seg7(int value, int seg);
 
