@@ -4,7 +4,7 @@
  * Machine generated for CPU 'NIOSII_CPU' in SOPC Builder design 'Hardware_Qsys'
  * SOPC Builder design path: ../../Hardware_Qsys.sopcinfo
  *
- * Generated: Mon Oct 13 20:00:27 CEST 2025
+ * Generated: Tue Oct 14 20:37:01 CEST 2025
  */
 
 /*
@@ -153,7 +153,7 @@
  */
 
 #define ALT_MODULE_CLASS_HEX3_HEX0 altera_avalon_pio
-#define HEX3_HEX0_BASE 0x41090
+#define HEX3_HEX0_BASE 0x410b0
 #define HEX3_HEX0_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX3_HEX0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX3_HEX0_CAPTURE 0
@@ -180,7 +180,7 @@
  */
 
 #define ALT_MODULE_CLASS_HEX5_HEX4 altera_avalon_pio
-#define HEX5_HEX4_BASE 0x41080
+#define HEX5_HEX4_BASE 0x410a0
 #define HEX5_HEX4_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX5_HEX4_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX5_HEX4_CAPTURE 0
@@ -210,7 +210,7 @@
 #define I2C_BASE 0x41000
 #define I2C_FIFO_DEPTH 4
 #define I2C_FREQ 50000000
-#define I2C_IRQ 1
+#define I2C_IRQ 2
 #define I2C_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define I2C_NAME "/dev/I2C"
 #define I2C_SPAN 64
@@ -224,7 +224,7 @@
  */
 
 #define ALT_MODULE_CLASS_LEDR altera_avalon_pio
-#define LEDR_BASE 0x410a0
+#define LEDR_BASE 0x410c0
 #define LEDR_BIT_CLEARING_EDGE_REGISTER 0
 #define LEDR_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LEDR_CAPTURE 0
@@ -280,7 +280,7 @@
  */
 
 #define ALT_MODULE_CLASS_PB altera_avalon_pio
-#define PB_BASE 0x410b0
+#define PB_BASE 0x410d0
 #define PB_BIT_CLEARING_EDGE_REGISTER 0
 #define PB_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PB_CAPTURE 1
@@ -292,7 +292,7 @@
 #define PB_HAS_IN 1
 #define PB_HAS_OUT 0
 #define PB_HAS_TRI 0
-#define PB_IRQ 2
+#define PB_IRQ 3
 #define PB_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define PB_IRQ_TYPE "EDGE"
 #define PB_NAME "/dev/PB"
@@ -307,7 +307,7 @@
  */
 
 #define ALT_MODULE_CLASS_SWITCH altera_avalon_pio
-#define SWITCH_BASE 0x410c0
+#define SWITCH_BASE 0x410e0
 #define SWITCH_BIT_CLEARING_EDGE_REGISTER 0
 #define SWITCH_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SWITCH_CAPTURE 0
@@ -344,19 +344,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x410d8
+#define ALT_STDERR_BASE 0x410f8
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x410d8
+#define ALT_STDIN_BASE 0x410f8
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x410d8
+#define ALT_STDOUT_BASE 0x410f8
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -371,7 +371,7 @@
 
 #define ALT_MODULE_CLASS_TIMER_MAIN altera_avalon_timer
 #define TIMER_MAIN_ALWAYS_RUN 0
-#define TIMER_MAIN_BASE 0x41060
+#define TIMER_MAIN_BASE 0x41080
 #define TIMER_MAIN_COUNTER_SIZE 32
 #define TIMER_MAIN_FIXED_PERIOD 0
 #define TIMER_MAIN_FREQ 50000000
@@ -391,28 +391,53 @@
 
 
 /*
- * UART configuration
+ * UART_LIDAR configuration
  *
  */
 
-#define ALT_MODULE_CLASS_UART altera_avalon_uart
-#define UART_BASE 0x41040
-#define UART_BAUD 115200
-#define UART_DATA_BITS 8
-#define UART_FIXED_BAUD 1
-#define UART_FREQ 50000000
-#define UART_IRQ 3
-#define UART_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define UART_NAME "/dev/UART"
-#define UART_PARITY 'N'
-#define UART_SIM_CHAR_STREAM ""
-#define UART_SIM_TRUE_BAUD 0
-#define UART_SPAN 32
-#define UART_STOP_BITS 1
-#define UART_SYNC_REG_DEPTH 2
-#define UART_TYPE "altera_avalon_uart"
-#define UART_USE_CTS_RTS 0
-#define UART_USE_EOP_REGISTER 0
+#define ALT_MODULE_CLASS_UART_LIDAR altera_avalon_uart
+#define UART_LIDAR_BASE 0x41040
+#define UART_LIDAR_BAUD 115200
+#define UART_LIDAR_DATA_BITS 8
+#define UART_LIDAR_FIXED_BAUD 1
+#define UART_LIDAR_FREQ 50000000
+#define UART_LIDAR_IRQ 1
+#define UART_LIDAR_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define UART_LIDAR_NAME "/dev/UART_LIDAR"
+#define UART_LIDAR_PARITY 'N'
+#define UART_LIDAR_SIM_CHAR_STREAM ""
+#define UART_LIDAR_SIM_TRUE_BAUD 0
+#define UART_LIDAR_SPAN 32
+#define UART_LIDAR_STOP_BITS 1
+#define UART_LIDAR_SYNC_REG_DEPTH 2
+#define UART_LIDAR_TYPE "altera_avalon_uart"
+#define UART_LIDAR_USE_CTS_RTS 0
+#define UART_LIDAR_USE_EOP_REGISTER 0
+
+
+/*
+ * UART_PC configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_UART_PC altera_avalon_uart
+#define UART_PC_BASE 0x41060
+#define UART_PC_BAUD 115200
+#define UART_PC_DATA_BITS 8
+#define UART_PC_FIXED_BAUD 1
+#define UART_PC_FREQ 50000000
+#define UART_PC_IRQ 4
+#define UART_PC_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define UART_PC_NAME "/dev/UART_PC"
+#define UART_PC_PARITY 'N'
+#define UART_PC_SIM_CHAR_STREAM ""
+#define UART_PC_SIM_TRUE_BAUD 0
+#define UART_PC_SPAN 32
+#define UART_PC_STOP_BITS 1
+#define UART_PC_SYNC_REG_DEPTH 2
+#define UART_PC_TYPE "altera_avalon_uart"
+#define UART_PC_USE_CTS_RTS 0
+#define UART_PC_USE_EOP_REGISTER 0
 
 
 /*
@@ -432,7 +457,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x410d8
+#define JTAG_UART_0_BASE 0x410f8
 #define JTAG_UART_0_IRQ 16
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -450,13 +475,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x410d0
+#define SYSID_QSYS_0_BASE 0x410f0
 #define SYSID_QSYS_0_ID 305419896
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1760344917
+#define SYSID_QSYS_0_TIMESTAMP 1760466478
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

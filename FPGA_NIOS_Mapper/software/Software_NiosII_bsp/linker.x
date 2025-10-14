@@ -4,7 +4,7 @@
  * Machine generated for CPU 'NIOSII_CPU' in SOPC Builder design 'Hardware_Qsys'
  * SOPC Builder design path: ../../Hardware_Qsys.sopcinfo
  *
- * Generated: Mon Oct 13 20:00:27 CEST 2025
+ * Generated: Tue Oct 14 20:37:01 CEST 2025
  */
 
 /*

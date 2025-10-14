@@ -4,7 +4,7 @@
 
 # List of include directories for -I compiler option (-I added when used).
 # Includes the BSP.
-ALT_INCLUDE_DIRS := include/
+ALT_INCLUDE_DIRS := include/ include/drivers/
 
 # List of library directories for -L linker option (-L added when used).
 # Includes the BSP.
@@ -142,8 +142,12 @@ ACDS_VERSION := 18.1
 ELF := Software_NiosII.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS += src/hex.c
+C_SRCS += src/drivers/hex.c
 C_SRCS += src/main.c
+
+# add all C sources placed in src/drivers/
+C_SRCS += $(wildcard src/drivers/*.c)
+
 CXX_SRCS :=
 ASM_SRCS :=
 

@@ -15,8 +15,10 @@ module Hardware_Qsys (
 		input  wire [1:0]  pushbutton_export, // pushbutton.export
 		input  wire        reset_reset_n,     //      reset.reset_n
 		input  wire [9:0]  switch_export,     //     switch.export
-		input  wire        uart_rxd,          //       uart.rxd
-		output wire        uart_txd           //           .txd
+		input  wire        uart_lidar_rxd,    // uart_lidar.rxd
+		output wire        uart_lidar_txd,    //           .txd
+		input  wire        uart_pc_rxd,       //    uart_pc.rxd
+		output wire        uart_pc_txd        //           .txd
 	);
 
 	wire  [31:0] niosii_cpu_data_master_readdata;                             // mm_interconnect_0:NIOSII_CPU_data_master_readdata -> NIOSII_CPU:d_readdata
@@ -88,20 +90,28 @@ module Hardware_Qsys (
 	wire   [1:0] mm_interconnect_0_hex5_hex4_s1_address;                      // mm_interconnect_0:HEX5_HEX4_s1_address -> HEX5_HEX4:address
 	wire         mm_interconnect_0_hex5_hex4_s1_write;                        // mm_interconnect_0:HEX5_HEX4_s1_write -> HEX5_HEX4:write_n
 	wire  [31:0] mm_interconnect_0_hex5_hex4_s1_writedata;                    // mm_interconnect_0:HEX5_HEX4_s1_writedata -> HEX5_HEX4:writedata
-	wire         mm_interconnect_0_uart_s1_chipselect;                        // mm_interconnect_0:UART_s1_chipselect -> UART:chipselect
-	wire  [15:0] mm_interconnect_0_uart_s1_readdata;                          // UART:readdata -> mm_interconnect_0:UART_s1_readdata
-	wire   [2:0] mm_interconnect_0_uart_s1_address;                           // mm_interconnect_0:UART_s1_address -> UART:address
-	wire         mm_interconnect_0_uart_s1_read;                              // mm_interconnect_0:UART_s1_read -> UART:read_n
-	wire         mm_interconnect_0_uart_s1_begintransfer;                     // mm_interconnect_0:UART_s1_begintransfer -> UART:begintransfer
-	wire         mm_interconnect_0_uart_s1_write;                             // mm_interconnect_0:UART_s1_write -> UART:write_n
-	wire  [15:0] mm_interconnect_0_uart_s1_writedata;                         // mm_interconnect_0:UART_s1_writedata -> UART:writedata
+	wire         mm_interconnect_0_uart_pc_s1_chipselect;                     // mm_interconnect_0:UART_PC_s1_chipselect -> UART_PC:chipselect
+	wire  [15:0] mm_interconnect_0_uart_pc_s1_readdata;                       // UART_PC:readdata -> mm_interconnect_0:UART_PC_s1_readdata
+	wire   [2:0] mm_interconnect_0_uart_pc_s1_address;                        // mm_interconnect_0:UART_PC_s1_address -> UART_PC:address
+	wire         mm_interconnect_0_uart_pc_s1_read;                           // mm_interconnect_0:UART_PC_s1_read -> UART_PC:read_n
+	wire         mm_interconnect_0_uart_pc_s1_begintransfer;                  // mm_interconnect_0:UART_PC_s1_begintransfer -> UART_PC:begintransfer
+	wire         mm_interconnect_0_uart_pc_s1_write;                          // mm_interconnect_0:UART_PC_s1_write -> UART_PC:write_n
+	wire  [15:0] mm_interconnect_0_uart_pc_s1_writedata;                      // mm_interconnect_0:UART_PC_s1_writedata -> UART_PC:writedata
+	wire         mm_interconnect_0_uart_lidar_s1_chipselect;                  // mm_interconnect_0:UART_LIDAR_s1_chipselect -> UART_LIDAR:chipselect
+	wire  [15:0] mm_interconnect_0_uart_lidar_s1_readdata;                    // UART_LIDAR:readdata -> mm_interconnect_0:UART_LIDAR_s1_readdata
+	wire   [2:0] mm_interconnect_0_uart_lidar_s1_address;                     // mm_interconnect_0:UART_LIDAR_s1_address -> UART_LIDAR:address
+	wire         mm_interconnect_0_uart_lidar_s1_read;                        // mm_interconnect_0:UART_LIDAR_s1_read -> UART_LIDAR:read_n
+	wire         mm_interconnect_0_uart_lidar_s1_begintransfer;               // mm_interconnect_0:UART_LIDAR_s1_begintransfer -> UART_LIDAR:begintransfer
+	wire         mm_interconnect_0_uart_lidar_s1_write;                       // mm_interconnect_0:UART_LIDAR_s1_write -> UART_LIDAR:write_n
+	wire  [15:0] mm_interconnect_0_uart_lidar_s1_writedata;                   // mm_interconnect_0:UART_LIDAR_s1_writedata -> UART_LIDAR:writedata
 	wire         irq_mapper_receiver0_irq;                                    // I2C:intr -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                                    // jtag_uart_0:av_irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                                    // TIMER_MAIN:irq -> irq_mapper:receiver2_irq
 	wire         irq_mapper_receiver3_irq;                                    // PB:irq -> irq_mapper:receiver3_irq
-	wire         irq_mapper_receiver4_irq;                                    // UART:irq -> irq_mapper:receiver4_irq
+	wire         irq_mapper_receiver4_irq;                                    // UART_PC:irq -> irq_mapper:receiver4_irq
+	wire         irq_mapper_receiver5_irq;                                    // UART_LIDAR:irq -> irq_mapper:receiver5_irq
 	wire  [31:0] niosii_cpu_irq_irq;                                          // irq_mapper:sender_irq -> NIOSII_CPU:irq
-	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [HEX3_HEX0:reset_n, HEX5_HEX4:reset_n, I2C:rst_n, LEDR:reset_n, PB:reset_n, SWITCH:reset_n, TIMER_MAIN:reset_n, UART:reset_n, jtag_uart_0:rst_n, mm_interconnect_0:jtag_uart_0_reset_reset_bridge_in_reset_reset, sysid_qsys_0:reset_n]
+	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [HEX3_HEX0:reset_n, HEX5_HEX4:reset_n, I2C:rst_n, LEDR:reset_n, PB:reset_n, SWITCH:reset_n, TIMER_MAIN:reset_n, UART_LIDAR:reset_n, UART_PC:reset_n, jtag_uart_0:rst_n, mm_interconnect_0:jtag_uart_0_reset_reset_bridge_in_reset_reset, sysid_qsys_0:reset_n]
 	wire         rst_controller_001_reset_out_reset;                          // rst_controller_001:reset_out -> [MEMORY:reset, NIOSII_CPU:reset_n, irq_mapper:reset, mm_interconnect_0:NIOSII_CPU_reset_reset_bridge_in_reset_reset]
 	wire         rst_controller_001_reset_out_reset_req;                      // rst_controller_001:reset_req -> [MEMORY:reset_req, NIOSII_CPU:reset_req, rst_translator:reset_req_in]
 	wire         niosii_cpu_debug_reset_request_reset;                        // NIOSII_CPU:debug_reset_request -> rst_controller_001:reset_in1
@@ -239,19 +249,34 @@ module Hardware_Qsys (
 		.irq        (irq_mapper_receiver2_irq)                    //   irq.irq
 	);
 
-	Hardware_Qsys_UART uart (
-		.clk           (clk_clk),                                 //                 clk.clk
-		.reset_n       (~rst_controller_reset_out_reset),         //               reset.reset_n
-		.address       (mm_interconnect_0_uart_s1_address),       //                  s1.address
-		.begintransfer (mm_interconnect_0_uart_s1_begintransfer), //                    .begintransfer
-		.chipselect    (mm_interconnect_0_uart_s1_chipselect),    //                    .chipselect
-		.read_n        (~mm_interconnect_0_uart_s1_read),         //                    .read_n
-		.write_n       (~mm_interconnect_0_uart_s1_write),        //                    .write_n
-		.writedata     (mm_interconnect_0_uart_s1_writedata),     //                    .writedata
-		.readdata      (mm_interconnect_0_uart_s1_readdata),      //                    .readdata
-		.rxd           (uart_rxd),                                // external_connection.export
-		.txd           (uart_txd),                                //                    .export
-		.irq           (irq_mapper_receiver4_irq)                 //                 irq.irq
+	Hardware_Qsys_UART_LIDAR uart_lidar (
+		.clk           (clk_clk),                                       //                 clk.clk
+		.reset_n       (~rst_controller_reset_out_reset),               //               reset.reset_n
+		.address       (mm_interconnect_0_uart_lidar_s1_address),       //                  s1.address
+		.begintransfer (mm_interconnect_0_uart_lidar_s1_begintransfer), //                    .begintransfer
+		.chipselect    (mm_interconnect_0_uart_lidar_s1_chipselect),    //                    .chipselect
+		.read_n        (~mm_interconnect_0_uart_lidar_s1_read),         //                    .read_n
+		.write_n       (~mm_interconnect_0_uart_lidar_s1_write),        //                    .write_n
+		.writedata     (mm_interconnect_0_uart_lidar_s1_writedata),     //                    .writedata
+		.readdata      (mm_interconnect_0_uart_lidar_s1_readdata),      //                    .readdata
+		.rxd           (uart_lidar_rxd),                                // external_connection.export
+		.txd           (uart_lidar_txd),                                //                    .export
+		.irq           (irq_mapper_receiver5_irq)                       //                 irq.irq
+	);
+
+	Hardware_Qsys_UART_LIDAR uart_pc (
+		.clk           (clk_clk),                                    //                 clk.clk
+		.reset_n       (~rst_controller_reset_out_reset),            //               reset.reset_n
+		.address       (mm_interconnect_0_uart_pc_s1_address),       //                  s1.address
+		.begintransfer (mm_interconnect_0_uart_pc_s1_begintransfer), //                    .begintransfer
+		.chipselect    (mm_interconnect_0_uart_pc_s1_chipselect),    //                    .chipselect
+		.read_n        (~mm_interconnect_0_uart_pc_s1_read),         //                    .read_n
+		.write_n       (~mm_interconnect_0_uart_pc_s1_write),        //                    .write_n
+		.writedata     (mm_interconnect_0_uart_pc_s1_writedata),     //                    .writedata
+		.readdata      (mm_interconnect_0_uart_pc_s1_readdata),      //                    .readdata
+		.rxd           (uart_pc_rxd),                                // external_connection.export
+		.txd           (uart_pc_txd),                                //                    .export
+		.irq           (irq_mapper_receiver4_irq)                    //                 irq.irq
 	);
 
 	Hardware_Qsys_jtag_uart_0 jtag_uart_0 (
@@ -347,13 +372,20 @@ module Hardware_Qsys (
 		.TIMER_MAIN_s1_readdata                        (mm_interconnect_0_timer_main_s1_readdata),                    //                                        .readdata
 		.TIMER_MAIN_s1_writedata                       (mm_interconnect_0_timer_main_s1_writedata),                   //                                        .writedata
 		.TIMER_MAIN_s1_chipselect                      (mm_interconnect_0_timer_main_s1_chipselect),                  //                                        .chipselect
-		.UART_s1_address                               (mm_interconnect_0_uart_s1_address),                           //                                 UART_s1.address
-		.UART_s1_write                                 (mm_interconnect_0_uart_s1_write),                             //                                        .write
-		.UART_s1_read                                  (mm_interconnect_0_uart_s1_read),                              //                                        .read
-		.UART_s1_readdata                              (mm_interconnect_0_uart_s1_readdata),                          //                                        .readdata
-		.UART_s1_writedata                             (mm_interconnect_0_uart_s1_writedata),                         //                                        .writedata
-		.UART_s1_begintransfer                         (mm_interconnect_0_uart_s1_begintransfer),                     //                                        .begintransfer
-		.UART_s1_chipselect                            (mm_interconnect_0_uart_s1_chipselect)                         //                                        .chipselect
+		.UART_LIDAR_s1_address                         (mm_interconnect_0_uart_lidar_s1_address),                     //                           UART_LIDAR_s1.address
+		.UART_LIDAR_s1_write                           (mm_interconnect_0_uart_lidar_s1_write),                       //                                        .write
+		.UART_LIDAR_s1_read                            (mm_interconnect_0_uart_lidar_s1_read),                        //                                        .read
+		.UART_LIDAR_s1_readdata                        (mm_interconnect_0_uart_lidar_s1_readdata),                    //                                        .readdata
+		.UART_LIDAR_s1_writedata                       (mm_interconnect_0_uart_lidar_s1_writedata),                   //                                        .writedata
+		.UART_LIDAR_s1_begintransfer                   (mm_interconnect_0_uart_lidar_s1_begintransfer),               //                                        .begintransfer
+		.UART_LIDAR_s1_chipselect                      (mm_interconnect_0_uart_lidar_s1_chipselect),                  //                                        .chipselect
+		.UART_PC_s1_address                            (mm_interconnect_0_uart_pc_s1_address),                        //                              UART_PC_s1.address
+		.UART_PC_s1_write                              (mm_interconnect_0_uart_pc_s1_write),                          //                                        .write
+		.UART_PC_s1_read                               (mm_interconnect_0_uart_pc_s1_read),                           //                                        .read
+		.UART_PC_s1_readdata                           (mm_interconnect_0_uart_pc_s1_readdata),                       //                                        .readdata
+		.UART_PC_s1_writedata                          (mm_interconnect_0_uart_pc_s1_writedata),                      //                                        .writedata
+		.UART_PC_s1_begintransfer                      (mm_interconnect_0_uart_pc_s1_begintransfer),                  //                                        .begintransfer
+		.UART_PC_s1_chipselect                         (mm_interconnect_0_uart_pc_s1_chipselect)                      //                                        .chipselect
 	);
 
 	Hardware_Qsys_irq_mapper irq_mapper (
@@ -364,6 +396,7 @@ module Hardware_Qsys (
 		.receiver2_irq (irq_mapper_receiver2_irq),           // receiver2.irq
 		.receiver3_irq (irq_mapper_receiver3_irq),           // receiver3.irq
 		.receiver4_irq (irq_mapper_receiver4_irq),           // receiver4.irq
+		.receiver5_irq (irq_mapper_receiver5_irq),           // receiver5.irq
 		.sender_irq    (niosii_cpu_irq_irq)                  //    sender.irq
 	);
 

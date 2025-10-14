@@ -1,22 +1,24 @@
+/**
+ * @file    main.c
+ * @author  Azeol
+ * @brief   Main file for Nios II application
+ * @version 0.1
+ * @date    2025-10-14
+ */
+
 // Standard lib
 #include <stdio.h>
-
-// Altera lib
-#include <altera_avalon_pio_regs.h>
-#include <system.h>
+#include <stdint.h>
 
 // Project libs
-#include "hex.h"
+#include "drivers/hex.h"
+#include "drivers/i2c.h"
 
 int main()
 {
   printf("Hello from Nios II!\n");
-  //testing seg7
-  int HEX54bits = (seg7(1, 1) | seg7(2, 0));
-  int HEX30bits = (seg7(3, 3) | seg7(4, 2) | seg7(5, 1) | seg7(6, 0));
-
-  IOWR_ALTERA_AVALON_PIO_DATA(HEX5_HEX4_BASE, HEX54bits);
-  IOWR_ALTERA_AVALON_PIO_DATA(HEX3_HEX0_BASE, HEX30bits);
+  //testing hex
+  hex_display("123456", 6, 0);
 
   return 0;
 }

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'NIOSII_CPU' in SOPC Builder design 'Hardware_Qsys'
  * SOPC Builder design path: ../../Hardware_Qsys.sopcinfo
  *
- * Generated: Mon Oct 13 20:00:27 CEST 2025
+ * Generated: Tue Oct 14 20:37:01 CEST 2025
  */
 
 /*
@@ -74,7 +74,8 @@ ALTERA_AVALON_I2C_INSTANCE ( I2C, I2C);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART_0, jtag_uart_0);
 ALTERA_AVALON_SYSID_QSYS_INSTANCE ( SYSID_QSYS_0, sysid_qsys_0);
 ALTERA_AVALON_TIMER_INSTANCE ( TIMER_MAIN, TIMER_MAIN);
-ALTERA_AVALON_UART_INSTANCE ( UART, UART);
+ALTERA_AVALON_UART_INSTANCE ( UART_LIDAR, UART_LIDAR);
+ALTERA_AVALON_UART_INSTANCE ( UART_PC, UART_PC);
 
 /*
  * Initialize the interrupt controller devices
@@ -101,5 +102,6 @@ void alt_sys_init( void )
     ALTERA_AVALON_I2C_INIT ( I2C, I2C);
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART_0, jtag_uart_0);
     ALTERA_AVALON_SYSID_QSYS_INIT ( SYSID_QSYS_0, sysid_qsys_0);
-    ALTERA_AVALON_UART_INIT ( UART, UART);
+    ALTERA_AVALON_UART_INIT ( UART_LIDAR, UART_LIDAR);
+    ALTERA_AVALON_UART_INIT ( UART_PC, UART_PC);
 }
