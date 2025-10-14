@@ -142,7 +142,8 @@ ACDS_VERSION := 18.1
 ELF := Software_NiosII.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := src/hello_world.c
+C_SRCS += src/main.c
+C_SRCS += src/7segDiplay.c
 CXX_SRCS :=
 ASM_SRCS :=
 

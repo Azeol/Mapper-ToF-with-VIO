@@ -55,12 +55,12 @@ Mapper-ToF-with-VIO
 ┃ ┣ **software --> Code for the Nios II**  
 ┃ ┃ ┣ Software_NiosII  
 ┃ ┃ ┃ ┣ include  
-┃ ┃ ┃ ┃ ┣  
+┃ ┃ ┃ ┃ ┣ 7segDisplay.h  
 ┃ ┃ ┃ ┣ src  
-┃ ┃ ┃ ┃ ┣  
-┃ ┃ ┣ Software_NiosII_bsp  
-┃ ┃ ┃ ┣   
-┃ ┣ DE10_LITE_Golden_Top.v   
+┃ ┃ ┃ ┃ ┣ 7segDisplay.c  
+┃ ┃ ┃ ┃ ┣ main.c  
+┃ ┃ ┗ Software_NiosII_bsp  
+┃ ┣ DE10_LITE_Golden_Top.v  
 ┃ ┣ Hardware_Mapper.qpf  
 ┃ ┣ Hardware_Mapper.qsf  
 ┃ ┣ Hardware_Qsys.qsys -> Qsys for NIOS II  

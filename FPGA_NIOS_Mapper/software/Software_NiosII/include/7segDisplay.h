@@ -1,6 +1,6 @@
-#ifndef AFFICHAGE7SEG_H_
-#define AFFICHAGE7SEG_H_
+#ifndef INCLUDE_7SEGDISPLAY_H_
+#define INCLUDE_7SEGDISPLAY_H_
 
 int seg7(int value, int seg);
 
-#endif
+#endif /* INCLUDE_7SEGDISPLAY_H_ */

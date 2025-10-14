@@ -1,7 +1,7 @@
 // Cette fonction permet de convertir une entree en valeur
 // comprise par la fonction d'affichage d'altera
 
-#include "7segDisplay.h"
+#include <7segDisplay.h>
 #include <stdio.h>
 
 int seg7(int value, int seg){
