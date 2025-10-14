@@ -60,9 +60,9 @@ Mapper-ToF-with-VIO
 ┃ ┃ ┃ ┃ ┣ hex.c  
 ┃ ┃ ┃ ┃ ┗ main.c  
 ┃ ┃ ┃ ┗ Makefile  
-┃ ┃ ┗ Software_NiosII_bsp
-┃ ┃ ┃ ┣ Makefile
-┃ ┃ ┃ ┗ system.h
+┃ ┃ ┗ Software_NiosII_bsp  
+┃ ┃ ┃ ┣ Makefile  
+┃ ┃ ┃ ┗ system.h  
 ┃ ┣ DE10_LITE_Golden_Top.v  
 ┃ ┣ Hardware_Mapper.qpf  
 ┃ ┣ Hardware_Mapper.qsf  

@@ -19,6 +19,7 @@ output_files/
 simulation/
 tmpWorkspace/
 obj/
+Workspace_Eclipse/
 
 # Nios II auto-generated files
 

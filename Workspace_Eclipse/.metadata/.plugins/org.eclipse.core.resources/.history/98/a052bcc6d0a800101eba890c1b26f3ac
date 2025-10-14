@@ -1,6 +1,0 @@
-#ifndef HEX_H_
-#define HEX_H_
-
-int seg7(int value, int seg);
-
-#endif /* INCLUDE_7SEGDISPLAY_H_ */
