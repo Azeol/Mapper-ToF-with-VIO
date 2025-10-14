@@ -45,12 +45,13 @@ You also need to be on a Nios2 Command Shell.
 PS : for the Quartus folder I only put the most important files
 
 Mapper-ToF-with-VIO  
-┣ **Documentation --> Doc folder**  
-┃ ┗ DE10_Lite_User_Manual.pdf  
+┣ **Documentation --> Doc folder** 
+┃ ┣ DE10_Lite_User_Manual.pdf  
+┃ ┗ ug_embedded_ip.pdf  
 ┣ **FPGA --> Quartus project**  
 ┃ ┣ Hardware_Qsys  
 ┃ ┃ ┣ synthesis  
-┃ ┃ ┃ ┗ Hardware_Qsys.qip -> Import NIOS II on the schematic  
+┃ ┃ ┃ ┗ Hardware_Qsys.qip -> Used to import NIOS II on the schematic  
 ┃ ┃ ┗ Hardware_Qsys.bsf  
 ┃ ┣ **software --> Code for the Nios II**  
 ┃ ┃ ┣ Software_NiosII  
@@ -72,7 +73,6 @@ Mapper-ToF-with-VIO
 ┃ ┗ LiDARexample.png  
 ┣ **PC --> VIO & Mapping**  
 ┃ ┗  
-┣ Workspace_Eclipse --> Workspace of Eclipse for Quartus (non important)  
 ┣ .gitignore  
 ┣ LICENSE  
 ┣ README.md  
