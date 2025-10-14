@@ -4,7 +4,7 @@ An open source project to make a 3D point cloud with a ToF camera using VIO to m
 It probably wont work but ehhh if it works it works. Most of my work on the Nios II is based on what I did in my masters degree and with Quartus.
 Probably will try to put it on a drone if it works and if I find how to send data over the air to my PC.  
 This project is mainly to familiarize myself with Verilog/SystemVerilog, Quartus and FGPA overall and git.  
-/!\ Note to self : remember to deactivate Memory integrity to enable Quartus USB-driver and let OpenCore open before and while opening the bit stream /!\
+/!\ Note to self : remember to deactivate Memory integrity to enable Quartus USB-driver and let OpenCore open before uploading the bit stream /!\
 
 ## Project objectives
 
@@ -55,11 +55,14 @@ Mapper-ToF-with-VIO
 ┃ ┣ **software --> Code for the Nios II**  
 ┃ ┃ ┣ Software_NiosII  
 ┃ ┃ ┃ ┣ include  
-┃ ┃ ┃ ┃ ┣ 7segDisplay.h  
+┃ ┃ ┃ ┃ ┣ hex.h  
 ┃ ┃ ┃ ┣ src  
-┃ ┃ ┃ ┃ ┣ 7segDisplay.c  
-┃ ┃ ┃ ┃ ┣ main.c  
-┃ ┃ ┗ Software_NiosII_bsp  
+┃ ┃ ┃ ┃ ┣ hex.c  
+┃ ┃ ┃ ┃ ┗ main.c  
+┃ ┃ ┃ ┗ Makefile  
+┃ ┃ ┗ Software_NiosII_bsp
+┃ ┃ ┃ ┣ Makefile
+┃ ┃ ┃ ┗ system.h
 ┃ ┣ DE10_LITE_Golden_Top.v  
 ┃ ┣ Hardware_Mapper.qpf  
 ┃ ┣ Hardware_Mapper.qsf  
@@ -69,7 +72,7 @@ Mapper-ToF-with-VIO
 ┃ ┗ LiDARexample.png  
 ┣ **PC --> VIO & Mapping**  
 ┃ ┗  
-┣ Software_Mapper --> Workspace of Eclipse for Quartus (non important)  
+┣ Workspace_Eclipse --> Workspace of Eclipse for Quartus (non important)  
 ┣ .gitignore  
 ┣ LICENSE  
 ┣ README.md  

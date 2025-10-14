@@ -1906,6 +1906,9 @@
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/hex.c">
+						<entry kind="includePath" name="/${ProjName}/include">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/Software_NiosII_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2518,6 +2521,9 @@
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/main.c">
+						<entry kind="includePath" name="/${ProjName}/include">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/Software_NiosII_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>

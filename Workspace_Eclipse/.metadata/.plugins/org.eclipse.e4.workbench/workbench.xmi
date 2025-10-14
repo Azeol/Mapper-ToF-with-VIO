@@ -47,7 +47,6 @@
           <tags>persp.viewSC:com.altera.sbtgui.launch.hardware.ByteStreamConsoleView</tags>
           <children xsi:type="basic:PartSashContainer" xmi:id="_Q3sfYaheEfC8usYk4LX7gA" selectedElement="_Q3sfZ6heEfC8usYk4LX7gA" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_Q3sfYqheEfC8usYk4LX7gA" elementId="topLeft" containerData="2500" selectedElement="_Q3sfY6heEfC8usYk4LX7gA">
-              <tags>noFocus</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_Q3sfY6heEfC8usYk4LX7gA" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_Q3qqMKheEfC8usYk4LX7gA"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_Q3sfZKheEfC8usYk4LX7gA" elementId="org.eclipse.cdt.ui.CView" toBeRendered="false" ref="_Q3qqMaheEfC8usYk4LX7gA"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_Q3sfZaheEfC8usYk4LX7gA" elementId="org.eclipse.ui.views.ResourceNavigator" toBeRendered="false" ref="_Q3qqMqheEfC8usYk4LX7gA"/>
@@ -96,7 +95,7 @@
         <tags>EditorStack</tags>
         <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_00rH0KjREfCOJfuV6BlcWg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="main.c" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; partName=&quot;main.c&quot; title=&quot;main.c&quot; tooltip=&quot;Software_NiosII/src/main.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Software_NiosII/src/main.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;200&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; partName=&quot;main.c&quot; title=&quot;main.c&quot; tooltip=&quot;Software_NiosII/src/main.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Software_NiosII/src/main.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;436&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
           <tags>removeOnHide</tags>
@@ -180,7 +179,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_QpRB0KheEfC8usYk4LX7gA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_PvjeEKjLEfCOJfuV6BlcWg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_QOej5aheEfC8usYk4LX7gA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oy7F0KjUEfCv56Dhbveavw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_QOej5aheEfC8usYk4LX7gA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_QpRB0aheEfC8usYk4LX7gA" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -204,7 +203,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_QpRo4KheEfC8usYk4LX7gA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_PvkFJajLEfCOJfuV6BlcWg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_QOejV6heEfC8usYk4LX7gA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oy8T9ajUEfCv56Dhbveavw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_QOejV6heEfC8usYk4LX7gA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_QpRo4aheEfC8usYk4LX7gA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
