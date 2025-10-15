@@ -50,6 +50,13 @@ static const int chars[] = {0b11000000, // 0    0            x   x   x   x   x  
 							0b11111111  //  	.    									!! Unwired on the board !!
 };
 
+/**
+ * @brief Convert a character to its 7-segment display representation.
+ * 
+ * @param in    The input character.
+ * @param val   Pointer to the variable to store the 7-segment value.
+ * @return int  0 on success, -1 on invalid character.
+ */
 int char27seg(char in, int *val)
 {
     *val = 0;
@@ -120,6 +127,14 @@ int char27seg(char in, int *val)
     return -1; // should never happen
 }
 
+/**
+ * @brief Convert a hexadecimal string to its 7-segment display representation.
+ * 
+ * @param value  The input hexadecimal string.
+ * @param len    The length of the input string.
+ * @param first  The starting position for the display.
+ * @return int   0 on success, -1 on failure.
+ */
 int hex_display(char *value, int len, int first)
 {
     // Input validation
