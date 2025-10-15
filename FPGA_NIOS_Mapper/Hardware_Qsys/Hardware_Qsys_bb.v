@@ -11,10 +11,10 @@ module Hardware_Qsys (
 	pushbutton_export,
 	reset_reset_n,
 	switch_export,
-	uart_pc_rxd,
-	uart_pc_txd,
 	uart_lidar_rxd,
-	uart_lidar_txd);	
+	uart_lidar_txd,
+	uart_pc_rxd,
+	uart_pc_txd);	
 
 	input		clk_clk;
 	output	[31:0]	hex3_hex0_export;
@@ -27,8 +27,8 @@ module Hardware_Qsys (
 	input	[1:0]	pushbutton_export;
 	input		reset_reset_n;
 	input	[9:0]	switch_export;
-	input		uart_pc_rxd;
-	output		uart_pc_txd;
 	input		uart_lidar_rxd;
 	output		uart_lidar_txd;
+	input		uart_pc_rxd;
+	output		uart_pc_txd;
 endmodule

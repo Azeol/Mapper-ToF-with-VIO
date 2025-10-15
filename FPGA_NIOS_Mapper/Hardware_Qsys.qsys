@@ -353,7 +353,7 @@
   <parameter name="width" value="16" />
  </module>
  <module name="I2C" kind="altera_avalon_i2c" version="18.1" enabled="1">
-  <parameter name="FIFO_DEPTH" value="4" />
+  <parameter name="FIFO_DEPTH" value="8" />
   <parameter name="USE_AV_ST" value="0" />
   <parameter name="clockRate" value="50000000" />
  </module>

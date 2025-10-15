@@ -18,7 +18,7 @@
 // Project lib
 #include "drivers/i2c.h"
 
-alt_avalon_i2c_register_optional_irq_handler(
-    I2C_BASE,
-    
-)
+void i2c_init()
+{
+
+}

@@ -11,10 +11,10 @@
 			pushbutton_export : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- export
 			reset_reset_n     : in  std_logic                     := 'X';             -- reset_n
 			switch_export     : in  std_logic_vector(9 downto 0)  := (others => 'X'); -- export
-			uart_pc_rxd       : in  std_logic                     := 'X';             -- rxd
-			uart_pc_txd       : out std_logic;                                        -- txd
 			uart_lidar_rxd    : in  std_logic                     := 'X';             -- rxd
-			uart_lidar_txd    : out std_logic                                         -- txd
+			uart_lidar_txd    : out std_logic;                                        -- txd
+			uart_pc_rxd       : in  std_logic                     := 'X';             -- rxd
+			uart_pc_txd       : out std_logic                                         -- txd
 		);
 	end component Hardware_Qsys;
 
@@ -31,9 +31,9 @@
 			pushbutton_export => CONNECTED_TO_pushbutton_export, -- pushbutton.export
 			reset_reset_n     => CONNECTED_TO_reset_reset_n,     --      reset.reset_n
 			switch_export     => CONNECTED_TO_switch_export,     --     switch.export
-			uart_pc_rxd       => CONNECTED_TO_uart_pc_rxd,       --    uart_pc.rxd
-			uart_pc_txd       => CONNECTED_TO_uart_pc_txd,       --           .txd
 			uart_lidar_rxd    => CONNECTED_TO_uart_lidar_rxd,    -- uart_lidar.rxd
-			uart_lidar_txd    => CONNECTED_TO_uart_lidar_txd     --           .txd
+			uart_lidar_txd    => CONNECTED_TO_uart_lidar_txd,    --           .txd
+			uart_pc_rxd       => CONNECTED_TO_uart_pc_rxd,       --    uart_pc.rxd
+			uart_pc_txd       => CONNECTED_TO_uart_pc_txd        --           .txd
 		);
 

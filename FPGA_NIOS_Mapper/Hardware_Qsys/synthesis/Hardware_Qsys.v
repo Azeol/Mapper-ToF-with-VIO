@@ -140,8 +140,8 @@ module Hardware_Qsys (
 
 	altera_avalon_i2c #(
 		.USE_AV_ST       (0),
-		.FIFO_DEPTH      (4),
-		.FIFO_DEPTH_LOG2 (2)
+		.FIFO_DEPTH      (8),
+		.FIFO_DEPTH_LOG2 (3)
 	) i2c (
 		.clk       (clk_clk),                             //            clock.clk
 		.rst_n     (~rst_controller_reset_out_reset),     //       reset_sink.reset_n

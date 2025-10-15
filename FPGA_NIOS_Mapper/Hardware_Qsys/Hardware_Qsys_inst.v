@@ -10,9 +10,9 @@
 		.pushbutton_export (<connected-to-pushbutton_export>), // pushbutton.export
 		.reset_reset_n     (<connected-to-reset_reset_n>),     //      reset.reset_n
 		.switch_export     (<connected-to-switch_export>),     //     switch.export
-		.uart_pc_rxd       (<connected-to-uart_pc_rxd>),       //    uart_pc.rxd
-		.uart_pc_txd       (<connected-to-uart_pc_txd>),       //           .txd
 		.uart_lidar_rxd    (<connected-to-uart_lidar_rxd>),    // uart_lidar.rxd
-		.uart_lidar_txd    (<connected-to-uart_lidar_txd>)     //           .txd
+		.uart_lidar_txd    (<connected-to-uart_lidar_txd>),    //           .txd
+		.uart_pc_rxd       (<connected-to-uart_pc_rxd>),       //    uart_pc.rxd
+		.uart_pc_txd       (<connected-to-uart_pc_txd>)        //           .txd
 	);
 

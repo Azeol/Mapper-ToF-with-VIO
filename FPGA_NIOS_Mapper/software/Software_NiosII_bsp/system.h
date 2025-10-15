@@ -4,7 +4,7 @@
  * Machine generated for CPU 'NIOSII_CPU' in SOPC Builder design 'Hardware_Qsys'
  * SOPC Builder design path: ../../Hardware_Qsys.sopcinfo
  *
- * Generated: Tue Oct 14 20:37:01 CEST 2025
+ * Generated: Wed Oct 15 00:14:49 CEST 2025
  */
 
 /*
@@ -208,7 +208,7 @@
 
 #define ALT_MODULE_CLASS_I2C altera_avalon_i2c
 #define I2C_BASE 0x41000
-#define I2C_FIFO_DEPTH 4
+#define I2C_FIFO_DEPTH 8
 #define I2C_FREQ 50000000
 #define I2C_IRQ 2
 #define I2C_IRQ_INTERRUPT_CONTROLLER_ID 0
@@ -481,7 +481,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1760466478
+#define SYSID_QSYS_0_TIMESTAMP 1760479824
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */
