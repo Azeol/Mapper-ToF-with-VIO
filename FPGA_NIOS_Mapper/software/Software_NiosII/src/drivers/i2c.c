@@ -35,8 +35,15 @@ ALT_AVALON_I2C_DEV_t* i2c_init(const char* i2c_name, uint8_t slave_address)
         return NULL;
     }
 
-    alt_avalon_i2c_master_target_set(i2c_dev, slave_address);   
+    alt_avalon_i2c_master_target_set(i2c_dev, slave_address);
 
+    // Speed and other configurations are set to defaults
+    // If needed, configure i2c_config here and apply it
+    // with i2c_config properly initialized and set
+
+    // alt_avalon_i2c_master_config_set(i2c_dev, &i2c_config);
+
+    printf("I2C device %s initialized with slave address 0x%02X\n", i2c_name, slave_address);
     return i2c_dev;
 }
 

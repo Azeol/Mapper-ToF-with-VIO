@@ -56,9 +56,19 @@ Mapper-ToF-with-VIO
 ┃ ┣ **software --> Code for the Nios II**  
 ┃ ┃ ┣ Software_NiosII  
 ┃ ┃ ┃ ┣ include  
-┃ ┃ ┃ ┃ ┣ hex.h  
+┃ ┃ ┃ ┃ ┣ drivers  
+┃ ┃ ┃ ┃ ┃ ┣ hex.h  
+┃ ┃ ┃ ┃ ┃ ┣ i2c.h  
+┃ ┃ ┃ ┃ ┃ ┗ uart.h  
+┃ ┃ ┃ ┃ ┣ ISR  
+┃ ┃ ┃ ┃ ┃ ┗ timerISR.h  
 ┃ ┃ ┃ ┣ src  
-┃ ┃ ┃ ┃ ┣ hex.c  
+┃ ┃ ┃ ┃ ┣ drivers  
+┃ ┃ ┃ ┃ ┃ ┣ hex.c  
+┃ ┃ ┃ ┃ ┃ ┣ i2c.c  
+┃ ┃ ┃ ┃ ┃ ┗ uart.c  
+┃ ┃ ┃ ┃ ┣ ISR   
+┃ ┃ ┃ ┃ ┃ ┗ timerISR.c  
 ┃ ┃ ┃ ┃ ┗ main.c  
 ┃ ┃ ┃ ┗ Makefile  
 ┃ ┃ ┗ Software_NiosII_bsp  

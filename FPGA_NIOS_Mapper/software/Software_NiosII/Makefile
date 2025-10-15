@@ -4,7 +4,7 @@
 
 # List of include directories for -I compiler option (-I added when used).
 # Includes the BSP.
-ALT_INCLUDE_DIRS := include/ include/drivers/
+ALT_INCLUDE_DIRS := include/ include/drivers/ include/ISR/
 
 # List of library directories for -L linker option (-L added when used).
 # Includes the BSP.
@@ -143,6 +143,9 @@ ELF := Software_NiosII.elf
 
 # Paths to C, C++, and assembly source files.
 C_SRCS += src/drivers/hex.c
+C_SRCS += src/drivers/i2c.c
+C_SRCS += src/drivers/uart.c
+C_SRCS += src/ISR/timerISR.c
 C_SRCS += src/main.c
 
 # add all C sources placed in src/drivers/

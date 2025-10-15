@@ -11,7 +11,7 @@
 
 /* I2C device configuration and variables */
 
-#define I2C_NAME "/dev/i2c_serial"      // Defined in system.h
+#define I2C_NAME "/dev/I2C"      // Defined in system.h
 #define I2C_IMU_ADDRESS 0x57            // Specified in the IMU datasheet, see documentation folder
 
 ALT_AVALON_I2C_DEV_t* i2c_dev;              // Pointer to I2C device structure
