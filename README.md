@@ -36,7 +36,7 @@ For those commands you need to do a cd /cygdrive/c/Users/YourUsername/Mapper-ToF
 You also need to be on a Nios2 Command Shell.
 
 **make clean** -> clean folder you are currently on (example : on this project on Software_NiosII or Software_NiosII_bsp)  
-**make build** -> build folder you are currently on only use on Software_NiosII and not on the bsp  
+**make all** -> build folder you are currently on only use on Software_NiosII or Software_NiosII_bsp
 **nios2-download Software_NiosII.elf --go** -> Upload the program on the DE10 Lite only use on Software_NiosII  
 
 ## Folder Structure
