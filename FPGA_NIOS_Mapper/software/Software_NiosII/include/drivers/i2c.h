@@ -12,13 +12,7 @@
 /* I2C device configuration and variables */
 
 #define I2C_NAME "/dev/I2C"      // Defined in system.h
-#define I2C_IMU_ADDRESS 0x57            // Specified in the IMU datasheet, see documentation folder
-
-ALT_AVALON_I2C_DEV_t* i2c_dev;              // Pointer to I2C device structure
-ALT_AVALON_I2C_MASTER_CONFIG_t i2c_config;  // I2C configuration structure
-ALT_AVALON_I2C_STATUS_CODE i2c_status;      // I2C status code
-alt_u8 i2c_txbuffer[0x210];                 // Transmission buffer
-alt_u8 i2c_rxbuffer[0x200];                 // Reception buffer
+#define I2C_IMU_ADDRESS 0x51            // Specified in the IMU datasheet, see documentation folder
 
 /* Function prototypes */
 

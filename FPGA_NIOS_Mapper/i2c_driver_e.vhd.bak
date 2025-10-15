@@ -1,0 +1,54 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity i2c_driver_e is
+    Port (
+        SDA    : inout std_logic;  -- Pin I2C SDA physique
+        SCL    : inout std_logic;  -- Pin I2C SCL physique
+        clk    : in std_logic;     -- Horloge système
+        rst_n  : in std_logic      -- Reset actif bas
+    );
+end top_i2c_fpga;
+
+architecture i2c_driver_a of i2c_driver_e is
+
+    -- Signaux internes du module I2C Qsys
+    signal sda_in  : std_logic;
+    signal sda_oe  : std_logic;
+    signal sda_out : std_logic;
+
+    signal scl_in  : std_logic;
+    signal scl_oe  : std_logic;
+    signal scl_out : std_logic;
+
+begin
+
+    -- ==============================
+    -- Gestion bidirectionnelle SDA
+    -- ==============================
+    SDA <= '0' when sda_oe = '1' else 'Z';
+    sda_in <= SDA;
+
+    -- ==============================
+    -- Gestion bidirectionnelle SCL (clock-stretching)
+    -- ==============================
+    SCL <= '0' when scl_oe = '1' else 'Z';
+    scl_in <= SCL;
+
+    -- ==============================
+    -- Instanciation du module I2C Qsys/Nios II
+    -- ==============================
+    u_i2c_master : entity work.i2c_master
+        port map (
+            clk     => clk,
+            rst_n   => rst_n,
+            sda_in  => sda_in,
+            sda_oe  => sda_oe,
+            sda_out => sda_out,  -- optionnel selon le module
+            scl_in  => scl_in,
+            scl_oe  => scl_oe,
+            scl_out => scl_out   -- optionnel
+            -- autres ports si nécessaire
+        );
+
+end rtl;

@@ -26,9 +26,8 @@ Example of 3D could point from a ToF LiDAR taken from the internet
 
 ### DE10 Lite Expansion Header
 
-For I2C I use the GPIO0 as SDA IN, the GPIO1 as SCL IN, the GPIO2 as SDA OE (output enable) and the GPIO 3 for SCL OE.
-Both the SDA IN and the SCL IN are the reading head and the OE are the line drivers for I2C.  
-For UART I use the GPIO34 as RxD and the GPIO35 as TxD
+For I2C I use the GPIO0 as SDA and GPIO1 as SCL
+For UART I use the GPIO34 as RxD and the GPIO35 as TxD for the LiDAR and GPIO32 as RxD and GPIO33 as TxD for the PC
 ![alt text](images/ExpansionHeader.png)
 
 ### Command needed on Nios2 Command Shell to upload code

@@ -43,7 +43,7 @@ ALT_AVALON_I2C_DEV_t* i2c_init(const char* i2c_name, uint8_t slave_address)
 
     // alt_avalon_i2c_master_config_set(i2c_dev, &i2c_config);
 
-    printf("I2C device %s initialized with slave address 0x%02X\n", i2c_name, slave_address);
+    printf("I2C device %s initialized with slave addressed as 0x%02X\n", i2c_name, slave_address);
     return i2c_dev;
 }
 

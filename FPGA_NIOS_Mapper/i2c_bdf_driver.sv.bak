@@ -1,0 +1,44 @@
+module top_i2c_fpga (
+    inout wire SDA,      // Pin I2C SDA physique
+    inout wire SCL,      // Pin I2C SCL physique
+    input  wire clk,     // Horloge système
+    input  wire rst_n    // Reset actif bas
+);
+
+    // Signaux internes du module I2C Qsys
+    wire sda_in;
+    wire sda_oe;
+    wire sda_out; // souvent généré par le module I2C, peut être combiné avec oe
+
+    wire scl_in;
+    wire scl_oe;
+    wire scl_out;
+
+    // ==============================
+    // Gestion bidirectionnelle SDA
+    // ==============================
+    assign SDA = sda_oe ? 1'b0 : 1'bz; // open-drain : tirer LOW si OE actif, flottant sinon
+    assign sda_in = SDA;               // lire le bus
+
+    // ==============================
+    // Gestion bidirectionnelle SCL (pour clock-stretching)
+    // ==============================
+    assign SCL = scl_oe ? 1'b0 : 1'bz;
+    assign scl_in = SCL;
+
+    // ==============================
+    // Instanciation du module I2C Qsys/Nios II
+    // ==============================
+    i2c_master u_i2c_master (
+        .clk       (clk),
+        .rst_n     (rst_n),
+        .sda_in    (sda_in),
+        .sda_oe    (sda_oe),
+        .sda_out   (sda_out),   // optionnel selon le module
+        .scl_in    (scl_in),
+        .scl_oe    (scl_oe),
+        .scl_out   (scl_out)    // optionnel
+        // autres ports si nécessaire
+    );
+
+endmodule
