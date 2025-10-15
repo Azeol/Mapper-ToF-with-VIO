@@ -10,6 +10,10 @@
 #ifndef TIMERISR_H_
 #define TIMERISR_H_
 
-
+// Function prototypes
+void init_isrTimer_ToF();
+void init_isrTimer_IMU();
+void isrTimer_ToF(void* context, alt_u32 id);
+void isrTimer_IMU(void* context, alt_u32 id);
 
 #endif /* TIMERISR_H_ */
