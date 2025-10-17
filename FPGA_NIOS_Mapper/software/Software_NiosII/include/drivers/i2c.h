@@ -12,7 +12,7 @@
 /* I2C device configuration and variables */
 
 #define I2C_NAME "/dev/I2C"      // Defined in system.h
-#define I2C_IMU_ADDRESS 0x51            // Specified in the IMU datasheet, see documentation folder
+#define I2C_IMU_ADDRESS 0x68     // Specified in the IMU datasheet, see documentation folder
 
 /* Function prototypes */
 

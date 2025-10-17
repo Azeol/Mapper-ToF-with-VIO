@@ -61,5 +61,11 @@ int main()
 
   printf("Received: 0x%02X\n", rx_data[0]);
 
+  // Initialize UART
+
+  //Init timers for ISRs
+  //init_isrTimer_ToF();
+  //init_isrTimer_IMU();
+
   return 0;
 }

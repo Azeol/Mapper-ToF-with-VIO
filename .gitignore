@@ -3,6 +3,9 @@
 # Vscode
 .vscode/
 
+# Arduino testing I2C and UART
+*.ino/
+
 # Python
 __pycache__/
 *.pyc

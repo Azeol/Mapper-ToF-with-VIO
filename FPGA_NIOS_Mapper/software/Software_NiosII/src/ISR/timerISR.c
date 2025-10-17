@@ -67,7 +67,7 @@ void init_isrTimer_IMU()
 /**
  * @brief Timer Interrupt Service Routine for ToF Camera
  * 
- * @param context   Isn't necessary here, can be NULL
+ * @param context Isn't necessary here, can be NULL
  * @param id      Isn't necessary here, can be 0
  */
 void isrTimer_ToF(void *context, alt_u32 id)
