@@ -32,7 +32,7 @@ void uart_init(alt_u32 base, alt_u32 sys_clk_freq, alt_u32 baud_rate)
     IOWR_32DIRECT(base, ALTERA_AVALON_UART_DIVISOR_REG, divisor);
     IOWR_32DIRECT(base, ALTERA_AVALON_UART_CONTROL_REG, 0x00000003); // Enable RX and TX
 
-    printf("UART initialized with baud rate %u and divisor %u\n", baud_rate, divisor);
+    printf("UART using base %u initialized with baud rate %u and divisor %u\n", base, baud_rate, divisor);
 }
 
 /**
@@ -91,6 +91,7 @@ void uart_send_string(alt_u32 base, const char* str)
 {
     while (*str)
     {
-        uart_send_char(base, *str++);
+        uart_send_char(base, *str);
+        str += 1;
     }
 }

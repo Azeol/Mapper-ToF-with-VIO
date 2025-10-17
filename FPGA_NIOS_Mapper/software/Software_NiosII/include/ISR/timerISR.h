@@ -11,6 +11,7 @@
 #define TIMERISR_H_
 
 // Function prototypes
+
 void init_isrTimer_MAIN();
 void isrTimer_MAIN(void* context, alt_u32 id);
 

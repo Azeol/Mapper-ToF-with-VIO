@@ -37,7 +37,7 @@ void init_isrTimer_MAIN()
     // Configure and initialize the interrupt
     alt_ic_isr_register(TIMER_MAIN_IRQ_INTERRUPT_CONTROLLER_ID, TIMER_MAIN_IRQ, (void *)isrTimer_MAIN, NULL, 0x0);
 
-    // Timer configuration (see p.116 of the course)
+    // Timer configuration
     IOWR_ALTERA_AVALON_TIMER_PERIODL(TIMER_MAIN_BASE, (62500 & 0xFFFF));         // Define the first 16 bits of the timer
     IOWR_ALTERA_AVALON_TIMER_PERIODH(TIMER_MAIN_BASE, ((62500 >> 16) & 0xFFFF)); // Define the last 16 bits of the timer
     IOWR_ALTERA_AVALON_TIMER_CONTROL(TIMER_MAIN_BASE, 7); // STOP = 0, START = 1, CONT = 1, ITO = 1
@@ -46,10 +46,10 @@ void init_isrTimer_MAIN()
 }
 
 /**
- * @brief Timer Interrupt Service Routine for MAIN timer
+ * @brief Timer Interrupt Service Routine for MAIN timer only to be called by init_isrTimer_MAIN()
  * 
- * @param context Isn't necessary here, can be NULL
- * @param id      Isn't necessary here, can be 0
+ * @param context Isn't necessary
+ * @param id      Isn't necessary
  */
 void isrTimer_MAIN(void *context, alt_u32 id)
 {

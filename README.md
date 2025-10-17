@@ -63,13 +63,19 @@ Mapper-ToF-with-VIO
 ┃ ┃ ┃ ┃ ┃ ┗ uart.h  
 ┃ ┃ ┃ ┃ ┣ ISR  
 ┃ ┃ ┃ ┃ ┃ ┗ timerISR.h  
+┃ ┃ ┃ ┃ ┣ sensors  
+┃ ┃ ┃ ┃ ┃ ┣ LiDAR.h  
+┃ ┃ ┃ ┃ ┃ ┗ IMU.h  
 ┃ ┃ ┃ ┣ src  
 ┃ ┃ ┃ ┃ ┣ drivers  
 ┃ ┃ ┃ ┃ ┃ ┣ hex.c  
 ┃ ┃ ┃ ┃ ┃ ┣ i2c.c  
 ┃ ┃ ┃ ┃ ┃ ┗ uart.c  
-┃ ┃ ┃ ┃ ┣ ISR   
+┃ ┃ ┃ ┃ ┣ ISR  
 ┃ ┃ ┃ ┃ ┃ ┗ timerISR.c  
+┃ ┃ ┃ ┃ ┣ sensors  
+┃ ┃ ┃ ┃ ┃ ┣ LiDAR.c  
+┃ ┃ ┃ ┃ ┃ ┗ IMU.c  
 ┃ ┃ ┃ ┃ ┗ main.c  
 ┃ ┃ ┃ ┗ Makefile  
 ┃ ┃ ┗ Software_NiosII_bsp  
@@ -88,4 +94,3 @@ Mapper-ToF-with-VIO
 ┣ LICENSE  
 ┣ README.md  
 ┗ todo.md  
-

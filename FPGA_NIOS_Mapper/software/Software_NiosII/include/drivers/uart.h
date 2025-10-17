@@ -11,6 +11,7 @@
 #define UART_H_
 
 // UART driver function prototypes
+
 void uart_init(alt_u32 base, alt_u32 sys_clk_freq, alt_u32 baud_rate);
 void uart_send_char(alt_u32 base, char c);
 char uart_read_char(alt_u32 base);
