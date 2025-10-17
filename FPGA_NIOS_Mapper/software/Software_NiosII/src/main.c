@@ -20,6 +20,7 @@
 #include "drivers/i2c.h"
 #include "drivers/uart.h"
 #include "ISR/timerISR.h"
+#include "LiDAR.h"
 
 // I2C variables
 
@@ -34,9 +35,9 @@ int main()
   printf("Hello from Nios II!\n");
 
   //testing hex
-  hex_display("123456", 6, 0);
+  //hex_display("123456", 6, 0);
 
-  //testing i2c
+  // Initialize I2C
   i2c_dev = i2c_init(I2C_NAME, I2C_IMU_ADDRESS);
   if (i2c_dev == NULL) 
   {
@@ -44,28 +45,13 @@ int main()
       return -1;
   }
 
-  alt_u8 tx_data[2] = {0x01, 0x02}; // test data to send
-  alt_u8 rx_data[1];                // buffer to receive data
-
-  if (i2c_write(i2c_dev, tx_data, sizeof(tx_data)) != 0) 
-  {
-      printf("I2C write failed!\n");
-      return -1;
-  }
-
-  if (i2c_read(i2c_dev, rx_data, sizeof(rx_data)) != 0) 
-  {
-      printf("I2C read failed!\n");
-      return -1;
-  }
-
-  printf("Received: 0x%02X\n", rx_data[0]);
-
   // Initialize UART
+  uart_init(UART_PC_BASE, 50000000, UART_PC_BAUD);
+  uart_init(UART_LIDAR_BASE, 50000000, UART_LIDAR_BAUD);
 
-  //Init timers for ISRs
-  //init_isrTimer_ToF();
-  //init_isrTimer_IMU();
+  // Init timers for ISRs
+  init_isrTimer_ToF();
+  init_isrTimer_IMU();
 
   return 0;
 }

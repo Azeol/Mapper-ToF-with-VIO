@@ -4,7 +4,7 @@
 
 # List of include directories for -I compiler option (-I added when used).
 # Includes the BSP.
-ALT_INCLUDE_DIRS := include/ include/drivers/ include/ISR/
+ALT_INCLUDE_DIRS := include/ include/drivers/ include/ISR/ include/sensors/
 
 # List of library directories for -L linker option (-L added when used).
 # Includes the BSP.
@@ -146,10 +146,13 @@ C_SRCS += src/drivers/hex.c
 C_SRCS += src/drivers/i2c.c
 C_SRCS += src/drivers/uart.c
 C_SRCS += src/ISR/timerISR.c
+C_SRCS += src/sensors/LiDAR.c
 C_SRCS += src/main.c
 
 # add all C sources placed in src/drivers/
 C_SRCS += $(wildcard src/drivers/*.c)
+C_SRCS += $(wildcard src/ISR/*.c)
+C_SRCS += $(wildcard src/sensors/*.c)
 
 CXX_SRCS :=
 ASM_SRCS :=
