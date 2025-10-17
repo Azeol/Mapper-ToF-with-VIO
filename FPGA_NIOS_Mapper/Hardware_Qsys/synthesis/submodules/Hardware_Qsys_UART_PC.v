@@ -18,24 +18,24 @@
 // altera message_level Level1 
 // altera message_off 10034 10035 10036 10037 10230 10240 10030 
 
-module Hardware_Qsys_UART_LIDAR_tx (
-                                     // inputs:
-                                      baud_divisor,
-                                      begintransfer,
-                                      clk,
-                                      clk_en,
-                                      do_force_break,
-                                      reset_n,
-                                      status_wr_strobe,
-                                      tx_data,
-                                      tx_wr_strobe,
+module Hardware_Qsys_UART_PC_tx (
+                                  // inputs:
+                                   baud_divisor,
+                                   begintransfer,
+                                   clk,
+                                   clk_en,
+                                   do_force_break,
+                                   reset_n,
+                                   status_wr_strobe,
+                                   tx_data,
+                                   tx_wr_strobe,
 
-                                     // outputs:
-                                      tx_overrun,
-                                      tx_ready,
-                                      tx_shift_empty,
-                                      txd
-                                   )
+                                  // outputs:
+                                   tx_overrun,
+                                   tx_ready,
+                                   tx_shift_empty,
+                                   txd
+                                )
 ;
 
   output           tx_overrun;
@@ -49,7 +49,7 @@ module Hardware_Qsys_UART_LIDAR_tx (
   input            do_force_break;
   input            reset_n;
   input            status_wr_strobe;
-  input   [  8: 0] tx_data;
+  input   [  7: 0] tx_data;
   input            tx_wr_strobe;
 
 
@@ -60,16 +60,16 @@ reg              do_load_shifter;
 wire             do_shift;
 reg              pre_txd;
 wire             shift_done;
-wire    [ 10: 0] tx_load_val;
+wire    [  9: 0] tx_load_val;
 reg              tx_overrun;
 reg              tx_ready;
 reg              tx_shift_empty;
 wire             tx_shift_reg_out;
-wire    [ 10: 0] tx_shift_register_contents;
+wire    [  9: 0] tx_shift_register_contents;
 wire             tx_wr_strobe_onset;
 reg              txd;
-wire    [ 10: 0] unxshiftxtx_shift_register_contentsxtx_shift_reg_outxx5_in;
-reg     [ 10: 0] unxshiftxtx_shift_register_contentsxtx_shift_reg_outxx5_out;
+wire    [  9: 0] unxshiftxtx_shift_register_contentsxtx_shift_reg_outxx5_in;
+reg     [  9: 0] unxshiftxtx_shift_register_contentsxtx_shift_reg_outxx5_out;
   assign tx_wr_strobe_onset = tx_wr_strobe && begintransfer;
   assign tx_load_val = {{1 {1'b1}},
     tx_data,
@@ -174,7 +174,7 @@ reg     [ 10: 0] unxshiftxtx_shift_register_contentsxtx_shift_reg_outxx5_out;
 
   assign unxshiftxtx_shift_register_contentsxtx_shift_reg_outxx5_in = (do_load_shifter)? tx_load_val :
     (do_shift)? {1'b0,
-    unxshiftxtx_shift_register_contentsxtx_shift_reg_outxx5_out[10 : 1]} :
+    unxshiftxtx_shift_register_contentsxtx_shift_reg_outxx5_out[9 : 1]} :
     unxshiftxtx_shift_register_contentsxtx_shift_reg_outxx5_out;
 
   assign tx_shift_register_contents = unxshiftxtx_shift_register_contentsxtx_shift_reg_outxx5_out;
@@ -191,18 +191,18 @@ endmodule
 // altera message_level Level1 
 // altera message_off 10034 10035 10036 10037 10230 10240 10030 
 
-module Hardware_Qsys_UART_LIDAR_rx_stimulus_source (
-                                                     // inputs:
-                                                      baud_divisor,
-                                                      clk,
-                                                      clk_en,
-                                                      reset_n,
-                                                      rx_char_ready,
-                                                      rxd,
+module Hardware_Qsys_UART_PC_rx_stimulus_source (
+                                                  // inputs:
+                                                   baud_divisor,
+                                                   clk,
+                                                   clk_en,
+                                                   reset_n,
+                                                   rx_char_ready,
+                                                   rxd,
 
-                                                     // outputs:
-                                                      source_rxd
-                                                   )
+                                                  // outputs:
+                                                   source_rxd
+                                                )
 ;
 
   output           source_rxd;
@@ -214,12 +214,12 @@ module Hardware_Qsys_UART_LIDAR_rx_stimulus_source (
   input            rxd;
 
 
-reg     [  8: 0] d1_stim_data;
+reg     [  7: 0] d1_stim_data;
 reg              delayed_unxrx_char_readyxx0;
 wire             do_send_stim_data;
 wire             pickup_pulse;
 wire             source_rxd;
-wire    [  8: 0] stim_data;
+wire    [  7: 0] stim_data;
 wire             unused_empty;
 wire             unused_overrun;
 wire             unused_ready;
@@ -227,7 +227,7 @@ wire             unused_ready;
 //synthesis translate_off
 //////////////// SIMULATION-ONLY CONTENTS
   //stimulus_transmitter, which is an e_instance
-  Hardware_Qsys_UART_LIDAR_tx stimulus_transmitter
+  Hardware_Qsys_UART_PC_tx stimulus_transmitter
     (
       .baud_divisor     (baud_divisor),
       .begintransfer    (do_send_stim_data),
@@ -285,32 +285,32 @@ endmodule
 // altera message_level Level1 
 // altera message_off 10034 10035 10036 10037 10230 10240 10030 
 
-module Hardware_Qsys_UART_LIDAR_rx (
-                                     // inputs:
-                                      baud_divisor,
-                                      begintransfer,
-                                      clk,
-                                      clk_en,
-                                      reset_n,
-                                      rx_rd_strobe,
-                                      rxd,
-                                      status_wr_strobe,
+module Hardware_Qsys_UART_PC_rx (
+                                  // inputs:
+                                   baud_divisor,
+                                   begintransfer,
+                                   clk,
+                                   clk_en,
+                                   reset_n,
+                                   rx_rd_strobe,
+                                   rxd,
+                                   status_wr_strobe,
 
-                                     // outputs:
-                                      break_detect,
-                                      framing_error,
-                                      parity_error,
-                                      rx_char_ready,
-                                      rx_data,
-                                      rx_overrun
-                                   )
+                                  // outputs:
+                                   break_detect,
+                                   framing_error,
+                                   parity_error,
+                                   rx_char_ready,
+                                   rx_data,
+                                   rx_overrun
+                                )
 ;
 
   output           break_detect;
   output           framing_error;
   output           parity_error;
   output           rx_char_ready;
-  output  [  8: 0] rx_data;
+  output  [  7: 0] rx_data;
   output           rx_overrun;
   input   [  8: 0] baud_divisor;
   input            begintransfer;
@@ -337,24 +337,24 @@ wire    [  7: 0] half_bit_cell_divisor;
 wire             is_break;
 wire             is_framing_error;
 wire             parity_error;
-wire    [  8: 0] raw_data_in;
+wire    [  7: 0] raw_data_in;
 reg              rx_char_ready;
-reg     [  8: 0] rx_data;
+reg     [  7: 0] rx_data;
 wire             rx_in_process;
 reg              rx_overrun;
 wire             rx_rd_strobe_onset;
 wire             rxd_edge;
 wire             rxd_falling;
-wire    [ 10: 0] rxd_shift_reg;
+wire    [  9: 0] rxd_shift_reg;
 wire             sample_enable;
 wire             shift_reg_start_bit_n;
 wire             source_rxd;
 wire             stop_bit;
 wire             sync_rxd;
 wire             unused_start_bit;
-wire    [ 10: 0] unxshiftxrxd_shift_regxshift_reg_start_bit_nxx6_in;
-reg     [ 10: 0] unxshiftxrxd_shift_regxshift_reg_start_bit_nxx6_out;
-  Hardware_Qsys_UART_LIDAR_rx_stimulus_source the_Hardware_Qsys_UART_LIDAR_rx_stimulus_source
+wire    [  9: 0] unxshiftxrxd_shift_regxshift_reg_start_bit_nxx6_in;
+reg     [  9: 0] unxshiftxrxd_shift_regxshift_reg_start_bit_nxx6_out;
+  Hardware_Qsys_UART_PC_rx_stimulus_source the_Hardware_Qsys_UART_PC_rx_stimulus_source
     (
       .baud_divisor  (baud_divisor),
       .clk           (clk),
@@ -525,9 +525,9 @@ unused_start_bit} = rxd_shift_reg;
     end
 
 
-  assign unxshiftxrxd_shift_regxshift_reg_start_bit_nxx6_in = (do_start_rx)? {11{1'b1}} :
+  assign unxshiftxrxd_shift_regxshift_reg_start_bit_nxx6_in = (do_start_rx)? {10{1'b1}} :
     (sample_enable)? {sync_rxd,
-    unxshiftxrxd_shift_regxshift_reg_start_bit_nxx6_out[10 : 1]} :
+    unxshiftxrxd_shift_regxshift_reg_start_bit_nxx6_out[9 : 1]} :
     unxshiftxrxd_shift_regxshift_reg_start_bit_nxx6_out;
 
   assign rxd_shift_reg = unxshiftxrxd_shift_regxshift_reg_start_bit_nxx6_out;
@@ -544,38 +544,38 @@ endmodule
 // altera message_level Level1 
 // altera message_off 10034 10035 10036 10037 10230 10240 10030 
 
-module Hardware_Qsys_UART_LIDAR_regs (
-                                       // inputs:
-                                        address,
-                                        break_detect,
-                                        chipselect,
-                                        clk,
-                                        clk_en,
-                                        framing_error,
-                                        parity_error,
-                                        read_n,
-                                        reset_n,
-                                        rx_char_ready,
-                                        rx_data,
-                                        rx_overrun,
-                                        tx_overrun,
-                                        tx_ready,
-                                        tx_shift_empty,
-                                        write_n,
-                                        writedata,
+module Hardware_Qsys_UART_PC_regs (
+                                    // inputs:
+                                     address,
+                                     break_detect,
+                                     chipselect,
+                                     clk,
+                                     clk_en,
+                                     framing_error,
+                                     parity_error,
+                                     read_n,
+                                     reset_n,
+                                     rx_char_ready,
+                                     rx_data,
+                                     rx_overrun,
+                                     tx_overrun,
+                                     tx_ready,
+                                     tx_shift_empty,
+                                     write_n,
+                                     writedata,
 
-                                       // outputs:
-                                        baud_divisor,
-                                        dataavailable,
-                                        do_force_break,
-                                        irq,
-                                        readdata,
-                                        readyfordata,
-                                        rx_rd_strobe,
-                                        status_wr_strobe,
-                                        tx_data,
-                                        tx_wr_strobe
-                                     )
+                                    // outputs:
+                                     baud_divisor,
+                                     dataavailable,
+                                     do_force_break,
+                                     irq,
+                                     readdata,
+                                     readyfordata,
+                                     rx_rd_strobe,
+                                     status_wr_strobe,
+                                     tx_data,
+                                     tx_wr_strobe
+                                  )
 ;
 
   output  [  8: 0] baud_divisor;
@@ -586,7 +586,7 @@ module Hardware_Qsys_UART_LIDAR_regs (
   output           readyfordata;
   output           rx_rd_strobe;
   output           status_wr_strobe;
-  output  [  8: 0] tx_data;
+  output  [  7: 0] tx_data;
   output           tx_wr_strobe;
   input   [  2: 0] address;
   input            break_detect;
@@ -598,7 +598,7 @@ module Hardware_Qsys_UART_LIDAR_regs (
   input            read_n;
   input            reset_n;
   input            rx_char_ready;
-  input   [  8: 0] rx_data;
+  input   [  7: 0] rx_data;
   input            rx_overrun;
   input            tx_overrun;
   input            tx_ready;
@@ -638,7 +638,7 @@ wire             rx_rd_strobe;
 wire    [ 15: 0] selected_read_data;
 wire    [ 12: 0] status_reg;
 wire             status_wr_strobe;
-reg     [  8: 0] tx_data;
+reg     [  7: 0] tx_data;
 wire             tx_wr_strobe;
   always @(posedge clk or negedge reset_n)
     begin
@@ -667,7 +667,7 @@ wire             tx_wr_strobe;
       if (reset_n == 0)
           tx_data <= 0;
       else if (tx_wr_strobe)
-          tx_data <= writedata[8 : 0];
+          tx_data <= writedata[7 : 0];
     end
 
 
@@ -790,25 +790,25 @@ endmodule
 // altera message_level Level1 
 // altera message_off 10034 10035 10036 10037 10230 10240 10030 
 
-module Hardware_Qsys_UART_LIDAR (
-                                  // inputs:
-                                   address,
-                                   begintransfer,
-                                   chipselect,
-                                   clk,
-                                   read_n,
-                                   reset_n,
-                                   rxd,
-                                   write_n,
-                                   writedata,
+module Hardware_Qsys_UART_PC (
+                               // inputs:
+                                address,
+                                begintransfer,
+                                chipselect,
+                                clk,
+                                read_n,
+                                reset_n,
+                                rxd,
+                                write_n,
+                                writedata,
 
-                                  // outputs:
-                                   dataavailable,
-                                   irq,
-                                   readdata,
-                                   readyfordata,
-                                   txd
-                                )
+                               // outputs:
+                                dataavailable,
+                                irq,
+                                readdata,
+                                readyfordata,
+                                txd
+                             )
   /* synthesis altera_attribute = "-name SYNCHRONIZER_IDENTIFICATION OFF" */ ;
 
   output           dataavailable;
@@ -838,18 +838,18 @@ wire             parity_error;
 wire    [ 15: 0] readdata;
 wire             readyfordata;
 wire             rx_char_ready;
-wire    [  8: 0] rx_data;
+wire    [  7: 0] rx_data;
 wire             rx_overrun;
 wire             rx_rd_strobe;
 wire             status_wr_strobe;
-wire    [  8: 0] tx_data;
+wire    [  7: 0] tx_data;
 wire             tx_overrun;
 wire             tx_ready;
 wire             tx_shift_empty;
 wire             tx_wr_strobe;
 wire             txd;
   assign clk_en = 1;
-  Hardware_Qsys_UART_LIDAR_tx the_Hardware_Qsys_UART_LIDAR_tx
+  Hardware_Qsys_UART_PC_tx the_Hardware_Qsys_UART_PC_tx
     (
       .baud_divisor     (baud_divisor),
       .begintransfer    (begintransfer),
@@ -866,7 +866,7 @@ wire             txd;
       .txd              (txd)
     );
 
-  Hardware_Qsys_UART_LIDAR_rx the_Hardware_Qsys_UART_LIDAR_rx
+  Hardware_Qsys_UART_PC_rx the_Hardware_Qsys_UART_PC_rx
     (
       .baud_divisor     (baud_divisor),
       .begintransfer    (begintransfer),
@@ -884,7 +884,7 @@ wire             txd;
       .status_wr_strobe (status_wr_strobe)
     );
 
-  Hardware_Qsys_UART_LIDAR_regs the_Hardware_Qsys_UART_LIDAR_regs
+  Hardware_Qsys_UART_PC_regs the_Hardware_Qsys_UART_PC_regs
     (
       .address          (address),
       .baud_divisor     (baud_divisor),

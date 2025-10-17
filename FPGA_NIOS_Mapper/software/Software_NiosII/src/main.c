@@ -45,12 +45,11 @@ int main()
       return -1;
   }
 
-  // Initialize UART
-  uart_init(UART_PC_BASE, 50000000, UART_PC_BAUD);
-  uart_init(UART_LIDAR_BASE, 50000000, UART_LIDAR_BAUD);
+  // Sensors initialization
+  lidar_init(UART_LIDAR_BASE, 50000000, 115200);
 
   // Init timers for ISRs
-  init_isrTimer_MAIN();
+  init_isrTimer_MAIN(UART_LIDAR_DATA_BITS);
 
   return 0;
 }

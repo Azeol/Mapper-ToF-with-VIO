@@ -2,7 +2,7 @@ set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "Hardware_Qsys" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../Hardware_Qsys.sopcinfo"]
-set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name SLD_INFO "QSYS_NAME Hardware_Qsys HAS_SOPCINFO 1 GENERATION_ID 1760711718"
+set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name SLD_INFO "QSYS_NAME Hardware_Qsys HAS_SOPCINFO 1 GENERATION_ID 1760717066"
 set_global_assignment -library "Hardware_Qsys" -name MISC_FILE [file join $::quartus(qip_path) "../Hardware_Qsys.cmp"]
 set_global_assignment -library "Hardware_Qsys" -name SLD_FILE [file join $::quartus(qip_path) "Hardware_Qsys.regmap"]
 set_global_assignment -library "Hardware_Qsys" -name SLD_FILE [file join $::quartus(qip_path) "Hardware_Qsys.debuginfo"]
@@ -16,7 +16,7 @@ set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTc2MDcxMTcxOA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTc2MDcxNzA2Ng==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::TUFYIDEw::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBNNTBEQUY0ODRDNkdFUw==::QXV0byBERVZJQ0U="
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -679,6 +679,27 @@ set_global_assignment -entity "Hardware_Qsys_jtag_uart_0" -library "Hardware_Qsy
 set_global_assignment -entity "Hardware_Qsys_jtag_uart_0" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "bGVnYWN5U2lnbmFsQWxsb3c=::ZmFsc2U=::bGVnYWN5U2lnbmFsQWxsb3c="
 set_global_assignment -entity "Hardware_Qsys_jtag_uart_0" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "ZW5hYmxlSW50ZXJhY3RpdmVJbnB1dA==::ZmFsc2U=::ZW5hYmxlSW50ZXJhY3RpdmVJbnB1dA=="
 set_global_assignment -entity "Hardware_Qsys_jtag_uart_0" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "ZW5hYmxlSW50ZXJhY3RpdmVPdXRwdXQ=::ZmFsc2U=::ZW5hYmxlSW50ZXJhY3RpdmVPdXRwdXQ="
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_NAME "SGFyZHdhcmVfUXN5c19VQVJUX1BD"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_DISPLAY_NAME "VUFSVCAoUlMtMjMyIFNlcmlhbCBQb3J0KSBJbnRlbCBGUEdBIElQ"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_VERSION "MTguMQ=="
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "YmF1ZA==::MTE1MjAw::QmF1ZCByYXRlIChicHMp"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "ZGF0YUJpdHM=::OA==::RGF0YSBiaXRz"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "Zml4ZWRCYXVk::dHJ1ZQ==::Rml4ZWQgYmF1ZCByYXRl"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "cGFyaXR5::Tk9ORQ==::UGFyaXR5"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "c2ltSW50ZXJhY3RpdmVJbnB1dEVuYWJsZQ==::ZmFsc2U=::SW50ZXJhY3RpdmUgc3RpbXVsdXMgd2luZG93"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "c2ltSW50ZXJhY3RpdmVPdXRwdXRFbmFibGU=::ZmFsc2U=::U3RyZWFtaW5nIG91dHB1dCB3aW5kb3c="
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "c2ltVHJ1ZUJhdWQ=::ZmFsc2U=::T3B0aW9u"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "c3RvcEJpdHM=::MQ==::U3RvcCBiaXRz"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "c3luY1JlZ0RlcHRo::Mg==::U3luY2hyb25pemVyIHN0YWdlcw=="
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "dXNlQ3RzUnRz::ZmFsc2U=::SW5jbHVkZSBDVFMvUlRT"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "dXNlRW9wUmVnaXN0ZXI=::ZmFsc2U=::SW5jbHVkZSBlbmQtb2YtcGFja2V0"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "dXNlUmVsYXRpdmVQYXRoRm9yU2ltRmlsZQ==::ZmFsc2U=::dXNlUmVsYXRpdmVQYXRoRm9yU2ltRmlsZQ=="
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "Y2xvY2tSYXRl::NTAwMDAwMDA=::Y2xvY2tSYXRl"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "YmF1ZEVycm9y::MC4wMQ==::QmF1ZCBlcnJvcg=="
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "cGFyaXR5RmlzcnRDaGFy::Tg==::cGFyaXR5RmlzcnRDaGFy"
 set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_COMPONENT_NAME "SGFyZHdhcmVfUXN5c19VQVJUX0xJREFS"
 set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_COMPONENT_DISPLAY_NAME "VUFSVCAoUlMtMjMyIFNlcmlhbCBQb3J0KSBJbnRlbCBGUEdBIElQ"
 set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
@@ -686,7 +707,7 @@ set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys
 set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
 set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_COMPONENT_VERSION "MTguMQ=="
 set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "YmF1ZA==::MTE1MjAw::QmF1ZCByYXRlIChicHMp"
-set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "ZGF0YUJpdHM=::OA==::RGF0YSBiaXRz"
+set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "ZGF0YUJpdHM=::OQ==::RGF0YSBiaXRz"
 set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "Zml4ZWRCYXVk::dHJ1ZQ==::Rml4ZWQgYmF1ZCByYXRl"
 set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "cGFyaXR5::Tk9ORQ==::UGFyaXR5"
 set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "c2ltSW50ZXJhY3RpdmVJbnB1dEVuYWJsZQ==::ZmFsc2U=::SW50ZXJhY3RpdmUgc3RpbXVsdXMgd2luZG93"
@@ -1238,6 +1259,7 @@ set_global_assignment -library "Hardware_Qsys" -name SYSTEMVERILOG_FILE [file jo
 set_global_assignment -library "Hardware_Qsys" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
 set_global_assignment -library "Hardware_Qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Hardware_Qsys_sysid_qsys_0.v"]
 set_global_assignment -library "Hardware_Qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Hardware_Qsys_jtag_uart_0.v"]
+set_global_assignment -library "Hardware_Qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Hardware_Qsys_UART_PC.v"]
 set_global_assignment -library "Hardware_Qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Hardware_Qsys_UART_LIDAR.v"]
 set_global_assignment -library "Hardware_Qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Hardware_Qsys_TIMER_MAIN.v"]
 set_global_assignment -library "Hardware_Qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Hardware_Qsys_SWITCH.v"]
@@ -1346,6 +1368,9 @@ set_global_assignment -entity "Hardware_Qsys_sysid_qsys_0" -library "Hardware_Qs
 set_global_assignment -entity "Hardware_Qsys_jtag_uart_0" -library "Hardware_Qsys" -name IP_TOOL_NAME "altera_avalon_jtag_uart"
 set_global_assignment -entity "Hardware_Qsys_jtag_uart_0" -library "Hardware_Qsys" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "Hardware_Qsys_jtag_uart_0" -library "Hardware_Qsys" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_TOOL_NAME "altera_avalon_uart"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_TOOL_VERSION "18.1"
+set_global_assignment -entity "Hardware_Qsys_UART_PC" -library "Hardware_Qsys" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_TOOL_NAME "altera_avalon_uart"
 set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "Hardware_Qsys_UART_LIDAR" -library "Hardware_Qsys" -name IP_TOOL_ENV "Qsys"

@@ -264,7 +264,7 @@ module Hardware_Qsys (
 		.irq           (irq_mapper_receiver5_irq)                       //                 irq.irq
 	);
 
-	Hardware_Qsys_UART_LIDAR uart_pc (
+	Hardware_Qsys_UART_PC uart_pc (
 		.clk           (clk_clk),                                    //                 clk.clk
 		.reset_n       (~rst_controller_reset_out_reset),            //               reset.reset_n
 		.address       (mm_interconnect_0_uart_pc_s1_address),       //                  s1.address
