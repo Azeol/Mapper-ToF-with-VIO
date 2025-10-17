@@ -2,9 +2,9 @@
  * linker.h - Linker script mapping information
  *
  * Machine generated for CPU 'NIOSII_CPU' in SOPC Builder design 'Hardware_Qsys'
- * SOPC Builder design path: ../../Hardware_Qsys.sopcinfo
+ * SOPC Builder design path: C:/Users/neser/Mapper-ToF-with-VIO/FPGA_NIOS_Mapper/Hardware_Qsys.sopcinfo
  *
- * Generated: Wed Oct 15 23:11:13 CEST 2025
+ * Generated: Fri Oct 17 16:41:20 CEST 2025
  */
 
 /*

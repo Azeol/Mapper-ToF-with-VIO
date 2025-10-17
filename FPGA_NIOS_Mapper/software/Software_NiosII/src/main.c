@@ -50,8 +50,7 @@ int main()
   uart_init(UART_LIDAR_BASE, 50000000, UART_LIDAR_BAUD);
 
   // Init timers for ISRs
-  init_isrTimer_ToF();
-  init_isrTimer_IMU();
+  init_isrTimer_MAIN();
 
   return 0;
 }

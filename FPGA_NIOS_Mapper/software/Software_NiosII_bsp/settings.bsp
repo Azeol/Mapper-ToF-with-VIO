@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>15 oct. 2025 23:11:24</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1760562684874</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\neser\Mapper-ToF-with-VIO\FPGA_NIOS_Mapper\software\Software_NiosII_bsp</BspGeneratedLocation>
-        <BspSettingsFile>C:\Users\neser\Mapper-ToF-with-VIO\FPGA_NIOS_Mapper\software\Software_NiosII_bsp\settings.bsp</BspSettingsFile>
-        <SopcDesignFile>..\..\Hardware_Qsys.sopcinfo</SopcDesignFile>
+        <BspGeneratedTimeStamp>17 oct. 2025 16:41:19</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1760712079225</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>.\</BspGeneratedLocation>
+        <BspSettingsFile>Software_NiosII_bsp\settings.bsp</BspSettingsFile>
+        <SopcDesignFile>C:\Users\neser\Mapper-ToF-with-VIO\FPGA_NIOS_Mapper\Hardware_Qsys.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>NIOSII_CPU</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -14,7 +14,7 @@
                 <SettingName>hal.sys_clk_timer</SettingName>
                 <Identifier>ALT_SYS_CLK</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>TIMER_IMU</Value>
+                <Value>TIMER_MAIN</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Slave descriptor of the system clock timer device. This device provides a periodic interrupt ("tick") and is typically required for RTOS use. This setting defines the value of ALT_SYS_CLK in system.h.</Description>
@@ -935,68 +935,62 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>TIMER_IMU</slaveDescriptor>
-                <addressRange>0x00041040 - 0x0004105F</addressRange>
-                <addressSpan>32</addressSpan>
-                <attributes>timer</attributes>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>UART_LIDAR</slaveDescriptor>
-                <addressRange>0x00041060 - 0x0004107F</addressRange>
+                <addressRange>0x00041040 - 0x0004105F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>UART_PC</slaveDescriptor>
-                <addressRange>0x00041080 - 0x0004109F</addressRange>
+                <addressRange>0x00041060 - 0x0004107F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>TIMER_TOF</slaveDescriptor>
-                <addressRange>0x000410A0 - 0x000410BF</addressRange>
+                <slaveDescriptor>TIMER_MAIN</slaveDescriptor>
+                <addressRange>0x00041080 - 0x0004109F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>HEX5_HEX4</slaveDescriptor>
-                <addressRange>0x000410C0 - 0x000410CF</addressRange>
+                <addressRange>0x000410A0 - 0x000410AF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>HEX3_HEX0</slaveDescriptor>
-                <addressRange>0x000410D0 - 0x000410DF</addressRange>
+                <addressRange>0x000410B0 - 0x000410BF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>LEDR</slaveDescriptor>
-                <addressRange>0x000410E0 - 0x000410EF</addressRange>
+                <addressRange>0x000410C0 - 0x000410CF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>PB</slaveDescriptor>
-                <addressRange>0x000410F0 - 0x000410FF</addressRange>
+                <addressRange>0x000410D0 - 0x000410DF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SWITCH</slaveDescriptor>
-                <addressRange>0x00041100 - 0x0004110F</addressRange>
+                <addressRange>0x000410E0 - 0x000410EF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sysid_qsys_0</slaveDescriptor>
-                <addressRange>0x00041110 - 0x00041117</addressRange>
+                <addressRange>0x000410F0 - 0x000410F7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00041118 - 0x0004111F</addressRange>
+                <addressRange>0x000410F8 - 0x000410FF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

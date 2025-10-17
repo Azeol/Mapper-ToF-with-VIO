@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'NIOSII_CPU' in SOPC Builder design 'Hardware_Qsys'
- * SOPC Builder design path: ../../Hardware_Qsys.sopcinfo
+ * SOPC Builder design path: C:/Users/neser/Mapper-ToF-with-VIO/FPGA_NIOS_Mapper/Hardware_Qsys.sopcinfo
  *
- * Generated: Wed Oct 15 23:11:13 CEST 2025
+ * Generated: Fri Oct 17 16:41:20 CEST 2025
  */
 
 /*
@@ -153,7 +153,7 @@
  */
 
 #define ALT_MODULE_CLASS_HEX3_HEX0 altera_avalon_pio
-#define HEX3_HEX0_BASE 0x410d0
+#define HEX3_HEX0_BASE 0x410b0
 #define HEX3_HEX0_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX3_HEX0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX3_HEX0_CAPTURE 0
@@ -180,7 +180,7 @@
  */
 
 #define ALT_MODULE_CLASS_HEX5_HEX4 altera_avalon_pio
-#define HEX5_HEX4_BASE 0x410c0
+#define HEX5_HEX4_BASE 0x410a0
 #define HEX5_HEX4_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX5_HEX4_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX5_HEX4_CAPTURE 0
@@ -224,7 +224,7 @@
  */
 
 #define ALT_MODULE_CLASS_LEDR altera_avalon_pio
-#define LEDR_BASE 0x410e0
+#define LEDR_BASE 0x410c0
 #define LEDR_BIT_CLEARING_EDGE_REGISTER 0
 #define LEDR_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LEDR_CAPTURE 0
@@ -280,7 +280,7 @@
  */
 
 #define ALT_MODULE_CLASS_PB altera_avalon_pio
-#define PB_BASE 0x410f0
+#define PB_BASE 0x410d0
 #define PB_BIT_CLEARING_EDGE_REGISTER 0
 #define PB_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PB_CAPTURE 1
@@ -307,7 +307,7 @@
  */
 
 #define ALT_MODULE_CLASS_SWITCH altera_avalon_pio
-#define SWITCH_BASE 0x41100
+#define SWITCH_BASE 0x410e0
 #define SWITCH_BIT_CLEARING_EDGE_REGISTER 0
 #define SWITCH_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SWITCH_CAPTURE 0
@@ -344,19 +344,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x41118
+#define ALT_STDERR_BASE 0x410f8
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x41118
+#define ALT_STDIN_BASE 0x410f8
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x41118
+#define ALT_STDOUT_BASE 0x410f8
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -365,55 +365,29 @@
 
 
 /*
- * TIMER_IMU configuration
+ * TIMER_MAIN configuration
  *
  */
 
-#define ALT_MODULE_CLASS_TIMER_IMU altera_avalon_timer
-#define TIMER_IMU_ALWAYS_RUN 0
-#define TIMER_IMU_BASE 0x41040
-#define TIMER_IMU_COUNTER_SIZE 32
-#define TIMER_IMU_FIXED_PERIOD 0
-#define TIMER_IMU_FREQ 50000000
-#define TIMER_IMU_IRQ 1
-#define TIMER_IMU_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define TIMER_IMU_LOAD_VALUE 49999
-#define TIMER_IMU_MULT 0.001
-#define TIMER_IMU_NAME "/dev/TIMER_IMU"
-#define TIMER_IMU_PERIOD 1
-#define TIMER_IMU_PERIOD_UNITS "ms"
-#define TIMER_IMU_RESET_OUTPUT 0
-#define TIMER_IMU_SNAPSHOT 1
-#define TIMER_IMU_SPAN 32
-#define TIMER_IMU_TICKS_PER_SEC 1000
-#define TIMER_IMU_TIMEOUT_PULSE_OUTPUT 0
-#define TIMER_IMU_TYPE "altera_avalon_timer"
-
-
-/*
- * TIMER_TOF configuration
- *
- */
-
-#define ALT_MODULE_CLASS_TIMER_TOF altera_avalon_timer
-#define TIMER_TOF_ALWAYS_RUN 0
-#define TIMER_TOF_BASE 0x410a0
-#define TIMER_TOF_COUNTER_SIZE 32
-#define TIMER_TOF_FIXED_PERIOD 0
-#define TIMER_TOF_FREQ 50000000
-#define TIMER_TOF_IRQ 0
-#define TIMER_TOF_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define TIMER_TOF_LOAD_VALUE 49999
-#define TIMER_TOF_MULT 0.001
-#define TIMER_TOF_NAME "/dev/TIMER_TOF"
-#define TIMER_TOF_PERIOD 1
-#define TIMER_TOF_PERIOD_UNITS "ms"
-#define TIMER_TOF_RESET_OUTPUT 0
-#define TIMER_TOF_SNAPSHOT 1
-#define TIMER_TOF_SPAN 32
-#define TIMER_TOF_TICKS_PER_SEC 1000
-#define TIMER_TOF_TIMEOUT_PULSE_OUTPUT 0
-#define TIMER_TOF_TYPE "altera_avalon_timer"
+#define ALT_MODULE_CLASS_TIMER_MAIN altera_avalon_timer
+#define TIMER_MAIN_ALWAYS_RUN 0
+#define TIMER_MAIN_BASE 0x41080
+#define TIMER_MAIN_COUNTER_SIZE 32
+#define TIMER_MAIN_FIXED_PERIOD 0
+#define TIMER_MAIN_FREQ 50000000
+#define TIMER_MAIN_IRQ 0
+#define TIMER_MAIN_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define TIMER_MAIN_LOAD_VALUE 49999
+#define TIMER_MAIN_MULT 0.001
+#define TIMER_MAIN_NAME "/dev/TIMER_MAIN"
+#define TIMER_MAIN_PERIOD 1
+#define TIMER_MAIN_PERIOD_UNITS "ms"
+#define TIMER_MAIN_RESET_OUTPUT 0
+#define TIMER_MAIN_SNAPSHOT 1
+#define TIMER_MAIN_SPAN 32
+#define TIMER_MAIN_TICKS_PER_SEC 1000
+#define TIMER_MAIN_TIMEOUT_PULSE_OUTPUT 0
+#define TIMER_MAIN_TYPE "altera_avalon_timer"
 
 
 /*
@@ -422,7 +396,7 @@
  */
 
 #define ALT_MODULE_CLASS_UART_LIDAR altera_avalon_uart
-#define UART_LIDAR_BASE 0x41060
+#define UART_LIDAR_BASE 0x41040
 #define UART_LIDAR_BAUD 115200
 #define UART_LIDAR_DATA_BITS 8
 #define UART_LIDAR_FIXED_BAUD 1
@@ -447,7 +421,7 @@
  */
 
 #define ALT_MODULE_CLASS_UART_PC altera_avalon_uart
-#define UART_PC_BASE 0x41080
+#define UART_PC_BASE 0x41060
 #define UART_PC_BAUD 115200
 #define UART_PC_DATA_BITS 8
 #define UART_PC_FIXED_BAUD 1
@@ -473,7 +447,7 @@
 
 #define ALT_INCLUDE_INSTRUCTION_RELATED_EXCEPTION_API
 #define ALT_MAX_FD 32
-#define ALT_SYS_CLK TIMER_IMU
+#define ALT_SYS_CLK TIMER_MAIN
 #define ALT_TIMESTAMP_CLK none
 
 
@@ -483,7 +457,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x41118
+#define JTAG_UART_0_BASE 0x410f8
 #define JTAG_UART_0_IRQ 16
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -501,13 +475,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x41110
+#define SYSID_QSYS_0_BASE 0x410f0
 #define SYSID_QSYS_0_ID 305419896
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1760561945
+#define SYSID_QSYS_0_TIMESTAMP 1760711718
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

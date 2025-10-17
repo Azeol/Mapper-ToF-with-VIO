@@ -86,7 +86,7 @@ ACDS_VERSION := 18.1
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := $(ABS_BSP_ROOT_DIR)/../../Hardware_Qsys.sopcinfo
+SOPCINFO_FILE := C:/Users/neser/Mapper-ToF-with-VIO/FPGA_NIOS_Mapper/Hardware_Qsys.sopcinfo
 
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false
@@ -152,14 +152,14 @@ SOPC_SYSID_FLAG += --id=305419896
 ELF_PATCH_FLAG  += --id 305419896
 
 # The SOPC System ID Base Address 
-# setting SOPC_SYSID_BASE_ADDRESS is 0x41110
-SOPC_SYSID_FLAG += --sidp=0x41110
-ELF_PATCH_FLAG  += --sidp 0x41110
+# setting SOPC_SYSID_BASE_ADDRESS is 0x410f0
+SOPC_SYSID_FLAG += --sidp=0x410f0
+ELF_PATCH_FLAG  += --sidp 0x410f0
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1760561945
-SOPC_SYSID_FLAG += --timestamp=1760561945
-ELF_PATCH_FLAG  += --timestamp 1760561945
+# setting SOPC_TIMESTAMP is 1760711718
+SOPC_SYSID_FLAG += --timestamp=1760711718
+ELF_PATCH_FLAG  += --timestamp 1760711718
 
 # Enable JTAG UART driver to recover when host is inactive causing buffer to 
 # full without returning error. Printf will not fail with this recovery. none 

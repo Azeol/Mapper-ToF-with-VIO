@@ -2,9 +2,9 @@
  * alt_sys_init.c - HAL initialization source
  *
  * Machine generated for CPU 'NIOSII_CPU' in SOPC Builder design 'Hardware_Qsys'
- * SOPC Builder design path: ../../Hardware_Qsys.sopcinfo
+ * SOPC Builder design path: C:/Users/neser/Mapper-ToF-with-VIO/FPGA_NIOS_Mapper/Hardware_Qsys.sopcinfo
  *
- * Generated: Wed Oct 15 23:11:13 CEST 2025
+ * Generated: Fri Oct 17 16:41:20 CEST 2025
  */
 
 /*
@@ -73,8 +73,7 @@ ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( NIOSII_CPU, NIOSII_CPU);
 ALTERA_AVALON_I2C_INSTANCE ( I2C, I2C);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART_0, jtag_uart_0);
 ALTERA_AVALON_SYSID_QSYS_INSTANCE ( SYSID_QSYS_0, sysid_qsys_0);
-ALTERA_AVALON_TIMER_INSTANCE ( TIMER_IMU, TIMER_IMU);
-ALTERA_AVALON_TIMER_INSTANCE ( TIMER_TOF, TIMER_TOF);
+ALTERA_AVALON_TIMER_INSTANCE ( TIMER_MAIN, TIMER_MAIN);
 ALTERA_AVALON_UART_INSTANCE ( UART_LIDAR, UART_LIDAR);
 ALTERA_AVALON_UART_INSTANCE ( UART_PC, UART_PC);
 
@@ -99,8 +98,7 @@ void alt_irq_init ( const void* base )
 
 void alt_sys_init( void )
 {
-    ALTERA_AVALON_TIMER_INIT ( TIMER_IMU, TIMER_IMU);
-    ALTERA_AVALON_TIMER_INIT ( TIMER_TOF, TIMER_TOF);
+    ALTERA_AVALON_TIMER_INIT ( TIMER_MAIN, TIMER_MAIN);
     ALTERA_AVALON_I2C_INIT ( I2C, I2C);
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART_0, jtag_uart_0);
     ALTERA_AVALON_SYSID_QSYS_INIT ( SYSID_QSYS_0, sysid_qsys_0);
