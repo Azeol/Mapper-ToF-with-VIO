@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'NIOSII_CPU' in SOPC Builder design 'Hardware_Qsys'
- * SOPC Builder design path: C:/Users/neser/Mapper-ToF-with-VIO/FPGA_NIOS_Mapper/Hardware_Qsys.sopcinfo
+ * SOPC Builder design path: ../../Hardware_Qsys.sopcinfo
  *
- * Generated: Fri Oct 17 16:41:20 CEST 2025
+ * Generated: Sat Oct 18 16:47:26 CEST 2025
  */
 
 /*
@@ -398,7 +398,7 @@
 #define ALT_MODULE_CLASS_UART_LIDAR altera_avalon_uart
 #define UART_LIDAR_BASE 0x41040
 #define UART_LIDAR_BAUD 115200
-#define UART_LIDAR_DATA_BITS 8
+#define UART_LIDAR_DATA_BITS 9
 #define UART_LIDAR_FIXED_BAUD 1
 #define UART_LIDAR_FREQ 50000000
 #define UART_LIDAR_IRQ 2
@@ -481,7 +481,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1760711718
+#define SYSID_QSYS_0_TIMESTAMP 1760798600
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

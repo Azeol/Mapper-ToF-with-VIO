@@ -11,7 +11,7 @@
 #define LIDAR_H_
 
 #define LIDAR_HEADER        0x59u  // Frame header of data package
-#define LIDAR_DATA_LENGTH   (UART_LIDAR_DATA_BITS + 1)     // Total bytes in a data package
+#define LIDAR_DATA_LENGTH   UART_LIDAR_DATA_BITS     // Total bytes in a data package
 
 typedef struct {
     uint16_t distance;    // Distance measurement in mm

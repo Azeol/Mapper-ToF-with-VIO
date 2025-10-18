@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>17 oct. 2025 16:41:19</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1760712079225</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>18 oct. 2025 16:51:18</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1760799078133</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>.\</BspGeneratedLocation>
-        <BspSettingsFile>Software_NiosII_bsp\settings.bsp</BspSettingsFile>
-        <SopcDesignFile>C:\Users\neser\Mapper-ToF-with-VIO\FPGA_NIOS_Mapper\Hardware_Qsys.sopcinfo</SopcDesignFile>
+        <BspSettingsFile>..\Software_NiosII_bsp\settings.bsp</BspSettingsFile>
+        <SopcDesignFile>..\..\Hardware_Qsys.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>NIOSII_CPU</Cpu>
         <SchemaVersion>1.9</SchemaVersion>

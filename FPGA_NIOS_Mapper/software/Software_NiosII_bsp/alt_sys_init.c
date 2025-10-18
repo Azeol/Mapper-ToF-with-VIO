@@ -2,9 +2,9 @@
  * alt_sys_init.c - HAL initialization source
  *
  * Machine generated for CPU 'NIOSII_CPU' in SOPC Builder design 'Hardware_Qsys'
- * SOPC Builder design path: C:/Users/neser/Mapper-ToF-with-VIO/FPGA_NIOS_Mapper/Hardware_Qsys.sopcinfo
+ * SOPC Builder design path: ../../Hardware_Qsys.sopcinfo
  *
- * Generated: Fri Oct 17 16:41:20 CEST 2025
+ * Generated: Sat Oct 18 16:47:26 CEST 2025
  */
 
 /*
