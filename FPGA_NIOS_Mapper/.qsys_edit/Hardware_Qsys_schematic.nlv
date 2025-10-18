@@ -18,19 +18,19 @@ preplace inst Hardware_Qsys.clk_0 -pg 1 -lvl 1 -y 310
 preplace inst Hardware_Qsys.sysid_qsys_0 -pg 1 -lvl 3 -y 650
 preplace inst Hardware_Qsys.TIMER_MAIN -pg 1 -lvl 3 -y 1270
 preplace inst Hardware_Qsys.HEX5_HEX4 -pg 1 -lvl 3 -y 1050
-preplace netloc FAN_OUT<net_container>Hardware_Qsys</net_container>(SLAVE)NIOSII_CPU.clk,(SLAVE)LEDR.clk,(SLAVE)I2C.clock,(SLAVE)jtag_uart_0.clk,(SLAVE)HEX5_HEX4.clk,(SLAVE)MEMORY.clk1,(MASTER)clk_0.clk,(SLAVE)SWITCH.clk,(SLAVE)UART_PC.clk,(SLAVE)TIMER_MAIN.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)HEX3_HEX0.clk,(SLAVE)PB.clk,(SLAVE)UART_LIDAR.clk) 1 1 2 290 1100 750
-preplace netloc INTERCONNECT<net_container>Hardware_Qsys</net_container>(MASTER)NIOSII_CPU.instruction_master,(SLAVE)MEMORY.s1,(SLAVE)LEDR.s1,(SLAVE)NIOSII_CPU.debug_mem_slave,(SLAVE)I2C.csr,(SLAVE)SWITCH.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)UART_PC.s1,(SLAVE)PB.s1,(SLAVE)TIMER_MAIN.s1,(SLAVE)HEX3_HEX0.s1,(MASTER)NIOSII_CPU.data_master,(SLAVE)UART_LIDAR.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)HEX5_HEX4.s1) 1 1 2 330 1220 690
-preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)UART_LIDAR.external_connection,(SLAVE)Hardware_Qsys.uart_lidar) 1 0 3 NJ 80 NJ 80 NJ
-preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)SWITCH.external_connection,(SLAVE)Hardware_Qsys.switch) 1 0 3 NJ 980 NJ 980 NJ
+preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)I2C.i2c_serial,(SLAVE)Hardware_Qsys.i2c_serial) 1 0 3 NJ 900 NJ 900 NJ
+preplace netloc INTERCONNECT<net_container>Hardware_Qsys</net_container>(SLAVE)I2C.csr,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)PB.s1,(SLAVE)LEDR.s1,(SLAVE)NIOSII_CPU.debug_mem_slave,(MASTER)NIOSII_CPU.instruction_master,(SLAVE)TIMER_MAIN.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)HEX3_HEX0.s1,(MASTER)NIOSII_CPU.data_master,(SLAVE)SWITCH.s1,(SLAVE)HEX5_HEX4.s1,(SLAVE)UART_PC.s1,(SLAVE)MEMORY.s1,(SLAVE)UART_LIDAR.s1) 1 1 2 330 1220 690
+preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)Hardware_Qsys.uart_lidar,(SLAVE)UART_LIDAR.external_connection) 1 0 3 NJ 80 NJ 80 NJ
+preplace netloc FAN_OUT<net_container>Hardware_Qsys</net_container>(SLAVE)UART_PC.clk,(SLAVE)PB.clk,(SLAVE)SWITCH.clk,(MASTER)clk_0.clk,(SLAVE)NIOSII_CPU.clk,(SLAVE)HEX5_HEX4.clk,(SLAVE)MEMORY.clk1,(SLAVE)jtag_uart_0.clk,(SLAVE)UART_LIDAR.clk,(SLAVE)LEDR.clk,(SLAVE)TIMER_MAIN.clk,(SLAVE)HEX3_HEX0.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)I2C.clock) 1 1 2 290 1100 750
+preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)Hardware_Qsys.switch,(SLAVE)SWITCH.external_connection) 1 0 3 NJ 980 NJ 980 NJ
+preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)Hardware_Qsys.hex5_hex4,(SLAVE)HEX5_HEX4.external_connection) 1 0 3 NJ 1080 NJ 1080 NJ
 preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)Hardware_Qsys.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)LEDR.external_connection,(SLAVE)Hardware_Qsys.ledr) 1 0 3 NJ 760 NJ 760 NJ
-preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)Hardware_Qsys.i2c_serial,(SLAVE)I2C.i2c_serial) 1 0 3 NJ 900 NJ 900 NJ
-preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)HEX5_HEX4.external_connection,(SLAVE)Hardware_Qsys.hex5_hex4) 1 0 3 NJ 1080 NJ 1080 NJ
-preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)Hardware_Qsys.pushbutton,(SLAVE)PB.external_connection) 1 0 3 NJ 40 NJ 40 NJ
+preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)PB.external_connection,(SLAVE)Hardware_Qsys.pushbutton) 1 0 3 NJ 60 NJ 60 NJ
+preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)Hardware_Qsys.ledr,(SLAVE)LEDR.external_connection) 1 0 3 NJ 760 NJ 760 NJ
+preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)clk_0.clk_in,(SLAVE)Hardware_Qsys.clk) 1 0 1 NJ
+preplace netloc INTERCONNECT<net_container>Hardware_Qsys</net_container>(SLAVE)UART_PC.reset,(SLAVE)PB.reset,(SLAVE)NIOSII_CPU.reset,(SLAVE)UART_LIDAR.reset,(SLAVE)HEX5_HEX4.reset,(SLAVE)TIMER_MAIN.reset,(MASTER)NIOSII_CPU.debug_reset_request,(SLAVE)I2C.reset_sink,(MASTER)clk_0.clk_reset,(SLAVE)SWITCH.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)MEMORY.reset1,(SLAVE)jtag_uart_0.reset,(SLAVE)LEDR.reset,(SLAVE)HEX3_HEX0.reset) 1 1 2 310 1200 710
 preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)UART_PC.external_connection,(SLAVE)Hardware_Qsys.uart_pc) 1 0 3 NJ 1180 NJ 1180 NJ
 preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)Hardware_Qsys.hex3_hex0,(SLAVE)HEX3_HEX0.external_connection) 1 0 3 NJ 500 NJ 500 NJ
-preplace netloc INTERCONNECT<net_container>Hardware_Qsys</net_container>(MASTER)clk_0.clk_reset,(SLAVE)NIOSII_CPU.reset,(SLAVE)PB.reset,(SLAVE)UART_PC.reset,(SLAVE)SWITCH.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)TIMER_MAIN.reset,(SLAVE)HEX3_HEX0.reset,(SLAVE)HEX5_HEX4.reset,(MASTER)NIOSII_CPU.debug_reset_request,(SLAVE)sysid_qsys_0.reset,(SLAVE)LEDR.reset,(SLAVE)UART_LIDAR.reset,(SLAVE)MEMORY.reset1,(SLAVE)I2C.reset_sink) 1 1 2 310 1200 710
-preplace netloc EXPORT<net_container>Hardware_Qsys</net_container>(SLAVE)Hardware_Qsys.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
-preplace netloc FAN_OUT<net_container>Hardware_Qsys</net_container>(MASTER)NIOSII_CPU.irq,(SLAVE)jtag_uart_0.irq,(SLAVE)I2C.interrupt_sender,(SLAVE)TIMER_MAIN.irq,(SLAVE)UART_LIDAR.irq,(SLAVE)UART_PC.irq,(SLAVE)PB.irq) 1 2 1 770
+preplace netloc FAN_OUT<net_container>Hardware_Qsys</net_container>(SLAVE)PB.irq,(SLAVE)UART_PC.irq,(SLAVE)I2C.interrupt_sender,(SLAVE)jtag_uart_0.irq,(SLAVE)TIMER_MAIN.irq,(MASTER)NIOSII_CPU.irq,(SLAVE)UART_LIDAR.irq) 1 2 1 770
 levelinfo -pg 1 0 80 980
 levelinfo -hier Hardware_Qsys 90 120 450 820 970

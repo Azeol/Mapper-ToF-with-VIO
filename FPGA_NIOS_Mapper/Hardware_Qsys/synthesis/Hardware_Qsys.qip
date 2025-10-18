@@ -2,7 +2,7 @@ set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "Hardware_Qsys" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../Hardware_Qsys.sopcinfo"]
-set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name SLD_INFO "QSYS_NAME Hardware_Qsys HAS_SOPCINFO 1 GENERATION_ID 1760717066"
+set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name SLD_INFO "QSYS_NAME Hardware_Qsys HAS_SOPCINFO 1 GENERATION_ID 1760798600"
 set_global_assignment -library "Hardware_Qsys" -name MISC_FILE [file join $::quartus(qip_path) "../Hardware_Qsys.cmp"]
 set_global_assignment -library "Hardware_Qsys" -name SLD_FILE [file join $::quartus(qip_path) "Hardware_Qsys.regmap"]
 set_global_assignment -library "Hardware_Qsys" -name SLD_FILE [file join $::quartus(qip_path) "Hardware_Qsys.debuginfo"]
@@ -16,7 +16,7 @@ set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTc2MDcxNzA2Ng==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTc2MDc5ODYwMA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::TUFYIDEw::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBNNTBEQUY0ODRDNkdFUw==::QXV0byBERVZJQ0U="
 set_global_assignment -entity "Hardware_Qsys" -library "Hardware_Qsys" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
