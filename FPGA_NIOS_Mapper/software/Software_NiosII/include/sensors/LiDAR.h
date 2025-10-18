@@ -19,8 +19,25 @@ typedef struct {
     float temperature;    // Chip temperature in Celsius
 } LiDAR_Data_t;
 
+// Global function prototypes
+
 void lidar_init(alt_u32 base, alt_u32 sys_clk_freq, alt_u32 baud_rate);
 int lidar_read_data(alt_u32 base, LiDAR_Data_t* data);
 int lidar_try_get(alt_u32 base, LiDAR_Data_t* data);
+
+/*
+Quick usage:
+    // Init once (after clocks/peripherals are ready)
+    lidar_init(UART_LIDAR_BASE, 50000000u, 115200u);
+
+    // In your timer ISR (see timerISR.c):
+    // void isrTimer_MAIN(...) { ... lidar_isr_step(); }
+
+    // In your main loop, poll for new data
+    LiDAR_Data_t d;
+    if (lidar_try_get(UART_LIDAR_BASE, &d) == 1) {
+        // use d.distance (mm), d.strength, d.temperature (°C)
+    }
+*/
 
 #endif /* LIDAR_H_ */

@@ -18,4 +18,17 @@ char uart_read_char(alt_u32 base);
 int uart_read_char_nonblocking(alt_u32 base);
 void uart_send_string(alt_u32 base, const char* str);
 
+/*
+Quick usage:
+	// Initialize and send a string
+	uart_init(UART_0_BASE, 50000000u, 115200u);
+	uart_send_string(UART_0_BASE, "Hello!\r\n");
+
+	// Read nonblocking in a loop
+	int ch = uart_read_char_nonblocking(UART_0_BASE);
+	if (ch >= 0) {
+		uart_send_char(UART_0_BASE, (char)ch); // echo
+	}
+*/
+
 #endif /* UART_H_ */

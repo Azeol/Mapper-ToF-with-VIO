@@ -20,7 +20,8 @@
 #include "drivers/i2c.h"
 #include "drivers/uart.h"
 #include "ISR/timerISR.h"
-#include "LiDAR.h"
+#include "sensors/MPU6050.h"
+#include "sensors/LiDAR.h"
 
 // I2C variables
 
@@ -29,6 +30,11 @@ ALT_AVALON_I2C_MASTER_CONFIG_t i2c_config;  // I2C configuration structure
 ALT_AVALON_I2C_STATUS_CODE i2c_status;      // I2C status code
 alt_u8 i2c_txbuffer[0x210];                 // Transmission buffer
 alt_u8 i2c_rxbuffer[0x200];                 // Reception buffer
+
+// MPU6050 variables
+
+mpu6050_t imu;
+alt_u8 who;
 
 int main()
 {
@@ -46,7 +52,12 @@ int main()
   }
 
   // Sensors initialization
-  lidar_init(UART_LIDAR_BASE, 50000000, 115200);
+  lidar_init(UART_LIDAR_BASE, 50000000u, 115200u);
+  mpu6050_init(&imu, i2c_dev, 0);
+
+  // Verify MPU6050 identity
+  mpu6050_who_am_i(&imu, &who); // expect 0x68
+  printf("MPU6050: 0x%02X\n", who);
 
   // Init timers for ISRs
   init_isrTimer_MAIN();

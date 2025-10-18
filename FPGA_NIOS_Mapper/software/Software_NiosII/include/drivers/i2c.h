@@ -23,4 +23,19 @@ ALT_AVALON_I2C_STATUS_CODE i2c_write_read(ALT_AVALON_I2C_DEV_t* i2c_dev,
                                           alt_u8* tx, size_t tx_length,
                                           alt_u8* rx, size_t rx_length);
 
+/*
+Quick usage:
+    ALT_AVALON_I2C_DEV_t* i2c = i2c_init(I2C_NAME, I2C_IMU_ADDRESS);
+    if (!i2c) { handle error
+    }
+
+    // Write register 0x6B = 0x00 (wake MPU6050)
+    alt_u8 w[2] = { 0x6B, 0x00 };
+    (void)i2c_write(i2c, w, 2);
+
+    // Read WHO_AM_I (0x75)
+    alt_u8 reg = 0x75, val = 0;
+    (void)i2c_write_read(i2c, &reg, 1, &val, 1);
+*/
+
 #endif // I2C_H_

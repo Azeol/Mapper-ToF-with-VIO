@@ -28,4 +28,18 @@
 
 int hex_display(char* value, int len, int first);
 
+/*
+Quick usage:
+	// Display "1234" starting at HEX0..HEX3
+	(void)hex_display("1234", 4, 0);
+
+	// Display "ab-c" starting at HEX2..HEX5
+	(void)hex_display("ab-c", 4, 2);
+
+Notes:
+	- Returns 0 if all chars were valid; >0 equals number of invalid chars.
+	- Supported chars: 0-9, a-f, h, i, l, m, o, r, u, '-'.
+	- first is the starting display index (0 = HEX0).
+*/
+
 #endif /* HEX_H_ */

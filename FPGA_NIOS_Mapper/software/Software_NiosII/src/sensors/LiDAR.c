@@ -74,7 +74,7 @@ static inline alt_u8 lidar_checksum(const alt_u8* u, size_t UART_BASE_BITS)
 
 /**
  * @brief LiDAR ISR step function to be called in a timer ISR to not block the CPU for too long
- * 
+ * using an FSM for logic
  */
 void lidar_isr_step(void)
 {
@@ -91,8 +91,10 @@ void lidar_isr_step(void)
 
         alt_u8 byte = (alt_u8)ch;
 
+        // FSM processing
         switch (s_state)
         {
+        // First Header byte
         case LIDAR_STATE_WAIT_HEADER_1:
             if (byte == LIDAR_HEADER)
             {
@@ -101,6 +103,7 @@ void lidar_isr_step(void)
             }
             break;
 
+        // Second Header byte
         case LIDAR_STATE_WAIT_HEADER_2:
             if (byte == LIDAR_HEADER)
             {
@@ -115,8 +118,10 @@ void lidar_isr_step(void)
             }
             break;
 
+        // Reading Data bytes
         case LIDAR_STATE_READ_DATA:
             s_data_buffer[s_data_index++] = byte;
+            
             if (s_data_index >= LIDAR_DATA_LENGTH)
             {
                 if(lidar_checksum(s_data_buffer, LIDAR_DATA_LENGTH - 1) == s_data_buffer[LIDAR_DATA_LENGTH - 1])
