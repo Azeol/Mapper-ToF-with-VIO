@@ -21,5 +21,6 @@ typedef struct {
 
 void lidar_init(alt_u32 base, alt_u32 sys_clk_freq, alt_u32 baud_rate);
 int lidar_read_data(alt_u32 base, LiDAR_Data_t* data);
+int lidar_try_get(alt_u32 base, LiDAR_Data_t* data);
 
 #endif /* LIDAR_H_ */

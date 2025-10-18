@@ -49,7 +49,7 @@ int main()
   lidar_init(UART_LIDAR_BASE, 50000000, 115200);
 
   // Init timers for ISRs
-  init_isrTimer_MAIN(UART_LIDAR_DATA_BITS);
+  init_isrTimer_MAIN();
 
   return 0;
 }

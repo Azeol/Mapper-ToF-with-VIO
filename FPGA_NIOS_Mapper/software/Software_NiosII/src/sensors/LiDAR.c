@@ -14,6 +14,7 @@
 // Altera lib
 #include "alt_types.h"
 #include "system.h"
+#include "sys/alt_irq.h"
 
 // Project lib
 #include "drivers/uart.h"
@@ -36,6 +37,10 @@ static alt_u8 s_state = LIDAR_STATE_WAIT_HEADER_1;
 static alt_u8 s_data_index = 0;
 static alt_u8 s_data_buffer[LIDAR_DATA_LENGTH];
 
+// Non global function prototypes
+
+static inline alt_u8 lidar_checksum(const alt_u8* u, size_t UART_BASE_BITS);
+
 /**
  * @brief Initialize the LiDAR sensor
  * 
@@ -54,7 +59,7 @@ void lidar_init(alt_u32 base, alt_u32 sys_clk_freq, alt_u32 baud_rate)
 }
 
 /**
- * @brief Checksum calculation for LiDAR data packet as shown in data sheet
+ * @brief Checksum calculation for LiDAR data packet as shown in datasheet
  * 
  * @param base  Base address of the UART
  * @param data  Pointer to LiDAR_Data_t structure to store the read data
@@ -136,7 +141,25 @@ void lidar_isr_step(void)
     }
 }
 
-alt_u8 lidar_try_get_data(LiDAR_Data_t* out)
+/**
+ * @brief Try to get the latest LiDAR data if available
+ * this function is to be used in the loops as an if-check
+ * 
+ * @param base  Base address of the UART
+ * @param data  Pointer to LiDAR_Data_t structure to store the read data
+ * @return int  1 if new data was available and copied, 0 if no new data, -1 on error
+ */
+int lidar_try_get(alt_u32 base, LiDAR_Data_t* data)
 {
+    if (data == NULL) return -1;
 
+    alt_irq_context ctx = alt_irq_disable_all();
+    uint8_t has = s_has_new;
+    if (has) {
+        *data = s_latest;   // Atomic copy with IRQ off
+        s_has_new = 0;
+    }
+    alt_irq_enable_all(ctx);
+
+    return has ? 1 : 0;
 }
