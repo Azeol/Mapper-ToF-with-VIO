@@ -51,6 +51,12 @@ int main()
       return -1;
   }
 
+  // IMU Configuration
+  mpu6050_set_sample_rate_div(&imu, 0); // max Hz (1kHz)
+  mpu6050_set_dlpf(&imu, MPU6050_DLPF_260HZ); // max bandwidth
+  mpu6050_set_accel_range(&imu, MPU6050_ACCEL_4G); // +-4G
+  mpu6050_set_gyro_range(&imu, MPU6050_GYRO_500DPS); // +-500 deg/s
+
   // Sensors initialization
   lidar_init(UART_LIDAR_BASE, 50000000u, 115200u);
   mpu6050_init(&imu, i2c_dev, 0);

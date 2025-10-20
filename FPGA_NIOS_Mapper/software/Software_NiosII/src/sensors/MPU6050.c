@@ -161,6 +161,13 @@ int mpu6050_set_sample_rate_div(mpu6050_t* imu, alt_u8 div)
 	return 0;
 }
 
+/**
+ * @brief Set the digital low-pass filter (DLPF) of the MPU6050
+ * 
+ * @param imu  Pointer to the MPU6050 structure
+ * @param dlpf Digital low-pass filter setting
+ * @return int 
+ */
 int mpu6050_set_dlpf(mpu6050_t* imu, mpu6050_dlpf_t dlpf)
 {
 	if (!imu) return -1;

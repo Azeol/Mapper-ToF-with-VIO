@@ -56,6 +56,7 @@ void isrTimer_MAIN(void *context, alt_u32 id)
     IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_MAIN_BASE, 0); // RESET the interrupt /!\ to do it each time
 
     lidar_isr_step();
+    
 
     return;
 }
