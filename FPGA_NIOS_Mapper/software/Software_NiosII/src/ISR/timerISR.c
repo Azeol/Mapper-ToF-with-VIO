@@ -46,7 +46,7 @@ static data_PC_t sensor_data;
 static mpu6050_data_t imu_data;
 static alt_u32 timestamp_counter;
 
-// Rewriting UART Helpers (little-endian)
+// UART Helpers (little-endian)
 static inline void uart_send_u16le(alt_u32 base, alt_u16 v) {
     uart_send_char(base, (char)(v & 0xFF));
     uart_send_char(base, (char)((v >> 8) & 0xFF));
@@ -126,14 +126,14 @@ void isrTimer_MAIN(void *context, alt_u32 id)
     uart_send_s16le(UART_PC_BASE, sensor_data.gz);
 
     // Hex display of timestamp on HEX5 and HEX4
-    hex_display((char *)&sensor_data.timestamp, 2, 0);
+    hex_display(sensor_data.timestamp, 2, 0);
 
     // Heartbeat LED toggle
     static int led_state = 0;
     if (timestamp_counter % 500 == 0) {
         led_state = !led_state;
     }
-    //IOWR_ALTERA_AVALON_PIO_DATA(LEDR_BASE, led_state);
+    led_SetLed(8, led_state);
 
     // Increment timestamp
     timestamp_counter += 1;

@@ -144,9 +144,11 @@ ELF := Software_NiosII.elf
 # Paths to C, C++, and assembly source files.
 C_SRCS += src/drivers/hex.c
 C_SRCS += src/drivers/i2c.c
+C_SRCS += src/drivers/led.c
 C_SRCS += src/drivers/uart.c
 C_SRCS += src/ISR/timerISR.c
 C_SRCS += src/sensors/LiDAR.c
+C_SRCS += src/sensors/MPU6050.c
 C_SRCS += src/main.c
 
 # add all C sources placed in src/drivers/

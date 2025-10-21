@@ -30,6 +30,10 @@ For I2C I use the GPIO0 as SDA and GPIO1 as SCL
 For UART I use the GPIO34 as RxD and the GPIO35 as TxD for the LiDAR and GPIO32 as RxD and GPIO33 as TxD for the PC
 ![alt text](images/ExpansionHeader.png)
 
+### LED Representation on FPGA
+
+To be able to debug and add a bit of a feedback on what's happening I added 
+
 ### Command needed on Nios2 Command Shell to upload code
 
 For those commands you need to do a cd /cygdrive/c/Users/YourUsername/Mapper-ToF-with-VIO/FPGA_NIOS_Mapper/software/Software_NiosII or Software_NiosII_bsp.
