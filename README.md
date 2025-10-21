@@ -40,6 +40,10 @@ To be able to debug and add a bit of a feedback on what's happening I added an L
 - LED 6-1 = not defined yet
 - LED 0 = 2Hz heartbeat
 
+### Debug mode
+
+To be able to activate the debug mode you need to put all switches up before starting the FPGA (before uploading code or before the soft reset with PB).
+
 ### Command needed on Nios2 Command Shell to upload code
 
 For those commands you need to do a cd /cygdrive/c/Users/YourUsername/Mapper-ToF-with-VIO/FPGA_NIOS_Mapper/software/Software_NiosII or Software_NiosII_bsp.
