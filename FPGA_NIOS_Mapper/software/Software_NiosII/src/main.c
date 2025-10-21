@@ -32,11 +32,19 @@ ALT_AVALON_I2C_DEV_t* i2c_dev;              // Pointer to I2C device structure
 
 static int mpu6050_initialization; // Status variable
 static alt_u8 g_who; // WHO_AM_I Variable
+int debug_mode = 0; // Debug mode flag
 
 int main()
 {
   printf("Nios II successfully initialized\n");
 
+  // Detecting debug mode via switches
+  int sw = IORD_ALTERA_AVALON_PIO_DATA(SWITCH_BASE);
+  if (sw == 0b1111111111)
+  {
+    debug_mode = 1;
+    printf("Debug mode enabled!\n");
+  }
   // Initialization indication
   (void)hex_display("123456", 6, 0);
 
@@ -48,7 +56,10 @@ int main()
   {
       printf("I2C failed to open connection!\n");
       (void)hex_display("Error-", 6, 0);
-      return -1;
+      if (!debug_mode)
+      {
+          return -1;
+      }
   }
 
   (void)led_SetLed(9, 1); // Indicate I2C init success
@@ -59,7 +70,10 @@ int main()
   {
       printf("MPU6050 initialization failed with code %d\n", mpu6050_initialization);
       (void)hex_display("Error-", 6, 0);
-      return -1;
+      if (!debug_mode)
+      {
+          return -1;
+      }
   }
 
   // IMU Configuration
@@ -69,11 +83,14 @@ int main()
   err += mpu6050_set_accel_range(&g_imu, MPU6050_ACCEL_4G); // +-4G
   err += mpu6050_set_gyro_range(&g_imu, MPU6050_GYRO_500DPS); // +-500 deg/s
 
-  if (err != 0) 
+  if (err != 0)
   {
       printf("MPU6050 configuration failed with code %d\n", err);
       (void)hex_display("Error-", 6, 0);
-      return -1;
+      if (!debug_mode)
+      {
+          return -1;
+      }
   }
   (void)led_SetLed(8, 1); // Indicate IMU init success
 
@@ -86,8 +103,11 @@ int main()
   if (g_who != MPU6050_REG_WHO_AM_I) 
   {
       printf("MPU6050 WHO_AM_I mismatch!\n");
-      (void)hex_display("Error-", 6, 0);
-      return -1;
+      (void)hex_display("Error-", 6, 6);
+      if (!debug_mode)
+      {
+          return -1;
+      }
   }
 
   // Init timers for ISRs

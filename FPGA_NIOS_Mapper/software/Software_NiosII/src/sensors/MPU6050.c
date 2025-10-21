@@ -153,7 +153,7 @@ int mpu6050_set_clock_source(mpu6050_t* imu, alt_u8 clksel)
  * 
  * @param imu Pointer to the MPU6050 structure
  * @param div Sample rate divider
- * @return int return -1 on failure, 0 on success
+ * @return int return 0 on success, -1 if imu is NULL, -2 on write error
  */
 int mpu6050_set_sample_rate_div(mpu6050_t* imu, alt_u8 div)
 {
@@ -167,7 +167,7 @@ int mpu6050_set_sample_rate_div(mpu6050_t* imu, alt_u8 div)
  * 
  * @param imu  Pointer to the MPU6050 structure
  * @param dlpf Digital low-pass filter setting
- * @return int return -1 on failure, 0 on success
+ * @return int return 0 on success, -1 if imu is NULL, -2 on read error, -3 on write error
  */
 int mpu6050_set_dlpf(mpu6050_t* imu, mpu6050_dlpf_t dlpf)
 {
@@ -184,7 +184,7 @@ int mpu6050_set_dlpf(mpu6050_t* imu, mpu6050_dlpf_t dlpf)
  * 
  * @param imu Pointer to the MPU6050 structure
  * @param range Gyroscope range setting
- * @return int return -1 on failure, 0 on success
+ * @return int return 0 on success, -1 if imu is NULL, -2 on read error, -3 on write error
  */
 int mpu6050_set_accel_range(mpu6050_t* imu, mpu6050_accel_range_t range)
 {
@@ -202,7 +202,7 @@ int mpu6050_set_accel_range(mpu6050_t* imu, mpu6050_accel_range_t range)
  * 
  * @param imu Pointer to the MPU6050 structure
  * @param range Gyroscope range setting
- * @return int return -1 on failure, 0 on success
+ * @return int return 0 on success, -1 if imu is NULL, -2 on read error, -3 on write error
  */
 int mpu6050_set_gyro_range(mpu6050_t* imu, mpu6050_gyro_range_t range)
 {

@@ -75,6 +75,7 @@ static inline void uart_send_u32le(alt_u32 base, alt_u32 v) {
  */
 void init_isrTimer_MAIN()
 {
+    printf("Main timer ISR initialized.\n");
     // Configure and initialize the interrupt
     alt_ic_isr_register(TIMER_MAIN_IRQ_INTERRUPT_CONTROLLER_ID, TIMER_MAIN_IRQ, (void *)isrTimer_MAIN, NULL, 0x0);
 
@@ -96,9 +97,36 @@ void isrTimer_MAIN(void *context, alt_u32 id)
 {
     IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_MAIN_BASE, 0); // RESET the interrupt /!\ to do it each time
 
-    // Call periodic functions
-    lidar_isr_step();
+    // Read user inputs
+    int press = IORD_ALTERA_AVALON_PIO_DATA(PB_BASE);
+    IOWR_ALTERA_AVALON_PIO_DATA(PB_BASE, 0); // Clear buttons after read
 
+    if (press == 0b01)
+    {
+        // Reset timestamp counter
+        printf("Timestamp counter reset by user!\n");
+        timestamp_counter = 0;
+    } else if (press == 0b10)
+    {
+        // Pause timestamp counter for an iteration
+        printf("Timestamp counter paused for one iteration.\n");
+        return;
+    } else if (press == 0b00)
+    {
+        alt_irq_disable_all();
+        (void)hex_display("000000", 6, 0); // Clear display
+        for(int i = 0; i < 10; i++)
+        {
+            (void)led_SetLed(9 - i, 1); // Light up LEDs one by one
+        }
+        printf("System reset triggered by user!\n");
+        usleep(2000000); // 2s delay before reset
+        ((void (*)(void))NIOS2_RESET_ADDR)();
+    }
+    
+
+    // Call LiDAR FSM to step
+    lidar_isr_step();
 
     // Read raw IMU data (14-byte burst, no float math in ISR)
     err = mpu6050_read_conv(&g_imu,
