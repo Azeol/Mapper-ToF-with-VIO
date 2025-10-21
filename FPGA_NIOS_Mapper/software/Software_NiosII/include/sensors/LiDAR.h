@@ -14,10 +14,14 @@
 #define LIDAR_DATA_LENGTH   UART_LIDAR_DATA_BITS     // Total bytes in a data package
 
 typedef struct {
-    uint16_t distance;    // Distance measurement in mm
-    uint16_t strength;    // Signal strength
+    alt_u16 distance;    // Distance measurement in mm
+    alt_u16 strength;    // Signal strength
     float temperature;    // Chip temperature in Celsius
 } LiDAR_Data_t;
+
+// Global variables
+
+static alt_u8 s_data_buffer[LIDAR_DATA_LENGTH];
 
 // Global function prototypes
 

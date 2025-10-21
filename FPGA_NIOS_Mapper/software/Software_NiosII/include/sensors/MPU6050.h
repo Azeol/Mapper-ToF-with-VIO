@@ -76,15 +76,25 @@ typedef struct {
 	float gyro_lsb_per_dps;    /* e.g., 131 for 250 dps */
 } mpu6050_t;
 
+/* Sensor data structure */
+typedef struct {
+	alt_16 ax;
+	alt_16 ay;
+	alt_16 az;
+	alt_16 gx;
+	alt_16 gy;
+	alt_16 gz;
+	alt_16 temp_raw;
+} mpu6050_data_t;
+
 // Global variables
 
-static mpu6050_t g_imu = {
+static mpu6050_t g_imu = { // Global IMU Variable
 	I2C_BASE,
 	MPU6050_I2C_ADDR_DEFAULT,
 	16384.0f,
 	131.0f
-}; // Global IMU Variable
-static alt_u8 g_who; // Global WHO_AM_I Variable
+}; 
 
 /* Initialization: set clock, wake, DLPF, sample rate, default ranges */
 
@@ -106,14 +116,14 @@ int mpu6050_set_gyro_range(mpu6050_t* imu, mpu6050_gyro_range_t range);
 /* Reading */
 
 int mpu6050_read_raw(mpu6050_t* imu,
-					 int16_t* ax, int16_t* ay, int16_t* az,
-					 int16_t* gx, int16_t* gy, int16_t* gz,
-					 int16_t* temp_raw);
+					 alt_16* ax, alt_16* ay, alt_16* az,
+					 alt_16* gx, alt_16* gy, alt_16* gz,
+					 alt_16* temp_raw);
 
 int mpu6050_read_conv(mpu6050_t* imu,
-					  float* ax_g, float* ay_g, float* az_g,
-					  float* gx_dps, float* gy_dps, float* gz_dps,
-					  float* temp_c);
+					  alt_16* ax_g, alt_16* ay_g, alt_16* az_g,
+					  alt_16* gx_dps, alt_16* gy_dps, alt_16* gz_dps,
+					  alt_16* temp_c);
 
 /*
 Quick usage:

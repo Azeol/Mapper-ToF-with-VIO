@@ -35,7 +35,6 @@ enum{
 
 static alt_u8 s_state = LIDAR_STATE_WAIT_HEADER_1;
 static alt_u8 s_data_index = 0;
-static alt_u8 s_data_buffer[LIDAR_DATA_LENGTH];
 
 // Non global function prototypes
 

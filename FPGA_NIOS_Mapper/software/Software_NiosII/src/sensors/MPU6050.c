@@ -214,22 +214,22 @@ int mpu6050_set_gyro_range(mpu6050_t* imu, mpu6050_gyro_range_t range)
  * @return int 
  */
 int mpu6050_read_raw(mpu6050_t* imu,
-					 int16_t* ax, int16_t* ay, int16_t* az,
-					 int16_t* gx, int16_t* gy, int16_t* gz,
-					 int16_t* temp_raw)
+					 alt_16* ax, alt_16* ay, alt_16* az,
+					 alt_16* gx, alt_16* gy, alt_16* gz,
+					 alt_16* temp_raw)
 {
 	if (!imu) return -1;
 	alt_u8 buf[14];
 	ALT_AVALON_I2C_STATUS_CODE st = burst_read(imu, MPU6050_REG_ACCEL_XOUT_H, buf, sizeof(buf));
 	if (st != ALT_AVALON_I2C_SUCCESS) return -2;
 
-	if (ax) *ax = (int16_t)((buf[0]<<8) | buf[1]);
-	if (ay) *ay = (int16_t)((buf[2]<<8) | buf[3]);
-	if (az) *az = (int16_t)((buf[4]<<8) | buf[5]);
-	if (temp_raw) *temp_raw = (int16_t)((buf[6]<<8) | buf[7]);
-	if (gx) *gx = (int16_t)((buf[8]<<8) | buf[9]);
-	if (gy) *gy = (int16_t)((buf[10]<<8) | buf[11]);
-	if (gz) *gz = (int16_t)((buf[12]<<8) | buf[13]);
+	if (ax) *ax = (alt_16)((buf[0]<<8) | buf[1]);
+	if (ay) *ay = (alt_16)((buf[2]<<8) | buf[3]);
+	if (az) *az = (alt_16)((buf[4]<<8) | buf[5]);
+	if (temp_raw) *temp_raw = (alt_16)((buf[6]<<8) | buf[7]);
+	if (gx) *gx = (alt_16)((buf[8]<<8) | buf[9]);
+	if (gy) *gy = (alt_16)((buf[10]<<8) | buf[11]);
+	if (gz) *gz = (alt_16)((buf[12]<<8) | buf[13]);
 	return 0;
 }
 
@@ -247,22 +247,22 @@ int mpu6050_read_raw(mpu6050_t* imu,
  * @return int 
  */
 int mpu6050_read_conv(mpu6050_t* imu,
-					  float* ax_g, float* ay_g, float* az_g,
-					  float* gx_dps, float* gy_dps, float* gz_dps,
-					  float* temp_c)
+					  alt_16* ax_g, alt_16* ay_g, alt_16* az_g,
+					  alt_16* gx_dps, alt_16* gy_dps, alt_16* gz_dps,
+					  alt_16* temp_c)
 {
 	if (!imu) return -1;
-	int16_t ax, ay, az, gx, gy, gz, traw;
+	alt_16 ax, ay, az, gx, gy, gz, traw;
 	int rc = mpu6050_read_raw(imu, &ax, &ay, &az, &gx, &gy, &gz, &traw);
 	if (rc != 0) return rc;
 
-	if (ax_g) *ax_g = ((float)ax) / (imu->accel_lsb_per_g);
-	if (ay_g) *ay_g = ((float)ay) / (imu->accel_lsb_per_g);
-	if (az_g) *az_g = ((float)az) / (imu->accel_lsb_per_g);
-	if (gx_dps) *gx_dps = ((float)gx) / (imu->gyro_lsb_per_dps);
-	if (gy_dps) *gy_dps = ((float)gy) / (imu->gyro_lsb_per_dps);
-	if (gz_dps) *gz_dps = ((float)gz) / (imu->gyro_lsb_per_dps);
-	if (temp_c) *temp_c = ((float)traw) / 340.0f + 36.53f; /* per datasheet */
+	if (ax_g) *ax_g = ((alt_16)ax) / (imu->accel_lsb_per_g);
+	if (ay_g) *ay_g = ((alt_16)ay) / (imu->accel_lsb_per_g);
+	if (az_g) *az_g = ((alt_16)az) / (imu->accel_lsb_per_g);
+	if (gx_dps) *gx_dps = ((alt_16)gx) / (imu->gyro_lsb_per_dps);
+	if (gy_dps) *gy_dps = ((alt_16)gy) / (imu->gyro_lsb_per_dps);
+	if (gz_dps) *gz_dps = ((alt_16)gz) / (imu->gyro_lsb_per_dps);
+	if (temp_c) *temp_c = ((alt_16)traw) / 340.0f + 36.53f; /* per datasheet */
 	return 0;
 }
 

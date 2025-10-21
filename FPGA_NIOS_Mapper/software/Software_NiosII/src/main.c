@@ -31,12 +31,17 @@ ALT_AVALON_I2C_STATUS_CODE i2c_status;      // I2C status code
 alt_u8 i2c_txbuffer[0x210];                 // Transmission buffer
 alt_u8 i2c_rxbuffer[0x200];                 // Reception buffer
 
+// MPU6050 variables
+
+static int mpu6050_initialization; // Status variable
+static alt_u8 g_who; // WHO_AM_I Variable
+
 int main()
 {
-  printf("Hello from Nios II!\n");
+  printf("Nios II successfully initialized\n");
 
-  //testing hex
-  //hex_display("123456", 6, 0);
+  //testing hex 
+  hex_display("hhhhhh", 6, 0);
 
   // Initialize I2C
   i2c_dev = i2c_init(I2C_NAME, I2C_IMU_ADDRESS);
@@ -45,6 +50,7 @@ int main()
       printf("I2C initialization failed!\n");
       return -1;
   }
+  //IOWR_ALTERA_AVALON_PIO_DATA(LEDR_BASE, 0); // Indicate I2C init success
 
   // IMU Configuration
   mpu6050_set_sample_rate_div(&g_imu, 0); // max Hz (1kHz)
@@ -54,12 +60,21 @@ int main()
 
   // Sensors initialization
   lidar_init(UART_LIDAR_BASE, 50000000u, 115200u);
-  mpu6050_init(&g_imu, i2c_dev, 0);
+  //IOWR_ALTERA_AVALON_PIO_DATA(LEDR_BASE, 1); // Indicate LiDAR init
+
+  mpu6050_initialization = mpu6050_init(&g_imu, i2c_dev, 0);
+  if (mpu6050_initialization != 0) 
+  {
+      printf("MPU6050 initialization failed with code %d\n", mpu6050_initialization);
+      return -1;
+  }
+  //IOWR_ALTERA_AVALON_PIO_DATA(LEDR_BASE, 2); // Indicate IMU init success
 
   // Verify MPU6050 identity
   mpu6050_who_am_i(&g_imu, &g_who); // expect 0x68
   printf("MPU6050: 0x%02X\n", g_who);
 
+  hex_display("000000", 6, 0); // Indicate all inits done
   // Init timers for ISRs
   init_isrTimer_MAIN();
 
