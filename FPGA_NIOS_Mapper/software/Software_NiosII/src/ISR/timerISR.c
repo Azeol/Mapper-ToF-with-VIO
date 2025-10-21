@@ -99,30 +99,30 @@ void isrTimer_MAIN(void *context, alt_u32 id)
 
     // Read user inputs
     int press = IORD_ALTERA_AVALON_PIO_DATA(PB_BASE);
-    IOWR_ALTERA_AVALON_PIO_DATA(PB_BASE, 0); // Clear buttons after read
+    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PB_BASE, 0); // Clear buttons after read
 
-    if (press == 0b01)
-    {
-        // Reset timestamp counter
-        printf("Timestamp counter reset by user!\n");
-        timestamp_counter = 0;
-    } else if (press == 0b10)
-    {
-        // Pause timestamp counter for an iteration
-        printf("Timestamp counter paused for one iteration.\n");
-        return;
-    } else if (press == 0b00)
-    {
-        alt_irq_disable_all();
-        (void)hex_display("000000", 6, 0); // Clear display
-        for(int i = 0; i < 10; i++)
-        {
-            (void)led_SetLed(9 - i, 1); // Light up LEDs one by one
-        }
-        printf("System reset triggered by user!\n");
-        usleep(2000000); // 2s delay before reset
-        ((void (*)(void))NIOS2_RESET_ADDR)();
-    }
+    //if (press == 0b01)
+    //{
+    //    // Reset timestamp counter
+    //    printf("Timestamp counter reset by user!\n");
+    //    timestamp_counter = 0;
+    //} else if (press == 0b10)
+    //{
+    //    // Pause timestamp counter for an iteration
+    //    printf("Timestamp counter paused for one iteration.\n");
+    //    return;
+    //} else if (press == 0b01)
+    //{
+    //    alt_irq_disable_all();
+    //    (void)hex_display("000000", 6, 0); // Clear display
+    //    for(int i = 0; i < 10; i++)
+    //    {
+    //        (void)led_SetLed(9 - i, 1); // Light up LEDs one by one
+    //    }
+    //    printf("System reset triggered by user!\n");
+    //    usleep(2000000); // 2s delay before reset
+    //    ((void (*)(void))NIOS2_RESET_ADDR)();
+    //}
     
 
     // Call LiDAR FSM to step
