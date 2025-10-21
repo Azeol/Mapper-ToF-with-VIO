@@ -5,7 +5,7 @@ It probably wont work but ehhh if it works it works. Most of my work on the Nios
 Probably will try to put it on a drone if it works and if I find how to send data over the air to my PC.  
 This project is mainly to familiarize myself with Verilog/SystemVerilog, Quartus and FGPA overall and git. 
 I am currently doing this project in C and after seeing that it works, I will redo everything in SV and Verilog.   
-/!\ Note to self : remember to deactivate Memory integrity to enable Quartus USB-driver and let OpenCore open before uploading the bit stream /!\
+**!Note to self : remember to deactivate Memory integrity to enable Quartus USB-driver and let OpenCore open before uploading the bit stream!**
 
 ## Project objectives
 
