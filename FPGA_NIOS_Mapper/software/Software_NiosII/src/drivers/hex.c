@@ -138,17 +138,20 @@ int char27seg(char in, int *val)
 int hex_display(char *value, int len, int first)
 {
     // Input validation
+    // Check for length overflow
     if ((first + len) > HEX_NB)
     {
         return -1;
     }
+    // Check for empty string
     if (len > HEX_NB)
     {
-        return -1;
+        return -2;
     }
+    // Check for invalid first index
     if ((first > HEX_NB) | (first < 0))
     {
-        return -1;
+        return -3;
     }
 
     // Copy the data
@@ -169,7 +172,7 @@ int hex_display(char *value, int len, int first)
 
     for (int k = 0; k < HEX_NB; k++)
     {
-        // Get the associated char and return if a char is invalid
+        // Get the associated char and add error counter if a char is invalid
         if (char27seg(buff[k], &tmp) < 0)
         {
             err += 1;

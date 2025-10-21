@@ -38,7 +38,13 @@ int main()
   printf("Nios II successfully initialized\n");
 
   // Initialization indication
-  hex_display("123456", 6, 0);
+  int err = hex_display("123456", 6, 0);
+  if (err != 0)
+  {
+      printf("7-segment display initialization failed with %d!\n", err);
+      return -1;
+  }
+
   IOWR_ALTERA_AVALON_PIO_DATA(LEDR_BASE, 0b0000000000); // All LEDs OFF
   usleep(500000); // 500ms delay
 
