@@ -45,9 +45,9 @@ PS : for the Quartus folder I only put the most important files
 
 Mapper-ToF-with-VIO  
 ┣ **Documentation --> Doc folder**  
-┃ ┣ DE10_Lite_User_Manual.pdf 
-┃ ┣ MPU-6000-Datasheet.pdf   
-┃ ┣ TFmini-Plus-A02_Product_Manual_EN.pdf
+┃ ┣ DE10_Lite_User_Manual.pdf  
+┃ ┣ MPU-6000-Datasheet.pdf  
+┃ ┣ TFmini-Plus-A02_Product_Manual_EN.pdf  
 ┃ ┗ ug_embedded_ip.pdf  
 ┣ **FPGA_NIOS_Mapper --> Quartus project**  
 ┃ ┣ Hardware_Qsys  
