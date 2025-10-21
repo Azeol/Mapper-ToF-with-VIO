@@ -47,7 +47,7 @@ You also need to be on a Nios2 Command Shell.
 
 ### HEX
 
->0 = number of invalid char  
+\>0 = number of invalid char  
  0 = success  
 -1 = length overflow  
 -2 = empty string  
