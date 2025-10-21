@@ -54,9 +54,6 @@ int main()
   (void)led_SetLed(9, 1); // Indicate I2C init success
 
   // Sensors initialization
-  lidar_init(UART_LIDAR_BASE, 50000000u, 115200u);
-  (void)led_SetLed(8, 1); // Indicate LiDAR init success
-
   mpu6050_initialization = mpu6050_init(&g_imu, i2c_dev, 0);
   if (mpu6050_initialization != 0) 
   {
@@ -78,8 +75,10 @@ int main()
       (void)hex_display("Error-", 6, 0);
       return -1;
   }
+  (void)led_SetLed(8, 1); // Indicate IMU init success
 
-  (void)led_SetLed(7, 1); // Indicate IMU init success
+  lidar_init(UART_LIDAR_BASE, 50000000u, 115200u);
+  (void)led_SetLed(7, 1); // Indicate LiDAR init success
 
   // Verify MPU6050 identity
   (void)mpu6050_who_am_i(&g_imu, &g_who); // expect 0x68

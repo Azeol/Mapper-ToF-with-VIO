@@ -32,7 +32,13 @@ For UART I use the GPIO34 as RxD and the GPIO35 as TxD for the LiDAR and GPIO32 
 
 ### LED Representation on FPGA
 
-To be able to debug and add a bit of a feedback on what's happening I added 
+To be able to debug and add a bit of a feedback on what's happening I added an LED HMI
+
+- LED 9 = I2C init success
+- LED 8 = IMU init success
+- LED 7 = LiDAR init success
+- LED 6-1 = not defined yet
+- LED 0 = 2Hz heartbeat
 
 ### Command needed on Nios2 Command Shell to upload code
 
