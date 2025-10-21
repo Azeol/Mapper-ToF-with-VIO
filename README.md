@@ -20,9 +20,9 @@ Example of 3D could point from a ToF LiDAR taken from the internet
 
 [IMU + ToF] -> [Nios II / FPGA] -> [PC]
 
-- **DE10-Lite / FPGA (Verilog)**: sensor acquisition, timestamping, transmission
+- **DE10-Lite / FPGA (Verilog)**: sensor acquisition, timestamping, transmission  
 - **Nios II processor (C++)**: IMU + ToF + I2C + UART + timer drivers  
-- **PC (Python)**: VIO processing and 3D point cloud construction and interpolation
+- **PC (Python)**: VIO processing and 3D point cloud construction and interpolation  
 
 ### DE10 Lite Expansion Header
 
