@@ -66,7 +66,8 @@ static void update_scales(mpu6050_t* imu, mpu6050_accel_range_t arange, mpu6050_
  * @param imu  Pointer to the MPU6050 structure
  * @param i2c  Pointer to the I2C device structure
  * @param addr Address of the MPU6050 (0 or default 0x68)
- * @return int 
+ * @return int 1 = true, 0 = success, -1 = error, -2 = timeout, -3 = bad arg, -4 = range error, -5 = NACK error,
+ * 			  -6 = arb lost, -7 = is busy
  */
 int mpu6050_init(mpu6050_t* imu, ALT_AVALON_I2C_DEV_t* i2c, alt_u8 addr)
 {
@@ -101,7 +102,7 @@ int mpu6050_init(mpu6050_t* imu, ALT_AVALON_I2C_DEV_t* i2c, alt_u8 addr)
  * 
  * @param imu Pointer to the MPU6050 structure
  * @param who Pointer to the variable to store the WHO_AM_I value
- * @return int 
+ * @return int return -1 on failure, 0 on success
  */
 int mpu6050_who_am_i(mpu6050_t* imu, alt_u8* who)
 {
@@ -152,7 +153,7 @@ int mpu6050_set_clock_source(mpu6050_t* imu, alt_u8 clksel)
  * 
  * @param imu Pointer to the MPU6050 structure
  * @param div Sample rate divider
- * @return int 
+ * @return int return -1 on failure, 0 on success
  */
 int mpu6050_set_sample_rate_div(mpu6050_t* imu, alt_u8 div)
 {
@@ -166,7 +167,7 @@ int mpu6050_set_sample_rate_div(mpu6050_t* imu, alt_u8 div)
  * 
  * @param imu  Pointer to the MPU6050 structure
  * @param dlpf Digital low-pass filter setting
- * @return int 
+ * @return int return -1 on failure, 0 on success
  */
 int mpu6050_set_dlpf(mpu6050_t* imu, mpu6050_dlpf_t dlpf)
 {
@@ -178,6 +179,13 @@ int mpu6050_set_dlpf(mpu6050_t* imu, mpu6050_dlpf_t dlpf)
 	return 0;
 }
 
+/**
+ * @brief Set the gyroscope range of the MPU6050
+ * 
+ * @param imu Pointer to the MPU6050 structure
+ * @param range Gyroscope range setting
+ * @return int return -1 on failure, 0 on success
+ */
 int mpu6050_set_accel_range(mpu6050_t* imu, mpu6050_accel_range_t range)
 {
 	if (!imu) return -1;
@@ -189,6 +197,13 @@ int mpu6050_set_accel_range(mpu6050_t* imu, mpu6050_accel_range_t range)
 	return 0;
 }
 
+/**
+ * @brief Set the gyroscope range of the MPU6050
+ * 
+ * @param imu Pointer to the MPU6050 structure
+ * @param range Gyroscope range setting
+ * @return int return -1 on failure, 0 on success
+ */
 int mpu6050_set_gyro_range(mpu6050_t* imu, mpu6050_gyro_range_t range)
 {
 	if (!imu) return -1;

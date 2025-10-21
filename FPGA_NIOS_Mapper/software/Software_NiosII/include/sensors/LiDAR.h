@@ -22,6 +22,7 @@ typedef struct {
 // Global variables
 
 static alt_u8 s_data_buffer[LIDAR_DATA_LENGTH];
+static volatile LiDAR_Data_t s_latest;
 
 // Global function prototypes
 

@@ -128,12 +128,12 @@ int char27seg(char in, int *val)
 }
 
 /**
- * @brief Convert a hexadecimal string to its 7-segment display representation.
+ * @brief Convert a hexadecimal string to its 7-segment display representation. Only accepted chars are 0-9, a-f, h, i, l, m, o, r, u and -.
  * 
  * @param value  The input hexadecimal string.
  * @param len    The length of the input string.
  * @param first  The starting position for the display.
- * @return int   0 on success, -1 on failure.
+ * @return int   >0 for the number of invalid char, 0 on success, -1 on length overflow, -2 on empty string, -3 on invalid first index.
  */
 int hex_display(char *value, int len, int first)
 {

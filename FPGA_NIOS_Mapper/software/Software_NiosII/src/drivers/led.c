@@ -15,6 +15,13 @@
 // Project lib
 #include "drivers/led.h"
 
+/**
+ * @brief Set the state of a specific LED
+ * 
+ * @param led   LED number (0-9)
+ * @param state LED state (0 = off, 1 = on)
+ * @return int  0 on success, -1 on invalid LED number
+ */
 int led_SetLed(int led, int state)
 {
     // Input checks

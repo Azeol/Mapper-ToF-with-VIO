@@ -45,6 +45,7 @@ typedef struct {
 static data_PC_t sensor_data;
 static mpu6050_data_t imu_data;
 static alt_u32 timestamp_counter;
+int err;
 
 // UART Helpers (little-endian)
 static inline void uart_send_u16le(alt_u32 base, alt_u16 v) {
@@ -97,16 +98,21 @@ void isrTimer_MAIN(void *context, alt_u32 id)
 
     // Call periodic functions
     lidar_isr_step();
+
+
     // Read raw IMU data (14-byte burst, no float math in ISR)
-    (void)mpu6050_read_conv(&g_imu,
+    err = mpu6050_read_conv(&g_imu,
                            &imu_data.ax, &imu_data.ay, &imu_data.az,
                            &imu_data.gx, &imu_data.gy, &imu_data.gz,
                            &imu_data.temp_raw);
+    if (err != 0) {
+        printf("MPU6050 read error %d\n", err);
+    }
 
     // Update sensor data structure
     sensor_data.timestamp = timestamp_counter;
-    sensor_data.lidar_distance = 0;
-    sensor_data.lidar_strength = 0;
+    sensor_data.lidar_distance = s_latest.distance;
+    sensor_data.lidar_strength = s_latest.strength;
     sensor_data.ax = imu_data.ax;
     sensor_data.ay = imu_data.ay;
     sensor_data.az = imu_data.az;
@@ -128,12 +134,16 @@ void isrTimer_MAIN(void *context, alt_u32 id)
     // Hex display of timestamp on HEX5 and HEX4
     hex_display(sensor_data.timestamp, 2, 0);
 
-    // Heartbeat LED toggle
+    // 2Hz Heartbeat LED toggle
     static int led_state = 0;
     if (timestamp_counter % 500 == 0) {
         led_state = !led_state;
     }
-    led_SetLed(8, led_state);
+    err = led_SetLed(0, led_state);
+    if (err != 0)
+    {
+        printf("LED indication failed with %d!\n", err);
+    }
 
     // Increment timestamp
     timestamp_counter += 1;

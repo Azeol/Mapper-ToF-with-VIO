@@ -22,9 +22,7 @@
 
 // LiDAR context
 static alt_u32 s_uart_base = 0;
-
-static volatile LiDAR_Data_t s_latest;
-static volatile alt_u8       s_has_new = 0;
+static volatile alt_u8 s_has_new = 0;
 
 /* FSM */
 enum{
