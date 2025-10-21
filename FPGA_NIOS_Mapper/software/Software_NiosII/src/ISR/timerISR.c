@@ -20,6 +20,8 @@
 
 // Project lib
 #include "ISR/timerISR.h"
+#include "sensors/LiDAR.h"
+#include "sensors/MPU6050.h"
 
 /* REMINDER : TIMER_CONTROL/STATUS register :
  * CONTROL : last 4 bits : STOP, START, CONT, ITO
@@ -56,7 +58,7 @@ void isrTimer_MAIN(void *context, alt_u32 id)
     IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_MAIN_BASE, 0); // RESET the interrupt /!\ to do it each time
 
     lidar_isr_step();
-    
+    mpu6050_read_conv(&g_imu, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
     return;
 }

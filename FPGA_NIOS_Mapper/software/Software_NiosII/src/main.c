@@ -31,11 +31,6 @@ ALT_AVALON_I2C_STATUS_CODE i2c_status;      // I2C status code
 alt_u8 i2c_txbuffer[0x210];                 // Transmission buffer
 alt_u8 i2c_rxbuffer[0x200];                 // Reception buffer
 
-// MPU6050 variables
-
-mpu6050_t imu;
-alt_u8 who;
-
 int main()
 {
   printf("Hello from Nios II!\n");
@@ -52,18 +47,18 @@ int main()
   }
 
   // IMU Configuration
-  mpu6050_set_sample_rate_div(&imu, 0); // max Hz (1kHz)
-  mpu6050_set_dlpf(&imu, MPU6050_DLPF_260HZ); // max bandwidth
-  mpu6050_set_accel_range(&imu, MPU6050_ACCEL_4G); // +-4G
-  mpu6050_set_gyro_range(&imu, MPU6050_GYRO_500DPS); // +-500 deg/s
+  mpu6050_set_sample_rate_div(&g_imu, 0); // max Hz (1kHz)
+  mpu6050_set_dlpf(&g_imu, MPU6050_DLPF_260HZ); // max bandwidth
+  mpu6050_set_accel_range(&g_imu, MPU6050_ACCEL_4G); // +-4G
+  mpu6050_set_gyro_range(&g_imu, MPU6050_GYRO_500DPS); // +-500 deg/s
 
   // Sensors initialization
   lidar_init(UART_LIDAR_BASE, 50000000u, 115200u);
-  mpu6050_init(&imu, i2c_dev, 0);
+  mpu6050_init(&g_imu, i2c_dev, 0);
 
   // Verify MPU6050 identity
-  mpu6050_who_am_i(&imu, &who); // expect 0x68
-  printf("MPU6050: 0x%02X\n", who);
+  mpu6050_who_am_i(&g_imu, &g_who); // expect 0x68
+  printf("MPU6050: 0x%02X\n", g_who);
 
   // Init timers for ISRs
   init_isrTimer_MAIN();

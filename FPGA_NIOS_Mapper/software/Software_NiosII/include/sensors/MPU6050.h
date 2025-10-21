@@ -76,6 +76,16 @@ typedef struct {
 	float gyro_lsb_per_dps;    /* e.g., 131 for 250 dps */
 } mpu6050_t;
 
+// Global variables
+
+static mpu6050_t g_imu = {
+	I2C_BASE,
+	MPU6050_I2C_ADDR_DEFAULT,
+	16384.0f,
+	131.0f
+}; // Global IMU Variable
+static alt_u8 g_who; // Global WHO_AM_I Variable
+
 /* Initialization: set clock, wake, DLPF, sample rate, default ranges */
 
 int mpu6050_init(mpu6050_t* imu, ALT_AVALON_I2C_DEV_t* i2c, alt_u8 addr);
