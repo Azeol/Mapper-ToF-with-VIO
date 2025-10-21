@@ -13,7 +13,7 @@ This project is mainly to familiarize myself with Verilog/SystemVerilog, Quartus
 - Transfering data from FPGA to PC to handle the VIO and map in real time
 - Generating the fused and interpolated 3D point cloud
 
-Example of 3D could point from a ToF LiDAR taken from the internet
+Example of 3D cloud point from a ToF LiDAR taken from the internet
 ![alt text](images/LiDARexample.png)
 
 ## Project Architectures
