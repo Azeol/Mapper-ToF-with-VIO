@@ -47,23 +47,23 @@ You also need to be on a Nios2 Command Shell.
 
 ### HEX
 
->0 = number of invalid char 
- 0 = success
--1 = length overflow
--2 = empty string
--3 = invalid first index
+>0 = number of invalid char  
+ 0 = success  
+-1 = length overflow  
+-2 = empty string  
+-3 = invalid first index  
 
 ### I2C
 
- 1 = true
- 0 = success
--1 = error
--2 = timeout
--3 = bad arg
--4 = range error
--5 = NACK error
--6 = arb lost
--7 = is busy
+ 1 = true  
+ 0 = success  
+-1 = error  
+-2 = timeout  
+-3 = bad arg  
+-4 = range error  
+-5 = NACK error  
+-6 = arb lost  
+-7 = is busy  
 
 ###  
 
